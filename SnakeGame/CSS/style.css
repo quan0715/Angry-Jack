@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'JackeyFont';
+    src: url("./main.ttf");
+}
+.Text{
+    -fx-font-family : 'JackeyFont';
+}
+.button {
+    -fx-font-family: 'JackeyFont';
+    -fx-background-color : 'd5e2cb';
+}
+.label {
+    -fx-font-family: 'JackeyFont';
+}
+#Snake2{
+    -fx-font-family: 'JackeyFont';
+
+    -fx-text-fill : #ffb549;
+}
+#Player1{
+    -fx-font-family: 'JackeyFont';
+    -fx-text-fill : #51bebf;
+}
+#Snake1{
+    -fx-font-family: 'JackeyFont';
+    -fx-text-fill : #769f93;
+}
+#Player2{
+    -fx-font-family: 'JackeyFont';
+    -fx-text-fill : #eb8a02;
+}
+
+#Normal{
+    -fx-font-family: 'JackeyFont';
+     -fx-text-fill :#DDDDDD;
+}
+#Alert{
+    -fx-font-family: 'JackeyFont';
+     -fx-text-fill :#AA0000;
+}
+#Ice{
+    -fx-text-fill : #62c0ff;
+}
+#Fire{
+    -fx-text-fill : #ff9700;
+}
+#Star{
+    -fx-text-fill : #ffee00;
+}
+.ImageStatus{
+    -fx-opacity : 0.1;
+}
