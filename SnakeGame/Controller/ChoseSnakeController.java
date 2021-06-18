@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -48,8 +49,12 @@ public class ChoseSnakeController{
   @FXML private Button SelectImg12;
   @FXML private Button SelectImg21;
   @FXML private Button SelectImg22;
-  @FXML private ImageView Select1;
-  @FXML private ImageView Select2;
+  @FXML private ImageView LockStatus1;
+  @FXML private ImageView LockStatus2;
+  private boolean locked1 = false ;
+  private boolean locked2 = false ;
+  private Image Lock = ResourcesLoader.getImage("img/lock.png");
+  private Image UnLock = ResourcesLoader.getImage("img/padlock.png");
   private Snake[][] snakes = new Snake[5][4];
   private Pair<Integer,Integer> hover1 = new Pair<>(3,0);
   private Pair<Integer,Integer> hover2 = new Pair<>(3,3);
@@ -82,8 +87,27 @@ public class ChoseSnakeController{
     scene.setRoot(root);
     App.stage.setScene(scene);
   }
+  public void switchLock1Icon(boolean LockStatus){
+    if(LockStatus){
+      LockStatus1.setImage(Lock);
+    }
+    else{
+      LockStatus1.setImage(UnLock);
+    }
+  }
+  public void switchLock2Icon(boolean LockStatus){
+    if(LockStatus){
+      LockStatus2.setImage(Lock);
+    }
+    else{
+      LockStatus2.setImage(UnLock);
+    }
+  }
   public void init() {
     SetThemeColor(HomeController.ThemeColor);
+    locked1 = locked2 = false;
+    switchLock1Icon(false);
+    switchLock2Icon(false);
     GameCurrentChildrenArray.Instance.set(GameTable1.getChildren());
     hover1=select1;
     hover2=select2;
@@ -241,12 +265,16 @@ public class ChoseSnakeController{
     int changedPlayer=0;
     if(e.getCode()==KeyCode.SPACE){
       fixed1=!fixed1;
+      locked1 = !locked1;
+      switchLock1Icon(locked1);
       if(fixed1&&hover1.getKey()==hover2.getKey()&&hover1.getValue()==hover2.getValue()){
         hover2=new Pair<>((hover2.getKey())%5,(hover2.getValue()-1)%4);
       }
     }
     else if(e.getCode()==KeyCode.ENTER){
       fixed2=!fixed2;
+      locked2 = !locked2;
+      switchLock2Icon(locked2);
       if(fixed2&&hover1.getKey()==hover2.getKey()&&hover1.getValue()==hover2.getValue()){
         hover1=new Pair<>((hover1.getKey())%5,(hover1.getValue()+1)%4);
       }
@@ -435,6 +463,22 @@ public class ChoseSnakeController{
             e2.printStackTrace();
           }
         }
+  }
+  public void ClickToLock1(){
+    fixed1=!fixed1;
+    locked1 = !locked1;
+    switchLock1Icon(locked1);
+    if(fixed1&&hover1.getKey()==hover2.getKey()&&hover1.getValue()==hover2.getValue()){
+      hover2=new Pair<>((hover2.getKey())%5,(hover2.getValue()-1)%4);
+    }
+  }
+  public void ClickToLock2(){
+    fixed2=!fixed2;
+    locked2 = !locked2;
+    switchLock2Icon(locked2);
+    if(fixed2&&hover1.getKey()==hover2.getKey()&&hover1.getValue()==hover2.getValue()){
+      hover1=new Pair<>((hover1.getKey())%5,(hover1.getValue()+1)%4);
+    }
   }
   public void setCustomizePhoto2(){
     FileChooser fileChooser = new FileChooser();
