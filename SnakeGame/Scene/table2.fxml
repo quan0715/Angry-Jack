@@ -36,9 +36,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="620.0" style="-fx-background-color: #292929#292929 #292929#292929;" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SnakeGame.Controller.GameTwoController">
+<AnchorPane id="LightPane" fx:id="Jack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="620.0" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SnakeGame.Controller.GameTwoController">
    <children>
-      <AnchorPane fx:id="GameTable" layoutY="53.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #333f48;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+      <AnchorPane id="LightBattle" fx:id="GameTable" layoutY="53.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <children>
             <Label fx:id="AlertText" alignment="CENTER" layoutY="201.0" prefHeight="158.0" prefWidth="606.0" text="TAP ENTER TO START NEW GAME" textAlignment="CENTER" textFill="#fffcfb">
                <font>
@@ -66,12 +66,12 @@
             <Font name="System Bold Italic" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="GamePoint1" alignment="TOP_CENTER" layoutX="140.0" layoutY="15.0" prefHeight="27.0" prefWidth="40.0" text="0" textAlignment="CENTER" textFill="#e2ffc6">
+      <Label id="LightLabel" fx:id="GamePoint1" alignment="TOP_CENTER" layoutX="140.0" layoutY="15.0" prefHeight="27.0" prefWidth="40.0" text="0" textAlignment="CENTER" textFill="#e2ffc6">
          <font>
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <Label fx:id="GamePoint2" alignment="TOP_CENTER" layoutX="440.0" layoutY="17.0" prefHeight="27.0" prefWidth="40.0" text="0" textAlignment="CENTER" textFill="#e2ffc6">
+      <Label id="LightLabel" fx:id="GamePoint2" alignment="TOP_CENTER" layoutX="440.0" layoutY="17.0" prefHeight="27.0" prefWidth="40.0" text="0" textAlignment="CENTER" textFill="#e2ffc6">
          <font>
             <Font name="System Bold Italic" size="30.0" />
          </font>
@@ -86,7 +86,7 @@
             <Font name="System Bold Italic" size="16.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="287.0" layoutY="13.0" prefHeight="34.0" prefWidth="50.0" text="Vs" textFill="#e2ffc6">
+      <Label id="LightLabel" fx:id="VS" alignment="CENTER" contentDisplay="CENTER" layoutX="287.0" layoutY="13.0" prefHeight="34.0" prefWidth="50.0" text="VS" textFill="#e2ffc6">
          <font>
             <Font size="32.0" />
          </font>

@@ -33,12 +33,14 @@ public class GameOneController{
   private InputController input;
   private int record;
   @FXML private AnchorPane GameTable;
+  @FXML private AnchorPane Jack;
   @FXML private Label ScoreText;
   @FXML private Label AlertText;
   @FXML private Label UserName;
   @FXML private Label RecordS;
   public void init() {
     MusicController.PlayBackground1();
+    SetThemeColor(HomeController.ThemeColor);
     DrawLine();
     setAlertText("TAP ENTER TO START NEW GAME","Normal");
     RecordS.setText("Record : ");
@@ -151,6 +153,16 @@ public class GameOneController{
   public void KeyEven(KeyEvent event) throws IOException{
     if(input.GameOneFlow(event)){
       StartGame();
+    }
+  }
+  public void SetThemeColor(boolean ThemeColor){
+    if(ThemeColor){
+      Jack.setId("LightPane");
+      GameTable.setId("LightBattle");
+    }
+    else {
+      Jack.setId("DarkPane");
+      GameTable.setId("DarkBattle");
     }
   }
 }

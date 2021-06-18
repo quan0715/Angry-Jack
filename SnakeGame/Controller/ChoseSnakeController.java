@@ -22,12 +22,18 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
 import javafx.util.Pair;
 
 
 public class ChoseSnakeController{
+  @FXML private AnchorPane ChoseTable;
+  @FXML private AnchorPane Jack;
+  @FXML private Text Title;
+  @FXML private AnchorPane GameTable1;
+  @FXML private Button ButtonBack;
   @FXML private GridPane table;
   @FXML private Pane P1select;
   @FXML private Pane P2select;
@@ -38,7 +44,6 @@ public class ChoseSnakeController{
   @FXML private Pane playerTwoExhibitPane;
   @FXML private Label SnakeType1;
   @FXML private Label SnakeType2;
-  @FXML private AnchorPane GameTable1;
   @FXML private Button SelectImg11;
   @FXML private Button SelectImg12;
   @FXML private Button SelectImg21;
@@ -46,12 +51,12 @@ public class ChoseSnakeController{
   @FXML private ImageView Select1;
   @FXML private ImageView Select2;
   private Snake[][] snakes = new Snake[5][4];
-  private Pair<Integer,Integer> hover1 = new Pair<>(0,2);
-  private Pair<Integer,Integer> hover2 = new Pair<>(0,3);
-  private static Pair<Integer,Integer> select1=new Pair<>(0,2);
-  private static Pair<Integer,Integer> select2=new Pair<>(0,3);
-  private static String Snake1Name = "PythonSnake";
-  private static String Snake2Name = "VscodeSnake";
+  private Pair<Integer,Integer> hover1 = new Pair<>(3,0);
+  private Pair<Integer,Integer> hover2 = new Pair<>(3,3);
+  private static Pair<Integer,Integer> select1=new Pair<>(3,0);
+  private static Pair<Integer,Integer> select2=new Pair<>(3,3);
+  private static String Snake1Name = "JackSnake";
+  private static String Snake2Name = "SBBSnake";
   private String[][] name = new String[5][4];
   private boolean fixed1=false;
   private boolean fixed2=false;
@@ -78,6 +83,7 @@ public class ChoseSnakeController{
     App.stage.setScene(scene);
   }
   public void init() {
+    SetThemeColor(HomeController.ThemeColor);
     GameCurrentChildrenArray.Instance.set(GameTable1.getChildren());
     hover1=select1;
     hover2=select2;
@@ -102,6 +108,30 @@ public class ChoseSnakeController{
       handle(e);
     });
     table.requestFocus();
+  }
+  private void SetThemeColor (boolean ThemeColor){
+    if(ThemeColor){
+      Jack.setId("LightPane");
+      Title.setId("LightText");
+      ButtonBack.setId("LightButton");
+      SelectImg11.setId("LightButton");
+      SelectImg12.setId("LightButton");
+      SelectImg21.setId("LightButton");
+      SelectImg22.setId("LightButton");
+      GameTable1.setId("LightBattle");
+      ChoseTable.setId("LightShow");
+    }
+    else {
+      Jack.setId("DarkPane");
+      Title.setId("DarkText");
+      ButtonBack.setId("DarkButton");
+      SelectImg11.setId("DarkButton");
+      SelectImg12.setId("DarkButton");
+      SelectImg21.setId("DarkButton");
+      SelectImg22.setId("DarkButton");
+      GameTable1.setId("DarkBattle");
+      ChoseTable.setId("DarkShow");
+    }
   }
   private void playSnake1() {
     //start speed useless if SnakeBodyPlayer not used

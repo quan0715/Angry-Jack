@@ -7,10 +7,47 @@
 }
 .button {
     -fx-font-family: 'JackeyFont';
-    -fx-background-color : 'd5e2cb';
 }
 .label {
     -fx-font-family: 'JackeyFont';
+}
+#DarkButton{
+    -fx-background-color : #d5e2cb;
+    -fx-text-fill: #000000;
+}
+#LightButton{
+    -fx-background-color : #4f1f35;
+    -fx-text-fill : #ffffff;
+}
+#DarkText{
+    -fx-fill : #b9e4b5;
+}
+#LightText{
+    -fx-fill  : #4f1f35;
+}
+#DarkLabel{
+   -fx-text-fill  : #b9e4b5;
+}
+#LightLabel{
+   -fx-text-fill : #4f1f35;
+}
+#DarkPane{
+    -fx-background-color:  #292929
+}
+#LightPane{
+    -fx-background-color: #b7e0e2
+}
+#DarkBattle{
+    -fx-background-color: #333f48
+}
+#LightBattle{
+    -fx-background-color: #938faf
+}
+#DarkShow{
+    -fx-background-color: #79827F
+}
+#LightShow{
+    -fx-background-color: #a5b452
 }
 #Snake2{
     -fx-font-family: 'JackeyFont';
@@ -19,11 +56,11 @@
 }
 #Player1{
     -fx-font-family: 'JackeyFont';
-    -fx-text-fill : #51bebf;
+    -fx-text-fill : #bdffeb;
 }
 #Snake1{
     -fx-font-family: 'JackeyFont';
-    -fx-text-fill : #769f93;
+    -fx-text-fill : #a1ffe3;
 }
 #Player2{
     -fx-font-family: 'JackeyFont';

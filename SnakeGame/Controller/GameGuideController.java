@@ -19,28 +19,34 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 
 public class GameGuideController implements Initializable {
     private List<AnchorPane> topic;
-    @FXML
-    private AnchorPane Home;
-    @FXML
-    private AnchorPane Food;
-    @FXML
-    private AnchorPane GameOne;
-    @FXML
-    private AnchorPane GameTwo;
-    @FXML
-    private AnchorPane Keyboard;
-    @FXML
-    private AnchorPane Developer;
-    @FXML
-    private Label TitleLabel;
+    @FXML  private AnchorPane Jack;
+    @FXML  private AnchorPane Home;
+    @FXML  private AnchorPane Food;
+    @FXML  private AnchorPane GameOne;
+    @FXML  private AnchorPane GameTwo;
+    @FXML  private AnchorPane Keyboard;
+    @FXML  private AnchorPane Developer;
+    @FXML  private Label TitleLabel;
+    @FXML  private ImageView Scene;
+    @FXML  private Text Title;
+    @FXML  private Text Quan;
+    @FXML  private Text Albert;
+    @FXML  private Text JACK;
+    @FXML  private GridPane Grid;
     private int Case = 0;
-
+    private Image Light = ResourcesLoader.getImage("img/LightScene.png");
+    private Image Dark = ResourcesLoader.getImage("img/DarkScene.png");
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        SetThemeColor(HomeController.ThemeColor);
         topic = new ArrayList<AnchorPane>();
         topic.add(Home);
         topic.add(Food);
@@ -53,7 +59,28 @@ public class GameGuideController implements Initializable {
         //GameOne.setVisible(false);
         //GameTwo.setVisible(false);
     }
-
+    public void SetThemeColor(boolean ThemeColor){
+        if(ThemeColor){
+            Scene.setImage(Light);
+            Grid.setId("LightBattle");
+            Home.setId("LightBattle");
+            Jack.setId("LightPane");
+            Title.setId("LightText");
+            Quan.setId("LightText");
+            Albert.setId("LightText");
+            JACK.setId("LightText");
+        }
+        else {
+            Scene.setImage(Dark);
+            Grid.setId("DarkBattle");
+            Home.setId("DarkBattle");
+            Jack.setId("DarkPane");
+            Title.setId("DarkText");
+            Quan.setId("DarkText");
+            Albert.setId("DarkText");
+            JACK.setId("DarkText");
+        }
+    }
     public void BackToHomePage() throws IOException {
         MusicController.ButtonClickSound();
         FXMLLoader loader = ResourcesLoader.getFXMLLoader("Scene/Home.fxml");

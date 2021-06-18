@@ -34,6 +34,8 @@ public class GameTwoController{
   DirectionController directionController2;
   public InputController input;
   @FXML  private AnchorPane GameTable;
+  @FXML  private AnchorPane Jack;
+  @FXML  private Label VS;
   @FXML  private Label ScoreText;
   @FXML  private Label AlertText;
   @FXML  private Label UserName1;
@@ -49,6 +51,7 @@ public class GameTwoController{
   private Timeline checkScoreTimeline;
   private Timeline SkillTextRefresh;
   public void init() {
+    SetThemeColor(HomeController.ThemeColor);
     MusicController.PlayBackground1();
     DrawLine();
     score1 = score2 = 0;
@@ -243,6 +246,22 @@ public class GameTwoController{
   public void KeyEven(KeyEvent event) throws IOException {
     if(input.GameTwoFlow(event)){
       StartGame();
+    }
+  }
+  public void SetThemeColor(boolean ThemeColor){
+    if(ThemeColor){
+      Jack.setId("LightPane");
+      GameTable.setId("LightBattle");
+      VS.setId("LightLabel");
+      GamePoint1.setId("LightLabel");
+      GamePoint2.setId("LightLabel");
+    }
+    else {
+      Jack.setId("DarkPane");
+      GameTable.setId("DarkBattle");
+      VS.setId("DarkLabel");
+      GamePoint1.setId("DarkLabel");
+      GamePoint2.setId("DarkLabel");
     }
   }
 }

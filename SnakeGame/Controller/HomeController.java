@@ -7,7 +7,9 @@ import java.util.ResourceBundle;
 import SnakeGame.App;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
+import SnakeGame.Snake.JackSnake;
 import SnakeGame.Snake.PythonSnake;
+import SnakeGame.Snake.SBBSnake;
 import SnakeGame.Snake.VscodeSnake;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,17 +24,24 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 public class HomeController implements Initializable{
-  @FXML Button ButtonOne;
+  @FXML private Button ButtonOne;
+  @FXML private Button ButtonTwo;
   @FXML public TextField GamePin;
   @FXML private ImageView Sound;
-  @FXML AnchorPane Jack;
+  @FXML private ImageView Theme;
+  @FXML private AnchorPane Jack;
+  @FXML private Text Title;
   private static boolean SoundOff = false;
+  public  static boolean ThemeColor = false;
+  private Image Light = ResourcesLoader.getImage("img/light.png");
+  private Image Dark = ResourcesLoader.getImage("img/dark.png");
   private Image sound = ResourcesLoader.getImage("img/sound.png");
   private Image nosound = ResourcesLoader.getImage("img/no-sound.png");
-  public static Snake Player1=new PythonSnake();
-  public static Snake Player2=new VscodeSnake();
+  public static Snake Player1=new JackSnake();
+  public static Snake Player2=new SBBSnake();
   public void SwitchOneManGame() throws IOException{
     MusicController.StopBackground2();
     MusicController.ButtonClickSound();
@@ -102,6 +111,7 @@ public class HomeController implements Initializable{
   public void initialize(URL location, ResourceBundle resources) {
     MusicController.PlayBackground2();
     SwitchSoundIcon(SoundOff);
+    SwitchThemeIcon(ThemeColor);
     ButtonOne.getScene();
     ButtonOne.setOnKeyPressed((e) -> {
       if(e.getCode() == KeyCode.ENTER){
@@ -119,9 +129,15 @@ public class HomeController implements Initializable{
       ButtonOne.requestFocus();
     });
   }
+  public void SetTheme(){
+    ThemeColor = !ThemeColor;
+    MusicController.ButtonClickSound();
+    SwitchThemeIcon(ThemeColor);
+  }
   public void SetMute(){
     SoundOff = !SoundOff;
     SwitchSoundIcon(SoundOff);
+    MusicController.ButtonClickSound();
     MusicController.SetMute(SoundOff);
   }
   private void SwitchSoundIcon (boolean SoundOff){
@@ -130,5 +146,20 @@ public class HomeController implements Initializable{
     }
     else Sound.setImage(sound);
   }
-  
+  private void SwitchThemeIcon (boolean ThemeColor){
+    if(ThemeColor){
+      Theme.setImage(Light);
+      Jack.setId("LightPane");
+      Title.setId("LightText");
+      ButtonOne.setId("LightButton");
+      ButtonTwo.setId("LightButton");
+    }
+    else {
+      Theme.setImage(Dark);
+      Jack.setId("DarkPane");
+      Title.setId("DarkText");
+      ButtonOne.setId("DarkButton");
+      ButtonTwo.setId("DarkButton");
+    }
+  }
 }
