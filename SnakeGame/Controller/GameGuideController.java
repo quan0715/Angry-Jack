@@ -69,6 +69,7 @@ public class GameGuideController implements Initializable {
             Quan.setId("LightText");
             Albert.setId("LightText");
             JACK.setId("LightText");
+            TitleLabel.setId("LightLabel");
         }
         else {
             Scene.setImage(Dark);
@@ -79,6 +80,7 @@ public class GameGuideController implements Initializable {
             Quan.setId("DarkText");
             Albert.setId("DarkText");
             JACK.setId("DarkText");
+            TitleLabel.setId("DarkLabel");
         }
     }
     public void BackToHomePage() throws IOException {
