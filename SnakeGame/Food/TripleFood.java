@@ -1,5 +1,6 @@
 package SnakeGame.Food;
 
+import SnakeGame.Controller.HomeController;
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
@@ -33,7 +34,8 @@ public class TripleFood extends Food {
   }
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
-    s.SkillText("BIG", "Normal");
+    if (HomeController.ThemeColor) s.SkillText("BIG", "LightNormal");
+    else s.SkillText("BIG", "DarkNormal");
     MusicController.GrowingUp();
     Timeline ef = new Timeline(new KeyFrame(Duration.millis(180), e -> {
       if(Case == 0) s.clearOnScreen();

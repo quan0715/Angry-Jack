@@ -33,6 +33,7 @@ public class BombFood extends Food {
         s.ScoreUp();
         MusicController.EatFoodPop();
         FoodGenerator.RefreshFood();
+        s.SkillText("Boom", "Alert");
         s.setSkill(3, new Callable<Void>(){
             @Override
             public Void call() throws Exception {
@@ -43,6 +44,7 @@ public class BombFood extends Food {
         Timeline cancelTimeline=new Timeline(new KeyFrame(Duration.millis(5000), e->{
             s.SnakeEffect(null);
             s.setSkill(0, null);
+            s.SkillText(null, null);
         }));
         cancelTimeline.setCycleCount(1);
         cancelTimeline.play();

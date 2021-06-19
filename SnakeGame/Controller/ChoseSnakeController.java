@@ -375,7 +375,6 @@ public class ChoseSnakeController{
         GridPane.setRowIndex(P2Hover,hover2.getKey());
       }
     }
-
     Snake1Name = name[hover1.getKey()][hover1.getValue()];
     Snake2Name = name[hover2.getKey()][hover2.getValue()];
     SnakeType1.setText(Snake1Name);
@@ -467,20 +466,140 @@ public class ChoseSnakeController{
         }
   }
   public void ClickToLock1(){
+    table.getChildren().remove(P1select);
+    table.getChildren().remove(P2select);
+    table.getChildren().remove(Hover);
+    table.getChildren().remove(P1Hover);
+    table.getChildren().remove(P2Hover);
+    MusicController.LockSound();
     fixed1=!fixed1;
     locked1 = !locked1;
     switchLock1Icon(locked1);
     if(fixed1&&hover1.getKey()==hover2.getKey()&&hover1.getValue()==hover2.getValue()){
       hover2=new Pair<>((hover2.getKey())%5,(hover2.getValue()-1)%4);
     }
+    int changedPlayer=0;
+    if(hover1.getKey()==hover2.getKey()&&hover1.getValue()==hover2.getValue()){
+      table.getChildren().add(Hover);
+      GridPane.setColumnIndex(Hover, hover1.getValue());
+      GridPane.setRowIndex(Hover, hover1.getKey());
+    }
+    else{
+      if(fixed1){
+        table.getChildren().add(P1select);
+        GridPane.setColumnIndex(P1select, hover1.getValue());
+        GridPane.setRowIndex(P1select, hover1.getKey());
+      }
+      else{
+        table.getChildren().add(P1Hover);
+        GridPane.setColumnIndex(P1Hover, hover1.getValue());
+        GridPane.setRowIndex(P1Hover, hover1.getKey());
+      }
+      if(fixed2){
+        table.getChildren().add(P2select);
+        GridPane.setColumnIndex(P2select, hover2.getValue());
+        GridPane.setRowIndex(P2select, hover2.getKey());
+      }
+      else{
+        table.getChildren().add(P2Hover);
+        GridPane.setColumnIndex(P2Hover, hover2.getValue());
+        GridPane.setRowIndex(P2Hover,hover2.getKey());
+      }
+    }
+
+    Snake1Name = name[hover1.getKey()][hover1.getValue()];
+    Snake2Name = name[hover2.getKey()][hover2.getValue()];
+    SnakeType1.setText(Snake1Name);
+    SnakeType2.setText(Snake2Name);
+    if(changedPlayer==1){
+      player1Body.clearOnScreen();
+      nextDir[0]=0;
+      player1Body=new SnakeBody(snakes[hover1.getKey()][hover1.getValue()],0,40,220);
+      try {
+        player1Body.AddNewBody();
+      } catch (Exception e1) {
+        e1.printStackTrace();
+      }
+    }
+    else if(changedPlayer==2){
+      player2Body.clearOnScreen();
+      nextDir[1]=0;
+      player2Body=new SnakeBody(snakes[hover2.getKey()][hover2.getValue()],0,460,220);
+      try {
+        player2Body.AddNewBody();
+      } catch (Exception e2) {
+        e2.printStackTrace();
+      }
+    }
+    SetSelectButton();
   }
   public void ClickToLock2(){
+    table.getChildren().remove(P1select);
+    table.getChildren().remove(P2select);
+    table.getChildren().remove(Hover);
+    table.getChildren().remove(P1Hover);
+    table.getChildren().remove(P2Hover);
+    int changedPlayer=0;
+    MusicController.LockSound();
     fixed2=!fixed2;
     locked2 = !locked2;
     switchLock2Icon(locked2);
     if(fixed2&&hover1.getKey()==hover2.getKey()&&hover1.getValue()==hover2.getValue()){
       hover1=new Pair<>((hover1.getKey())%5,(hover1.getValue()+1)%4);
     }
+    if(hover1.getKey()==hover2.getKey()&&hover1.getValue()==hover2.getValue()){
+      table.getChildren().add(Hover);
+      GridPane.setColumnIndex(Hover, hover1.getValue());
+      GridPane.setRowIndex(Hover, hover1.getKey());
+    }
+    else{
+      if(fixed1){
+        table.getChildren().add(P1select);
+        GridPane.setColumnIndex(P1select, hover1.getValue());
+        GridPane.setRowIndex(P1select, hover1.getKey());
+      }
+      else{
+        table.getChildren().add(P1Hover);
+        GridPane.setColumnIndex(P1Hover, hover1.getValue());
+        GridPane.setRowIndex(P1Hover, hover1.getKey());
+      }
+      if(fixed2){
+        table.getChildren().add(P2select);
+        GridPane.setColumnIndex(P2select, hover2.getValue());
+        GridPane.setRowIndex(P2select, hover2.getKey());
+      }
+      else{
+        table.getChildren().add(P2Hover);
+        GridPane.setColumnIndex(P2Hover, hover2.getValue());
+        GridPane.setRowIndex(P2Hover,hover2.getKey());
+      }
+    }
+
+    Snake1Name = name[hover1.getKey()][hover1.getValue()];
+    Snake2Name = name[hover2.getKey()][hover2.getValue()];
+    SnakeType1.setText(Snake1Name);
+    SnakeType2.setText(Snake2Name);
+    if(changedPlayer==1){
+      player1Body.clearOnScreen();
+      nextDir[0]=0;
+      player1Body=new SnakeBody(snakes[hover1.getKey()][hover1.getValue()],0,40,220);
+      try {
+        player1Body.AddNewBody();
+      } catch (Exception e1) {
+        e1.printStackTrace();
+      }
+    }
+    else if(changedPlayer==2){
+      player2Body.clearOnScreen();
+      nextDir[1]=0;
+      player2Body=new SnakeBody(snakes[hover2.getKey()][hover2.getValue()],0,460,220);
+      try {
+        player2Body.AddNewBody();
+      } catch (Exception e2) {
+        e2.printStackTrace();
+      }
+    }
+    SetSelectButton();
   }
   public void setCustomizePhoto2(){
     FileChooser fileChooser = new FileChooser();

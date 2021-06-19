@@ -231,12 +231,12 @@
             <Button fx:id="SelectImg12" defaultButton="true" disable="true" focusTraversable="false" layoutX="58.0" layoutY="325.0" mnemonicParsing="false" onAction="#setCustomizePhoto2" prefHeight="23.0" prefWidth="62.0" text="Select" visible="false" />
             <Button fx:id="SelectImg21" defaultButton="true" disable="true" focusTraversable="false" layoutX="481.0" layoutY="325.0" mnemonicParsing="false" onAction="#setCustomizePhoto1" prefHeight="23.0" prefWidth="62.0" text="Select" visible="false" />
             <Button fx:id="SelectImg22" defaultButton="true" disable="true" focusTraversable="false" layoutX="482.0" layoutY="325.0" mnemonicParsing="false" onAction="#setCustomizePhoto2" prefHeight="23.0" prefWidth="62.0" text="Select" visible="false" />
-            <ImageView fx:id="LockStatus1" fitHeight="40.0" fitWidth="40.0" layoutX="58.0" layoutY="42.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="LockStatus1" fitHeight="40.0" fitWidth="40.0" layoutX="58.0" layoutY="42.0" nodeOrientation="INHERIT" onMouseClicked="#ClickToLock1" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/unlock.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="LockStatus2" fitHeight="40.0" fitWidth="40.0" layoutX="493.0" layoutY="42.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="LockStatus2" fitHeight="40.0" fitWidth="40.0" layoutX="493.0" layoutY="42.0" nodeOrientation="INHERIT" onMouseClicked="#ClickToLock2" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/unlock.png" />
                </image>

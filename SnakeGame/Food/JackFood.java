@@ -1,6 +1,7 @@
 package SnakeGame.Food;
 
 
+import SnakeGame.Controller.HomeController;
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
@@ -35,7 +36,8 @@ public class JackFood extends Food {
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.RateBuff(SpeedUp);
     s.SnakeEffect(l);
-    s.SkillText("Angry", "Normal");
+    if (HomeController.ThemeColor) s.SkillText("Angry!", "LightNormal");
+    else s.SkillText("Angry!", "DarkNormal");
     Timeline speedup = new Timeline(new KeyFrame(Duration.millis(3000), e -> {
       s.SnakeEffect(null);
       s.RateNuff(SpeedUp);
