@@ -34,6 +34,14 @@
 #DarkPane{
     -fx-background-color:  #292929
 }
+#LightField{
+    -fx-background-color:  black;
+    -fx-text-fill  : #ffffff;
+}
+#DarkField{
+    -fx-background-color:  white;
+    -fx-text-fill: #000000;
+}
 #LightPane{
     -fx-background-color: #ffffff;
 }

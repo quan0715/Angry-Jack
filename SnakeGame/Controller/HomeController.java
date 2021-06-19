@@ -153,6 +153,7 @@ public class HomeController implements Initializable{
       Title.setId("LightText");
       ButtonOne.setId("LightButton");
       ButtonTwo.setId("LightButton");
+      GamePin.setId("LightField");
     }
     else {
       Theme.setImage(Dark);
@@ -160,6 +161,7 @@ public class HomeController implements Initializable{
       Title.setId("DarkText");
       ButtonOne.setId("DarkButton");
       ButtonTwo.setId("DarkButton");
+      GamePin.setId("DarkField");
     }
   }
 }
