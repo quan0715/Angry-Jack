@@ -21,7 +21,7 @@ import javafx.scene.input.KeyEvent;
 public class InputController{
   private boolean NewGame;
   private boolean GamePause;
-  
+  private String NormalAlert;
   private Label AlertText;
   private SnakeBodyPlayer s1;
   private SnakeBodyPlayer s2;
@@ -44,6 +44,12 @@ public class InputController{
     init();
   }
   public void init(){
+    if(HomeController.ThemeColor){
+      NormalAlert = "LightNormal";
+    }
+    else {
+      NormalAlert = "DarkNormal";
+    }
     GamePause = false;
     NewGame = true;
   }
@@ -58,13 +64,13 @@ public class InputController{
       if(GameContinue()){
         s1.pause();
         s2.pause();
-        setAlertText("TAP SPACE --> CONTINUE THE GAME\n\nTAP H --> RETURN HOME PAGE", "Normal");
+        setAlertText("TAP SPACE --> CONTINUE THE GAME\n\nTAP H --> RETURN HOME PAGE", NormalAlert);
         GamePause = true;
       }
       else if(GameIsPause()){
         s1.play();
         s2.play();
-        setAlertText("", "Normal");
+        setAlertText("", NormalAlert);
         GamePause = false;
       }
     } 
@@ -94,11 +100,11 @@ public class InputController{
     if (key == KeyCode.SPACE) {
       if (GameContinue()) {
         s1.pause();
-        setAlertText("TAP SPACE --> CONTINUE THE GAME\n\nTAP H --> RETURN HOME PAGE", "Normal");
+        setAlertText("TAP SPACE --> CONTINUE THE GAME\n\nTAP H --> RETURN HOME PAGE", NormalAlert);
         GamePause = true;
       } else if (GameIsPause()) {
         s1.play();
-        setAlertText("", "Normal");
+        setAlertText("", NormalAlert);
         GamePause = false;
       }
     }
@@ -146,6 +152,6 @@ public class InputController{
     return GamePause;
   }
   public void welcome() {
-    setAlertText("TAP ENTER TO START NEW GAME", "Normal");
+    setAlertText("TAP ENTER TO START NEW GAME", NormalAlert);
   }
 }

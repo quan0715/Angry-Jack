@@ -33,6 +33,7 @@ public class GameTwoController{
   DirectionController directionController1;
   DirectionController directionController2;
   public InputController input;
+  private String NormalAlert = "DarkNormal";
   @FXML  private AnchorPane GameTable;
   @FXML  private AnchorPane Jack;
   @FXML  private Label VS;
@@ -155,8 +156,14 @@ public class GameTwoController{
     for (int i = 0; i <= windowWidth; i += GridWidth) {
       Line rows = new Line(0, i, windowWidth, i);
       Line cols = new Line(i, 0, i, windowWidth);
-      rows.setStroke(Color.web("#D6D6AD"));
-      cols.setStroke(Color.web("#D6D6AD"));
+      if(HomeController.ThemeColor) {
+        rows.setStroke(Color.web("#353535"));
+        cols.setStroke(Color.web("#353535"));
+      }
+      else {
+        rows.setStroke(Color.web("#D6D6AD"));
+        cols.setStroke(Color.web("#D6D6AD"));
+      }
       rows.setStrokeWidth(0.3);
       cols.setStrokeWidth(0.3);
       GameTable.getChildren().add(rows);
@@ -255,6 +262,7 @@ public class GameTwoController{
       VS.setId("LightLabel");
       GamePoint1.setId("LightLabel");
       GamePoint2.setId("LightLabel");
+      NormalAlert = "LightNormal";
     }
     else {
       Jack.setId("DarkPane");
@@ -262,6 +270,7 @@ public class GameTwoController{
       VS.setId("DarkLabel");
       GamePoint1.setId("DarkLabel");
       GamePoint2.setId("DarkLabel");
+      NormalAlert = "DarkNormal";
     }
   }
 }

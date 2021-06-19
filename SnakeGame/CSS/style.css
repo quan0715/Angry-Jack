@@ -29,19 +29,21 @@
    -fx-text-fill  : #b9e4b5;
 }
 #LightLabel{
-   -fx-text-fill : #4f1f35;
+   -fx-text-fill : #161a1d;
 }
 #DarkPane{
     -fx-background-color:  #292929
 }
 #LightPane{
-    -fx-background-color: #b7e0e2
+    -fx-background-color: #ffffff;
 }
 #DarkBattle{
     -fx-background-color: #333f48
+
 }
 #LightBattle{
-    -fx-background-color: #938faf
+
+    -fx-background-color : #d9d9d9;
 }
 #DarkShow{
     -fx-background-color: #79827F
@@ -67,9 +69,13 @@
     -fx-text-fill : #eb8a02;
 }
 
-#Normal{
+#DarkNormal{
     -fx-font-family: 'JackeyFont';
      -fx-text-fill :#DDDDDD;
+}
+#LightNormal{
+    -fx-font-family: 'JackeyFont';
+     -fx-text-fill : #161a1d;
 }
 #Alert{
     -fx-font-family: 'JackeyFont';

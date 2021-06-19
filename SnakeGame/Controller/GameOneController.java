@@ -32,6 +32,7 @@ public class GameOneController{
   private Timeline checkScoreTimeline;
   private InputController input;
   private int record;
+  private String NormalAlert = "DarkNormal";
   @FXML private AnchorPane GameTable;
   @FXML private AnchorPane Jack;
   @FXML private Label ScoreText;
@@ -42,7 +43,6 @@ public class GameOneController{
     MusicController.PlayBackground1();
     SetThemeColor(HomeController.ThemeColor);
     DrawLine();
-    setAlertText("TAP ENTER TO START NEW GAME","Normal");
     RecordS.setText("Record : ");
     GameCurrentChildrenArray.Instance.set(GameTable.getChildren());
     directionController = new DirectionController();
@@ -77,6 +77,7 @@ public class GameOneController{
     checkScoreTimeline.setCycleCount(Timeline.INDEFINITE);
     checkScoreTimeline.play();
     input = new InputController(AlertText,snakeBodyPlayer1,directionController);
+    input.welcome();
   }
   // Game flow
   public void StartGame(){
@@ -93,8 +94,14 @@ public class GameOneController{
     for (int i = 0; i <= windowWidth; i += GridWidth) {
       Line rows = new Line(0, i, windowWidth, i);
       Line cols = new Line(i, 0, i, windowWidth);
-      rows.setStroke(Color.web("#D6D6AD"));
-      cols.setStroke(Color.web("#D6D6AD"));
+      if(HomeController.ThemeColor) {
+        rows.setStroke(Color.web("#353535"));
+        cols.setStroke(Color.web("#353535"));
+      }
+      else {
+        rows.setStroke(Color.web("#D6D6AD"));
+        cols.setStroke(Color.web("#D6D6AD"));
+      }
       rows.setStrokeWidth(0.3);
       cols.setStrokeWidth(0.3);
       GameTable.getChildren().add(rows);
@@ -159,10 +166,12 @@ public class GameOneController{
     if(ThemeColor){
       Jack.setId("LightPane");
       GameTable.setId("LightBattle");
+      NormalAlert = "LightNormal";
     }
     else {
       Jack.setId("DarkPane");
       GameTable.setId("DarkBattle");
+      NormalAlert = "DarkNormal";
     }
   }
 }

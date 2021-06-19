@@ -1,6 +1,7 @@
 package SnakeGame.Food;
 
 
+import SnakeGame.Controller.HomeController;
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
@@ -30,7 +31,9 @@ public class IceFood extends Food {
     l.setSpecularConstant(2.0);
     l.setDiffuseConstant(2.0);
     image = ResourcesLoader.getImage("img/ice.png");
+
     body.setFill(new ImagePattern(image));
+    if(HomeController.ThemeColor)body.setEffect(l);
   }
 
   @Override

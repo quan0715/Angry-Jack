@@ -40,7 +40,7 @@
    <children>
       <AnchorPane id="LightBattle" fx:id="GameTable" layoutY="53.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <children>
-            <Label fx:id="AlertText" alignment="CENTER" layoutY="201.0" prefHeight="158.0" prefWidth="606.0" text="TAP ENTER TO START NEW GAME" textAlignment="CENTER" textFill="#fffcfb">
+            <Label id="LightLabel" fx:id="AlertText" alignment="CENTER" layoutY="201.0" prefHeight="158.0" prefWidth="606.0" text="TAP ENTER TO START NEW GAME" textAlignment="CENTER" textFill="#fffcfb">
                <font>
                   <Font size="26.0" />
                </font>
