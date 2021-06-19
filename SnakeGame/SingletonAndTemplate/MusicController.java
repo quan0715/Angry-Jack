@@ -2,6 +2,8 @@ package SnakeGame.SingletonAndTemplate;
 
 
 import SnakeGame.ResourcesLoader;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
@@ -16,6 +18,7 @@ public class MusicController {
   private MediaPlayer Growing;
   private MediaPlayer Throwing;
   private Media TNT;
+  private Media Lock;
   private MediaPlayer SuperStar;
   private static int woody = 0;
   private MusicController(){
@@ -28,6 +31,7 @@ public class MusicController {
     Growing = ResourcesLoader.getMediaPlayer("Music/ban.mp3");
     Throwing = ResourcesLoader.getMediaPlayer("Music/Fireballs.mp3");
     TNT = ResourcesLoader.getMedia("Music/TnT.mp3");
+    Lock = ResourcesLoader.getMedia("Music/doorLock.mp3");
     BackGround1MediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
     BackGround2MediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
     BackGround2MediaPlayer.setVolume(0.6);
@@ -86,6 +90,15 @@ public class MusicController {
   public static void ButtonClickSound() {
     instance.Click.seek(Duration.millis(400));
     instance.Click.play();
+  }
+  public static void LockSound(){
+    MediaPlayer player=new MediaPlayer(instance.Lock);
+    player.seek(Duration.millis(300));
+    player.setVolume(0.4);
+    player.play();
+    Timeline shutDownTimeline=new Timeline(new KeyFrame(Duration.millis(1000),e->player.dispose()));
+    shutDownTimeline.setCycleCount(1);
+    shutDownTimeline.play();
   }
   public static void SetMute(boolean SoundOff){
     instance.BackGround1MediaPlayer.setMute(SoundOff);
