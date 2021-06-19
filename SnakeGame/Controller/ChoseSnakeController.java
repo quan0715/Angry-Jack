@@ -264,6 +264,7 @@ public class ChoseSnakeController{
     table.getChildren().remove(P2Hover);
     int changedPlayer=0;
     if(e.getCode()==KeyCode.SPACE){
+      MusicController.LockSound();
       fixed1=!fixed1;
       locked1 = !locked1;
       switchLock1Icon(locked1);
@@ -272,6 +273,7 @@ public class ChoseSnakeController{
       }
     }
     else if(e.getCode()==KeyCode.ENTER){
+      MusicController.LockSound();
       fixed2=!fixed2;
       locked2 = !locked2;
       switchLock2Icon(locked2);
