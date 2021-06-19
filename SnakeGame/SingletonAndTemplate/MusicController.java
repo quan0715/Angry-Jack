@@ -31,7 +31,7 @@ public class MusicController {
     Growing = ResourcesLoader.getMediaPlayer("Music/ban.mp3");
     Throwing = ResourcesLoader.getMediaPlayer("Music/Fireballs.mp3");
     TNT = ResourcesLoader.getMedia("Music/TnT.mp3");
-    Lock = ResourcesLoader.getMedia("Music/doorLock.mp3");
+    Lock = ResourcesLoader.getMedia("Music/Click.mp3");
     BackGround1MediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
     BackGround2MediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
     BackGround2MediaPlayer.setVolume(0.6);

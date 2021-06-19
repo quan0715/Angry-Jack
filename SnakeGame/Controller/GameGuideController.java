@@ -28,59 +28,51 @@ import javafx.scene.text.Text;
 public class GameGuideController implements Initializable {
     private List<AnchorPane> topic;
     @FXML  private AnchorPane Jack;
-    @FXML  private AnchorPane Home;
-    @FXML  private AnchorPane Food;
-    @FXML  private AnchorPane GameOne;
-    @FXML  private AnchorPane GameTwo;
-    @FXML  private AnchorPane Keyboard;
-    @FXML  private AnchorPane Developer;
+    @FXML  private AnchorPane HomeDark;
+    @FXML  private AnchorPane HomeLight;
+    @FXML  private AnchorPane FoodDark;
+    @FXML  private AnchorPane FoodLight;
+    @FXML  private AnchorPane KeyboardDark;
+    @FXML  private AnchorPane KeyboardLight;
+    @FXML  private AnchorPane DeveloperDark;
+    @FXML  private AnchorPane DeveloperLight;
     @FXML  private Label TitleLabel;
-    @FXML  private ImageView Scene;
     @FXML  private Text Title;
-    @FXML  private Text Quan;
-    @FXML  private Text Albert;
-    @FXML  private Text JACK;
-    @FXML  private GridPane Grid;
     private int Case = 0;
-    private Image Light = ResourcesLoader.getImage("img/LightScene.png");
-    private Image Dark = ResourcesLoader.getImage("img/DarkScene.png");
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        SetThemeColor(HomeController.ThemeColor);
         topic = new ArrayList<AnchorPane>();
-        topic.add(Home);
-        topic.add(Food);
-        topic.add(Keyboard);
-        topic.add(Developer);
-        //topic.add(GameTwo);
+        SetThemeColor(HomeController.ThemeColor);
         Case = 0;
         TitleLabel.setText("Home Page");
         Setvis(Case);
-        //GameOne.setVisible(false);
-        //GameTwo.setVisible(false);
     }
     public void SetThemeColor(boolean ThemeColor){
         if(ThemeColor){
-            Scene.setImage(Light);
-            Grid.setId("LightBattle");
-            Home.setId("LightBattle");
+            topic.add(HomeLight);
+            topic.add(FoodLight);
+            topic.add(KeyboardLight);
+            topic.add(DeveloperLight);
             Jack.setId("LightPane");
             Title.setId("LightText");
-            Quan.setId("LightText");
-            Albert.setId("LightText");
-            JACK.setId("LightText");
             TitleLabel.setId("LightLabel");
+            HomeDark.setVisible(false);
+            FoodDark.setVisible(false);
+            KeyboardDark.setVisible(false);
+            DeveloperDark.setVisible(false);
         }
         else {
-            Scene.setImage(Dark);
-            Grid.setId("DarkBattle");
-            Home.setId("DarkBattle");
+            topic.add(HomeDark);
+            topic.add(FoodDark);
+            topic.add(KeyboardDark);
+            topic.add(DeveloperDark);
             Jack.setId("DarkPane");
             Title.setId("DarkText");
-            Quan.setId("DarkText");
-            Albert.setId("DarkText");
-            JACK.setId("DarkText");
             TitleLabel.setId("DarkLabel");
+            HomeLight.setVisible(false);
+            FoodLight.setVisible(false);
+            KeyboardLight.setVisible(false);
+            DeveloperLight.setVisible(false);
         }
     }
     public void BackToHomePage() throws IOException {

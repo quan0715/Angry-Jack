@@ -143,7 +143,7 @@ public class ChoseSnakeController{
       SelectImg21.setId("LightButton");
       SelectImg22.setId("LightButton");
       GameTable1.setId("LightBattle");
-      ChoseTable.setId("LightShow");
+      ChoseTable.setId("LightPane");
     }
     else {
       Jack.setId("DarkPane");
@@ -154,7 +154,7 @@ public class ChoseSnakeController{
       SelectImg21.setId("DarkButton");
       SelectImg22.setId("DarkButton");
       GameTable1.setId("DarkBattle");
-      ChoseTable.setId("DarkShow");
+      ChoseTable.setId("DarkPane");
     }
   }
   private void playSnake1() {

@@ -22,12 +22,12 @@
       </Text>
       <AnchorPane id="LightBattle" fx:id="GameTable1" layoutX="10.0" layoutY="180.0" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Label id="player1" fx:id="UserName1" alignment="TOP_RIGHT" layoutX="6.0" layoutY="4.0" prefHeight="34.0" prefWidth="133.0" stylesheets="@../CSS/style.css" text="Player1" textAlignment="CENTER" textFill="#51bebf">
+            <Label id="Player1" fx:id="UserName1" alignment="TOP_RIGHT" layoutX="23.0" layoutY="5.0" prefHeight="34.0" prefWidth="133.0" stylesheets="@../CSS/style.css" text="Player1" textAlignment="CENTER" textFill="#27b3ff">
                <font>
                   <Font name="System Bold Italic" size="32.0" />
                </font>
             </Label>
-            <AnchorPane id="LightShow" fx:id="ChoseTable" layoutX="175.0" prefHeight="400.0" prefWidth="250.0">
+            <AnchorPane fx:id="ChoseTable" layoutX="175.0" prefHeight="400.0" prefWidth="250.0">
                <children>
                   <GridPane fx:id="table" alignment="CENTER" layoutX="5.0" layoutY="50.0" prefHeight="300.0" prefWidth="240.0">
                     <columnConstraints>
@@ -44,9 +44,9 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Pane fx:id="P1select" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: #51BEBF; -fx-border-width: 5;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Pane fx:id="P1Hover" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #bdffeb; -fx-border-width: 5;" GridPane.rowIndex="1" />
-                        <Pane fx:id="P2select" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: #ed8b01; -fx-border-width: 5;" GridPane.columnIndex="3" />
+                        <Pane fx:id="P1select" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: #0086c9#0086c9; -fx-border-width: 5;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Pane fx:id="P1Hover" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #27b3ff#27b3ff; -fx-border-width: 5;" GridPane.rowIndex="1" />
+                        <Pane fx:id="P2select" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: #eb8a02#eb8a02; -fx-border-width: 5;" GridPane.columnIndex="3" />
                         <Pane fx:id="P2Hover" prefHeight="60.0" prefWidth="60.0" style="-fx-border-color: #FFB549; -fx-border-width: 5;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -212,17 +212,17 @@
                      </children>
                   </GridPane>
                </children></AnchorPane>
-            <Label id="snake1" fx:id="SnakeType1" alignment="TOP_CENTER" contentDisplay="CENTER" layoutY="356.0" prefHeight="30.0" prefWidth="180.0" text="SNAKE1" textFill="#bdffeb">
+            <Label id="Snake1" fx:id="SnakeType1" alignment="TOP_CENTER" contentDisplay="CENTER" layoutY="356.0" prefHeight="30.0" prefWidth="180.0" text="SNAKE1" textFill="#0086c9">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label id="snake2" fx:id="SnakeType2" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="425.0" layoutY="356.0" prefHeight="30.0" prefWidth="174.0" text="SNAKE2" textAlignment="CENTER" textFill="#ffb549">
+            <Label id="Snake2" fx:id="SnakeType2" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="425.0" layoutY="356.0" prefHeight="30.0" prefWidth="174.0" text="SNAKE2" textAlignment="CENTER" textFill="#eb8900">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label id="player2" fx:id="UserName2" alignment="TOP_RIGHT" layoutX="457.0" layoutY="4.0" prefHeight="34.0" prefWidth="138.0" text="Player2" textAlignment="CENTER" textFill="#eb8a02">
+            <Label id="Player2" fx:id="UserName2" alignment="TOP_RIGHT" layoutX="443.0" layoutY="5.0" prefHeight="34.0" prefWidth="138.0" text="Player2" textAlignment="CENTER" textFill="#eb8a02">
                <font>
                   <Font name="System Bold Italic" size="32.0" />
                </font>
@@ -231,12 +231,12 @@
             <Button fx:id="SelectImg12" defaultButton="true" disable="true" focusTraversable="false" layoutX="58.0" layoutY="325.0" mnemonicParsing="false" onAction="#setCustomizePhoto2" prefHeight="23.0" prefWidth="62.0" text="Select" visible="false" />
             <Button fx:id="SelectImg21" defaultButton="true" disable="true" focusTraversable="false" layoutX="481.0" layoutY="325.0" mnemonicParsing="false" onAction="#setCustomizePhoto1" prefHeight="23.0" prefWidth="62.0" text="Select" visible="false" />
             <Button fx:id="SelectImg22" defaultButton="true" disable="true" focusTraversable="false" layoutX="482.0" layoutY="325.0" mnemonicParsing="false" onAction="#setCustomizePhoto2" prefHeight="23.0" prefWidth="62.0" text="Select" visible="false" />
-            <ImageView fx:id="LockStatus1" fitHeight="40.0" fitWidth="40.0" layoutX="134.0" layoutY="6.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="LockStatus1" fitHeight="40.0" fitWidth="40.0" layoutX="58.0" layoutY="42.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/unlock.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="LockStatus2" fitHeight="40.0" fitWidth="40.0" layoutX="427.0" layoutY="2.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="LockStatus2" fitHeight="40.0" fitWidth="40.0" layoutX="493.0" layoutY="42.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/unlock.png" />
                </image>

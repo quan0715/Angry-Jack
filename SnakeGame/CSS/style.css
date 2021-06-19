@@ -26,7 +26,7 @@
     -fx-fill  : #4f1f35;
 }
 #DarkLabel{
-   -fx-text-fill  : #b9e4b5;
+   -fx-text-fill  : #ffffff;
 }
 #LightLabel{
    -fx-text-fill : #161a1d;
@@ -54,19 +54,20 @@
 #Snake2{
     -fx-font-family: 'JackeyFont';
 
-    -fx-text-fill : #ffb549;
+    -fx-text-fill : #eb8900;
 }
 #Player1{
     -fx-font-family: 'JackeyFont';
-    -fx-text-fill : #bdffeb;
+    -fx-text-fill : #0086c9;
+
 }
 #Snake1{
     -fx-font-family: 'JackeyFont';
-    -fx-text-fill : #a1ffe3;
+    -fx-text-fill : #27b3ff;
 }
 #Player2{
     -fx-font-family: 'JackeyFont';
-    -fx-text-fill : #eb8a02;
+    -fx-text-fill :#eb8a02;
 }
 
 #DarkNormal{
