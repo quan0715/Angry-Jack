@@ -52,7 +52,6 @@ public class SnakeBodyPlayer {
                         try {
                             skill.call();
                         } catch (Exception e) {
-                            // TODO Auto-generated catch block
                             e.printStackTrace();
                         }
                         if(skillCount==0)skill = null;

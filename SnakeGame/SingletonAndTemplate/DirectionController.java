@@ -23,7 +23,7 @@ public class DirectionController {
     CanFire = false;
   }
   public Direction NextDirection(){
-    return direct.size() == 1 ? direct.peek() : direct.poll();
+    return direct.size() == 0 ? null : direct.poll();
   }
   public void Direction1 (KeyCode key){
     if(key==KeyCode.W && lastDirection != Direction.UP&&lastDirection != Direction.DOWN){
