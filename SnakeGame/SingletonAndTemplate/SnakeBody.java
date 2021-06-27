@@ -26,7 +26,7 @@ public class SnakeBody {
   private int TextCount = 0;
   private String Skill = "";
   private String Id = "";
-  private int score;
+  private int score=0;
   public int woody=0;
   public SnakeBody(Snake instance,int startSpeed, int x,int y) {
     HeadX = x;
@@ -72,6 +72,7 @@ public class SnakeBody {
     if(Body.size()>0&&woody==0){
       GameCurrentChildrenArray.Instance.get().remove(Body.get(Body.size()-1).GetBody());
       Body.remove(Body.get(Body.size()-1));
+      ScoreDown();
     }
   }
   public void AddNewBody(){
@@ -93,6 +94,7 @@ public class SnakeBody {
       bod.InitialSnakeBody(new Point(x, y));
       bod.SnakeEffect(l);
       Body.add(bod);
+      ScoreUp();
     }
     catch(Exception e){
       System.out.println("fail adding new body");
@@ -151,11 +153,11 @@ public class SnakeBody {
   public void RateNuff(double buff) {
     FoodBuff /= buff;
   }
-  public void ScoreUp(){
+  private void ScoreUp(){
     score+=10;
     rate=0.12 + rate * 0.97;
   }
-  public void ScoreDown(){
+  private void ScoreDown(){
     score-=10;
     rate=(rate - 0.12) / 0.97;
   }

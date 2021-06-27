@@ -79,7 +79,6 @@ public class Bomb extends Food {
    m_boomPlayer.boom();
     for(int i=0;i<3;i++){
       s.RemoveBody();
-      s.ScoreDown();
     }
   }
 }

@@ -37,7 +37,6 @@ public class StarFood extends Food {
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.AddNewBody();
-    s.ScoreUp();
     s.RateBuff(SpeedUp);
     s.woody++;
     s.SkillText("SUPER", "Star");

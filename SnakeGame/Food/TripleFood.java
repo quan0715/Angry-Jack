@@ -44,7 +44,6 @@ public class TripleFood extends Food {
         Case = (Case + 1) % 2;
     }));
     Timeline add = new Timeline( new KeyFrame(Duration.millis(500) , e -> {
-      s.ScoreUp();
       s.AddNewBody();
     }));
     Timeline text = new Timeline(new KeyFrame(Duration.millis(1500), e -> {

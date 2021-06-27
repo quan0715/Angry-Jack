@@ -30,7 +30,6 @@ public class BombFood extends Food {
     @Override
     protected void OnSnakeHeadTouch(SnakeBody s) {
         s.AddNewBody();
-        s.ScoreUp();
         MusicController.EatFoodPop();
         FoodGenerator.RefreshFood();
         s.SkillText("Boom", "Alert");
