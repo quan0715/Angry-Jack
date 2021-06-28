@@ -6,7 +6,6 @@ import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.effect.Lighting;
 import javafx.scene.effect.Light.Distant;
 import javafx.scene.image.Image;
@@ -38,16 +37,11 @@ public class JackFood extends Food {
     s.SnakeEffect(l);
     if (HomeController.ThemeColor) s.SkillText("Angry!", "LightNormal");
     else s.SkillText("Angry!", "DarkNormal");
-    Timeline speedup = new Timeline(new KeyFrame(Duration.millis(3000), e -> {
+    GameFlow speedup = new GameFlow(new KeyFrame(Duration.millis(3000), e -> {
       s.SnakeEffect(null);
       s.RateNuff(SpeedUp);
       s.SkillText(null, "");
-    }));
-    speedup.setCycleCount(1);
-    speedup.play();
-    //s.AddNewBody();
-    //s.score += 10;
-    //s.SetRate(0.12 + s.GetRate() * 0.97);
+    }),1);
     MusicController.EatFoodPop();
     FoodGenerator.RefreshFood();
   }

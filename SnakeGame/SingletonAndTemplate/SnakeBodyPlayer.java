@@ -2,14 +2,12 @@ package SnakeGame.SingletonAndTemplate;
 
 import java.util.concurrent.Callable;
 
-import SnakeGame.Controller.HomeController;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.util.Duration;
 
 public class SnakeBodyPlayer {
-    private Timeline snakeTimeline;
-    private SnakeBody snake;
+    private GameFlow snakeTimeline;
+    private SnakeBody snake=null;
     private int startSpeed;
     private DirectionController directionController;
     private int counter=0;
@@ -20,13 +18,10 @@ public class SnakeBodyPlayer {
     private int skillCount=0;
     public SnakeBodyPlayer(DirectionController d, int sp, Callable<Boolean> f){
         startSpeed=sp;
-        snake=new SnakeBody(HomeController.Player1, startSpeed, 300, 300);
-        snake.m_player=this;
-        snake.clearOnScreen();
         directionController=d;
         shouldStop=f;
-        snakeTimeline=new Timeline(new KeyFrame(Duration.millis(1),e->{controll();}));
-        snakeTimeline.setCycleCount(Timeline.INDEFINITE);
+        snakeTimeline=new GameFlow(new KeyFrame(Duration.millis(1),e->{
+            control();}),-1);
     }
     public void SetSnakeBody(SnakeBody b){
         GameEntityCenter.removeSnakeBody(snake);
@@ -35,11 +30,9 @@ public class SnakeBodyPlayer {
         snake.m_player=this;
         play();
     }
-    public void setStopCondition(Callable<Boolean> f){
-        shouldStop=f;
-    }
     public SnakeBody getSnakeBody(){return snake;}
-    private void controll() {
+    private void control() {
+        if(snake==null)return;
         if(!stop){
             counter++;
             if(counter >= snake.GetSpeed()){
@@ -67,14 +60,11 @@ public class SnakeBodyPlayer {
             }
         }
     }
-    public void stop() {
+    private void stop() {
         stop=true;
         snakeTimeline.stop();
     }
-    public void pause() {
-        snakeTimeline.pause();
-    }
-    public void play() {
+    private void play() {
         snakeTimeline.play();
         stop=false;
     }

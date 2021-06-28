@@ -4,12 +4,8 @@ import java.util.concurrent.Callable;
 
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
-import SnakeGame.SingletonAndTemplate.Food;
-import SnakeGame.SingletonAndTemplate.FoodGenerator;
-import SnakeGame.SingletonAndTemplate.MusicController;
-import SnakeGame.SingletonAndTemplate.SnakeBody;
+import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
@@ -40,13 +36,11 @@ public class BombFood extends Food {
                 return null;
             }
         });
-        Timeline cancelTimeline=new Timeline(new KeyFrame(Duration.millis(5000), e->{
+        GameFlow cancelFlow=new GameFlow(new KeyFrame(Duration.millis(5000), e->{
             s.SnakeEffect(null);
             s.setSkill(0, null);
             s.SkillText(null, null);
-        }));
-        cancelTimeline.setCycleCount(1);
-        cancelTimeline.play();
+        }),1);
     }
     @Override
     protected void OnSnakeBodyTouch(SnakeBody s) {

@@ -7,7 +7,6 @@ import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.effect.Lighting;
 import javafx.scene.effect.Light.Distant;
 import javafx.scene.image.Image;
@@ -51,22 +50,18 @@ public class FireFood extends Food {
         return null;
       }
     });
-    Timeline cancelTimeline=new Timeline(new KeyFrame(Duration.millis(5000), e->{
+    GameFlow cancelFlow=new GameFlow(new KeyFrame(Duration.millis(5000), e->{
       s.SnakeEffect(null);
       s.setSkill(0, null);
       s.SkillText(null, "");
-    }));
-    cancelTimeline.setCycleCount(1);
-    cancelTimeline.play();
+    }),1);
     spark = 25;
     s.SnakeEffect(l);
-    Timeline SparkTimeline = new Timeline(new KeyFrame(Duration.millis(1), e -> {
+    GameFlow SparkFlow = new GameFlow(new KeyFrame(Duration.millis(1), e -> {
       lightO = new Distant(45, spark, Color.web("#ff9700"));
       l.setLight(lightO);
       spark = (spark - 25 + 0.075) % 100 + 25;
-    }));
-    SparkTimeline.setCycleCount(5000);
-    SparkTimeline.play();
+    }),5000);
   }
   @Override
   protected void Cast(SnakeBody s) {  

@@ -16,7 +16,6 @@ import SnakeGame.Food.NormalFood;
 import SnakeGame.Food.StarFood;
 import SnakeGame.Food.TripleFood;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.util.Duration;
 
 public class FoodGenerator{
@@ -91,7 +90,7 @@ public class FoodGenerator{
         break;
     }
     bullet.ChangeFoodPosition(new Point(X, Y));
-    Timeline move = new Timeline(new KeyFrame(Duration.millis(speed*0.4),e ->{
+    GameFlow move = new GameFlow(new KeyFrame(Duration.millis(speed*0.4),e ->{
       int x = bullet.GetFoodPosition().getX();
       int y = bullet.GetFoodPosition().getY();
       switch (d) {
@@ -113,9 +112,7 @@ public class FoodGenerator{
         GameEntityCenter.removeFood(bullet);
       }
       bullet.ChangeFoodPosition(new Point(x,y));
-    }));
-    move.setCycleCount(30);
-    move.play();
+    }),30);
   }
   public static void NewBomb(SnakeBody snake) {
     double duration=5000;
@@ -141,12 +138,10 @@ public class FoodGenerator{
       Bomb m_bomb=new Bomb(p,duration);
       instance.foods.add(m_bomb);
       
-      Timeline cancelTimeline=new Timeline(new KeyFrame(Duration.millis(duration),ev -> {
+      GameFlow cancelTimeline=new GameFlow(new KeyFrame(Duration.millis(duration),ev -> {
         if(instance.foods.contains(m_bomb))instance.foods.remove(m_bomb);
         GameEntityCenter.removeFood(m_bomb);
-      }));
-      cancelTimeline.setCycleCount(1);
-      cancelTimeline.play();
+      }),1);
     }
   }
 }

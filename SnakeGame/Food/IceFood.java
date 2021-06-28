@@ -6,7 +6,6 @@ import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.effect.Lighting;
 import javafx.scene.effect.Light.Distant;
 import javafx.scene.image.Image;
@@ -47,14 +46,12 @@ public class IceFood extends Food {
     s.RateBuff(SlowDown);
     s.SnakeEffect(l);
     s.SkillText("Frozen", "Ice");
-    Timeline slowdown = new Timeline(new KeyFrame(Duration.millis(3000), e -> {
+    GameFlow slowdown = new GameFlow(new KeyFrame(Duration.millis(3000), e -> {
       s.RateNuff(SlowDown);
       s.SnakeEffect(null);
       s.SkillText(null, "");
 
-    }));
-    slowdown.setCycleCount(1);
-    slowdown.play();
+    }),1);
   }
 
   @Override

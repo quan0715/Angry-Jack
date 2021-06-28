@@ -11,7 +11,6 @@ import SnakeGame.Enum.SnakePart;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -29,7 +28,7 @@ public class GameOneController{
   private int score = 0;
   private SnakeBodyPlayer snakeBodyPlayer1;
   private DirectionController directionController;
-  private Timeline checkScoreTimeline;
+  private GameFlow checkScoreGameFlow;
   private InputController input;
   private int record;
   private String NormalAlert = "DarkNormal";
@@ -62,6 +61,7 @@ public class GameOneController{
         @Override
         public Boolean call() throws Exception {
           SnakeBody tem=snakeBodyPlayer1.getSnakeBody();
+          if(tem==null)return false;
           if(tem.woody!=0)return false;
           if(tem.whatPart(tem.GetHead()).contains(SnakePart.BODY)){
             GameOver();
@@ -71,11 +71,10 @@ public class GameOneController{
         }
       }
     );
-    checkScoreTimeline=new Timeline(new KeyFrame(Duration.millis(10),e->{
+    checkScoreGameFlow=new GameFlow(new KeyFrame(Duration.millis(10),e->{
+      if(snakeBodyPlayer1.getSnakeBody()==null)return;
       if(score!=snakeBodyPlayer1.getSnakeBody().GetScore())ChangedScore();
-    }));
-    checkScoreTimeline.setCycleCount(Timeline.INDEFINITE);
-    checkScoreTimeline.play();
+    }),-1);
     input = new InputController(AlertText,snakeBodyPlayer1,directionController);
     input.welcome();
   }

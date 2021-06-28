@@ -64,5 +64,6 @@ public class GameEntityCenter {
         for (SnakeBody b : RemoveListSnake) instance.snakes.remove(b);
         for (Food f : RemoveListFood)  instance.foods.remove(f);
         FoodEventCenter.clear();
+        GameFlowController.Clear();
     }
 }
