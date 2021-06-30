@@ -14,1250 +14,1650 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="LightPane" fx:id="Jack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="620.0" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SnakeGame.Controller.GameGuideController">
-   <children>
-      <Text id="LightText" fx:id="Title" fill="#b9e4b5" fontSmoothingType="LCD" layoutX="116.0" layoutY="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="GAME GUIDE" textAlignment="CENTER" wrappingWidth="420.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="84.0">
-         <font>
-            <Font name="JackeyFont" size="70.0" />
-         </font>
-      </Text>
-      <Label id="LightLabel" fx:id="TitleLabel" alignment="CENTER" contentDisplay="BOTTOM" layoutX="152.0" layoutY="79.0" text="Home Page" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="152.0" AnchorPane.rightAnchor="148.0">
-         <font>
-            <Font size="48.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="34.0" layoutY="19.0" onMouseClicked="#BackToHomePage" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/house.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="521.0" layoutY="89.0" onMouseClicked="#RightShift" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="70.0">
-         <image>
-            <Image url="@../img/right-arrow.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="70.0" layoutY="89.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#LeftShift" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0">
-         <image>
-            <Image url="@../img/right-arrow.png" />
-         </image>
-      </ImageView>
-      <AnchorPane fx:id="FoodDark" layoutX="7.0" layoutY="128.0" prefHeight="508.0" prefWidth="609.0" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
-         <children>
-            <GridPane id="DarkBattle" fx:id="Grid" gridLinesVisible="true" layoutX="-1.0" layoutY="21.0" prefHeight="422.0" prefWidth="604.0" style="-fx-border-color: WHITE;" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="31.0">
-              <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="82.0" minWidth="1.0" prefWidth="53.5" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="103.5" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0" prefWidth="203.66665649414062" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="415.0" minWidth="8.5" prefWidth="46.333343505859375" />
-                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="415.0" minWidth="23.0" prefWidth="196.0" />
-              </columnConstraints>
-              <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
-                     <image>
-                        <Image url="@../img/Jack.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
-                     <image>
-                        <Image url="@../img/bananas.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
-                     <image>
-                        <Image url="@../img/fire.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
-                     <image>
-                        <Image url="@../img/ice.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../img/bomb.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../img/avocado.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
-                     <image>
-                        <Image url="@../img/star.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Normal Jack" textAlignment="CENTER" wrappingWidth="99.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Bomb JACK" textAlignment="CENTER" wrappingWidth="115.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="ICE JACK" textAlignment="CENTER" wrappingWidth="110.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Fire JACK" textAlignment="CENTER" wrappingWidth="114.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Banana JACK" textAlignment="CENTER" wrappingWidth="129.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Super JACK" textAlignment="CENTER" wrappingWidth="110.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Angry JACK" textAlignment="CENTER" wrappingWidth="118.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="7">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Growing up with  new body, speed up" textAlignment="CENTER" wrappingWidth="188.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Able to plant bomb in fornt of your opponent" textAlignment="CENTER" wrappingWidth="172.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Freez the opponent snake make them slow down" textAlignment="CENTER" wrappingWidth="190.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Been able to use fire attack other snake" textAlignment="CENTER" wrappingWidth="194.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Growing three new body " textAlignment="CENTER" wrappingWidth="200.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="5">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text=" Become invincible temporarily invulnerable to all damage" textAlignment="CENTER" wrappingWidth="186.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="6">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Getting angry and speed up twice" textAlignment="CENTER" wrappingWidth="159.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="7">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S" textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="3S" textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S" textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S" textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="6">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="3S" textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="7">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text id="DarkText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="ICON" textAlignment="CENTER" wrappingWidth="43.32843017578125">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text id="DarkText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="NAME" textAlignment="CENTER" wrappingWidth="49.32843017578125" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text id="DarkText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="SKILL " textAlignment="CENTER" wrappingWidth="149.82843017578125" GridPane.columnIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text id="DarkText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="TIMES" textAlignment="CENTER" wrappingWidth="42.32843017578125" GridPane.columnIndex="3">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text id="DarkText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="OTHERS" textAlignment="CENTER" wrappingWidth="186.32843017578125" GridPane.columnIndex="4">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="None" textAlignment="CENTER" wrappingWidth="37.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="None" textAlignment="CENTER" wrappingWidth="37.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="5">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
-                     <image>
-                        <Image url="@../img/FireBullet.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" top="10.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@../img/TNT.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" top="10.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="you will lose three snake body if bump into It" textAlignment="CENTER" wrappingWidth="127.32843017578125" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="60.0" right="1.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="you got burn and lose one snake body when hit by fire" textAlignment="CENTER" wrappingWidth="141.82843017578125" GridPane.columnIndex="4" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="55.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text=" I'm vary angry now!" textAlignment="CENTER" wrappingWidth="194.82843017578125" GridPane.columnIndex="4" GridPane.rowIndex="7">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets right="30.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Damage include fire bomb and your opponent attack" textAlignment="CENTER" wrappingWidth="194.82843017578125" GridPane.columnIndex="4" GridPane.rowIndex="6">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-               </children>
-            </GridPane>
-         </children></AnchorPane>
-      <AnchorPane fx:id="KeyboardDark" layoutX="6.0" layoutY="141.0" prefHeight="499.0" prefWidth="600.0" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
-         <children>
-            <Rectangle arcHeight="50.0" arcWidth="5.0" fill="#333f48" height="37.0" layoutX="119.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.0" />
-            <Text fill="#ffcccc" layoutX="128.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="SPACE" textAlignment="CENTER" wrappingWidth="118.49263763427734">
-               <font>
-                  <Font size="31.0" />
-               </font>
-            </Text>
-            <GridPane layoutX="105.0" layoutY="328.0" prefHeight="105.0" prefWidth="156.0">
-              <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1" />
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-rotate: 90;" styleClass="Text" text="&gt;" textAlignment="CENTER" wrappingWidth="25.32598876953125" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="2.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="&gt;" textAlignment="CENTER" wrappingWidth="47.992645263671875" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="&lt;" textAlignment="CENTER" wrappingWidth="39.992645263671875" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-rotate: 90;" styleClass="Text" text="&lt;" textAlignment="CENTER" wrappingWidth="27.992645263671875" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-               </children>
-            </GridPane>
-            <GridPane layoutX="104.0" layoutY="193.0" prefHeight="105.0" prefWidth="156.0">
-               <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1" />
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="D" textAlignment="CENTER" wrappingWidth="29.992645263671875" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="A" textAlignment="CENTER" wrappingWidth="25.992645263671875" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="S" textAlignment="CENTER" wrappingWidth="21.32598876953125" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="W" textAlignment="CENTER" wrappingWidth="28.6593017578125" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-               </children>
-            </GridPane>
-            <Rectangle arcHeight="50.0" arcWidth="5.0" fill="#333f48" height="37.0" layoutX="119.0" layoutY="113.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.0" />
-            <Text fill="#ffcccc" layoutX="131.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="ENTER" textAlignment="CENTER" wrappingWidth="108.49263763427734">
-               <font>
-                  <Font size="31.0" />
-               </font>
-            </Text>
-            <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="407.0" layoutY="246.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
-            <Text fill="#ffcccc" layoutX="419.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Q" textAlignment="CENTER" wrappingWidth="22.659317016601562">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Text>
-            <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="409.0" layoutY="383.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
-            <Text fill="#ffcccc" layoutX="422.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="?" textAlignment="CENTER" wrappingWidth="22.659317016601562">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Text>
-            <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="406.0" layoutY="68.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
-            <Text fill="#ffcccc" layoutX="418.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="H" textAlignment="CENTER" wrappingWidth="22.659317016601562">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Text>
-            <Text fill="#ffcccc" layoutX="68.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="1. Pause/Continous the game 2. player1 choose snake" textAlignment="CENTER" wrappingWidth="232.5">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#ffcccc" layoutX="69.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="1. Start a new game        2. player2 choose snake" textAlignment="CENTER" wrappingWidth="195.0">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#ffcccc" layoutX="323.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Back to Home page" textAlignment="CENTER" wrappingWidth="212.74264526367188">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#ffcccc" layoutX="70.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player1 direction control" textAlignment="CENTER" wrappingWidth="212.74264526367188">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#ffcccc" layoutX="72.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player2 direction control" textAlignment="CENTER" wrappingWidth="212.74264526367188">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#ffcccc" layoutX="325.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player1 Shooting button" textAlignment="CENTER" wrappingWidth="212.74264526367188">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#ffcccc" layoutX="332.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player2 Shooting button" textAlignment="CENTER" wrappingWidth="212.74264526367188">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-         </children></AnchorPane>
-      <AnchorPane fx:id="DeveloperDark" disable="true" layoutX="6.0" layoutY="128.0" prefHeight="481.0" prefWidth="600.0" visible="false">
-         <children>
-            <GridPane layoutX="30.0" layoutY="68.0" prefHeight="281.0" prefWidth="503.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="68.0">
-              <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="81.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="94.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="368.3333435058594" minWidth="10.0" prefWidth="207.66665649414062" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.66668701171875" minWidth="10.0" prefWidth="144.33334350585938" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <ImageView fitHeight="66.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/Quan.JPG" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="77.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../img/Albert.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../img/Jack.png" />
-                     </image>
-                  </ImageView>
-                  <Text id="DarkText" fx:id="Quan" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="QUAN" textAlignment="CENTER" wrappingWidth="71.99510192871094" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text id="DarkText" fx:id="JACK" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="JACK" textAlignment="CENTER" wrappingWidth="71.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text id="DarkText" fx:id="Albert" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="ALBERT" textAlignment="CENTER" wrappingWidth="87.99510192871094" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="GAME UI &amp; UX design and Programmer" textAlignment="CENTER" wrappingWidth="181.32839965820312" GridPane.columnIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="system architect and Programmer" textAlignment="CENTER" wrappingWidth="187.32846069335938" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Game Idea and  Main Character of the Game" textAlignment="CENTER" wrappingWidth="209.99502563476562" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanFB" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
-                     <image>
-                        <Image url="@../img/facebook%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanIG" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
-                     <image>
-                        <Image url="@../img/instagram%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="55.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanEmail" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
-                     <image>
-                        <Image url="@../img/gmail.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="90.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertFB" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../img/facebook%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertIG" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../img/instagram%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="55.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertEmail" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../img/gmail.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="90.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackEmail" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../img/gmail.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="90.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackIG" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../img/instagram%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="55.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackFB" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../img/facebook%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </ImageView>
-               </children>
-            </GridPane>
-            <ImageView fitHeight="48.0" fitWidth="56.0" layoutX="274.0" layoutY="393.0" onMouseClicked="#GitHubLink" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/github.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="KeyboardLight" layoutX="3.0" layoutY="146.0" prefHeight="499.0" prefWidth="600.0" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
-         <children>
-            <Rectangle arcHeight="50.0" arcWidth="5.0" fill="#333f48" height="37.0" layoutX="119.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.0" />
-            <Text fill="#ffcccc" layoutX="128.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="SPACE" textAlignment="CENTER" wrappingWidth="118.49263763427734">
-               <font>
-                  <Font size="31.0" />
-               </font>
-            </Text>
-            <GridPane layoutX="105.0" layoutY="328.0" prefHeight="105.0" prefWidth="156.0">
-               <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1" />
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-rotate: 90;" styleClass="Text" text="&gt;" textAlignment="CENTER" wrappingWidth="25.32598876953125" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="2.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="&gt;" textAlignment="CENTER" wrappingWidth="47.992645263671875" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="&lt;" textAlignment="CENTER" wrappingWidth="39.992645263671875" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-rotate: 90;" styleClass="Text" text="&lt;" textAlignment="CENTER" wrappingWidth="27.992645263671875" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-               </children>
-            </GridPane>
-            <GridPane layoutX="104.0" layoutY="193.0" prefHeight="105.0" prefWidth="156.0">
-               <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1" />
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="D" textAlignment="CENTER" wrappingWidth="29.992645263671875" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="A" textAlignment="CENTER" wrappingWidth="25.992645263671875" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="S" textAlignment="CENTER" wrappingWidth="21.32598876953125" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="W" textAlignment="CENTER" wrappingWidth="28.6593017578125" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="48.0" />
-                     </font>
-                  </Text>
-               </children>
-            </GridPane>
-            <Rectangle arcHeight="50.0" arcWidth="5.0" fill="#333f48" height="37.0" layoutX="119.0" layoutY="113.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.0" />
-            <Text fill="#ffcccc" layoutX="131.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="ENTER" textAlignment="CENTER" wrappingWidth="108.49263763427734">
-               <font>
-                  <Font size="31.0" />
-               </font>
-            </Text>
-            <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="407.0" layoutY="241.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
-            <Text fill="#ffcccc" layoutX="419.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Q" textAlignment="CENTER" wrappingWidth="22.659317016601562">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Text>
-            <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="409.0" layoutY="383.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
-            <Text fill="#ffcccc" layoutX="422.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="?" textAlignment="CENTER" wrappingWidth="22.659317016601562">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Text>
-            <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="407.0" layoutY="69.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0" />
-            <Text fill="#ffcccc" layoutX="418.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="H" textAlignment="CENTER" wrappingWidth="22.659317016601562">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Text>
-            <Text id="LightText" fill="WHITE" layoutX="68.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="1. Pause/Continous the game 2. player1 choose snake" textAlignment="CENTER" wrappingWidth="232.5">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text id="LightText" fill="WHITE" layoutX="69.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="1. Start a new game        2. player2 choose snake" textAlignment="CENTER" wrappingWidth="195.0">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text id="LightText" fill="WHITE" layoutX="323.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Back to Home page" textAlignment="CENTER" wrappingWidth="212.74264526367188">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text id="LightText" fill="#ffcccc" layoutX="70.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player1 direction control" textAlignment="CENTER" wrappingWidth="212.74264526367188">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text id="LightText" fill="#ffcccc" layoutX="72.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player2 direction control" textAlignment="CENTER" wrappingWidth="212.74264526367188">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text id="LightText" fill="#ffcccc" layoutX="328.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player1 Shooting button" textAlignment="CENTER" wrappingWidth="212.74264526367188">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-            <Text id="LightText" fill="#ffcccc" layoutX="332.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Player2 Shooting button" textAlignment="CENTER" wrappingWidth="212.74264526367188">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="DeveloperLight" disable="true" layoutX="16.0" layoutY="138.0" prefHeight="481.0" prefWidth="600.0" visible="false">
-         <children>
-            <GridPane layoutX="30.0" layoutY="68.0" prefHeight="281.0" prefWidth="503.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="68.0">
-               <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0" prefWidth="81.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="94.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="368.3333435058594" minWidth="10.0" prefWidth="207.66665649414062" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.66668701171875" minWidth="10.0" prefWidth="144.33334350585938" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView fitHeight="66.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/Quan.JPG" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="77.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../img/Albert.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../img/Jack.png" />
-                     </image>
-                  </ImageView>
-                  <Text id="LightText" fx:id="Quan1" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="QUAN" textAlignment="CENTER" wrappingWidth="71.99510192871094" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text id="LightText" fx:id="JACK1" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="JACK" textAlignment="CENTER" wrappingWidth="71.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text id="LightText" fx:id="Albert1" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="ALBERT" textAlignment="CENTER" wrappingWidth="87.99510192871094" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text id="Light" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="GAME UI &amp; UX design and Programmer" textAlignment="CENTER" wrappingWidth="181.32839965820312" GridPane.columnIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text id="Light" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="system architect and Programmer" textAlignment="CENTER" wrappingWidth="187.32846069335938" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text id="Light" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Game Idea and  Main Character of the Game" textAlignment="CENTER" wrappingWidth="209.99502563476562" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanFB" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
-                     <image>
-                        <Image url="@../img/facebook%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanIG" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
-                     <image>
-                        <Image url="@../img/instagram%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="55.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanEmail" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
-                     <image>
-                        <Image url="@../img/gmail.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="90.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertFB" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../img/facebook%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertIG" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../img/instagram%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="55.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertEmail" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../img/gmail.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="90.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackEmail" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../img/gmail.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="90.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackIG" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../img/instagram%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="55.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackFB" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../img/facebook%20(1).png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </ImageView>
-               </children>
-            </GridPane>
-            <ImageView fitHeight="48.0" fitWidth="56.0" layoutX="274.0" layoutY="393.0" onMouseClicked="#GitHubLink" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/github.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="FoodLight" layoutX="17.0" layoutY="138.0" prefHeight="508.0" prefWidth="609.0" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
-         <children>
-            <GridPane id="LightBattle" fx:id="Grid1" gridLinesVisible="true" layoutX="-20.0" layoutY="26.0" prefHeight="422.0" prefWidth="604.0" style="-fx-border-color: WHITE;" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="21.0">
-               <columnConstraints>
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="82.0" minWidth="1.0" prefWidth="53.5" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="103.5" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0" prefWidth="203.66665649414062" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="415.0" minWidth="8.5" prefWidth="46.333343505859375" />
-                  <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="415.0" minWidth="23.0" prefWidth="196.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
-                     <image>
-                        <Image url="@../img/Jack.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
-                     <image>
-                        <Image url="@../img/bananas.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
-                     <image>
-                        <Image url="@../img/fire.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
-                     <image>
-                        <Image url="@../img/ice.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-                     <image>
-                        <Image url="@../img/bomb.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@../img/avocado.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
-                     <image>
-                        <Image url="@../img/star.png" />
-                     </image>
-                  </ImageView>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Normal Jack" textAlignment="CENTER" wrappingWidth="99.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Bomb JACK" textAlignment="CENTER" wrappingWidth="115.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="ICE JACK" textAlignment="CENTER" wrappingWidth="110.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Fire JACK" textAlignment="CENTER" wrappingWidth="114.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Banana JACK" textAlignment="CENTER" wrappingWidth="129.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="5">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Super JACK" textAlignment="CENTER" wrappingWidth="110.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Angry JACK" textAlignment="CENTER" wrappingWidth="118.32843017578125" GridPane.columnIndex="1" GridPane.rowIndex="7">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Growing up with  new body, speed up" textAlignment="CENTER" wrappingWidth="188.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Able to plant bomb in fornt of your opponent" textAlignment="CENTER" wrappingWidth="172.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Freez the opponent snake make them slow down" textAlignment="CENTER" wrappingWidth="190.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Been able to use fire attack other snake" textAlignment="CENTER" wrappingWidth="194.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Growing three new body " textAlignment="CENTER" wrappingWidth="200.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="5">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text=" Become invincible temporarily invulnerable to all damage" textAlignment="CENTER" wrappingWidth="186.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="6">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Getting angry and speed up twice" textAlignment="CENTER" wrappingWidth="159.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="7">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S" textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="3S" textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S" textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S" textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="6">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="3S" textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="7">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text id="LightText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="ICON" textAlignment="CENTER" wrappingWidth="43.32843017578125">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text id="LightText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="NAME" textAlignment="CENTER" wrappingWidth="49.32843017578125" GridPane.columnIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text id="LightText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="SKILL " textAlignment="CENTER" wrappingWidth="149.82843017578125" GridPane.columnIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text id="LightText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="TIMES" textAlignment="CENTER" wrappingWidth="42.32843017578125" GridPane.columnIndex="3">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text id="LightText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="OTHERS" textAlignment="CENTER" wrappingWidth="186.32843017578125" GridPane.columnIndex="4">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="None" textAlignment="CENTER" wrappingWidth="37.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="None" textAlignment="CENTER" wrappingWidth="37.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="5">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
-                     <image>
-                        <Image url="@../img/FireBullet.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" top="10.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@../img/TNT.png" />
-                     </image>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="10.0" top="10.0" />
-                     </GridPane.margin>
-                  </ImageView>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="you will lose three snake body if bump into It" textAlignment="CENTER" wrappingWidth="127.32843017578125" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="60.0" right="1.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="you got burn and lose one snake body when hit by fire" textAlignment="CENTER" wrappingWidth="141.82843017578125" GridPane.columnIndex="4" GridPane.rowIndex="4">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="55.0" top="10.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text=" I'm vary angry now!" textAlignment="CENTER" wrappingWidth="194.82843017578125" GridPane.columnIndex="4" GridPane.rowIndex="7">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets right="30.0" />
-                     </GridPane.margin>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Damage include fire bomb and your opponent attack" textAlignment="CENTER" wrappingWidth="194.82843017578125" GridPane.columnIndex="4" GridPane.rowIndex="6">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-               </children>
-            </GridPane>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="HomeDark" layoutX="15.0" layoutY="148.0" prefHeight="481.0" prefWidth="618.0" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
-         <children>
-            <ImageView id="DarkPane" fx:id="Scene11" fitHeight="429.0" fitWidth="389.0" layoutX="14.0" layoutY="28.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="228.0" AnchorPane.topAnchor="28.0">
-               <image>
-                  <Image url="@../img/DarkScene.png" />
-               </image>
-            </ImageView>
-            <Line endX="99.0" endY="10.0" layoutX="280.0" layoutY="169.0" startX="129.8431396484375" startY="-32.5" stroke="#51bebf" strokeWidth="2.0" />
-            <Line endX="173.8431396484375" endY="-43.5" layoutX="238.0" layoutY="107.0" startX="141.0" startY="34.5" stroke="#51bebf" strokeWidth="2.0" />
-            <Line endX="-172.0" endY="70.5" layoutX="585.0" layoutY="130.0" startX="-206.0" startY="93.5" stroke="#51bebf" strokeWidth="2.0" />
-            <Pane layoutX="336.0" layoutY="198.0" prefHeight="40.0" prefWidth="43.0" style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;" />
-            <Pane layoutX="336.0" layoutY="163.0" prefHeight="32.0" prefWidth="43.0" style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;" />
-            <Pane layoutX="336.0" layoutY="122.0" prefHeight="40.0" prefWidth="43.0" style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;" />
-            <Pane layoutX="115.0" layoutY="289.0" prefHeight="34.0" prefWidth="176.0" style="-fx-border-color: #00ffa2#00ffa2; -fx-border-width: 3;" />
-            <Pane layoutX="139.0" layoutY="383.0" prefHeight="34.0" prefWidth="130.0" style="-fx-border-color: #FFB549 #FFB549; -fx-border-width: 3;" />
-            <Pane layoutX="141.0" layoutY="336.0" prefHeight="34.0" prefWidth="130.0" style="-fx-border-color: #FFB549 #FFB549; -fx-border-width: 3;" />
-            <ImageView fx:id="Sound111" fitHeight="25.0" fitWidth="25.0" layoutX="497.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/no-sound.png" />
-               </image>
-            </ImageView>
-            <Line endX="-74.1568603515625" endY="52.5" layoutX="489.0" layoutY="254.0" startX="-199.0" startY="52.5" stroke="#00ffa2" strokeWidth="2.0" />
-            <Line endX="-211.6568603515625" endY="18.0" layoutX="628.0" layoutY="387.0" startX="-357.0" startY="18.0" stroke="#ffb549" strokeWidth="2.0" />
-            <Text fill="#ffb549" layoutX="425.0" layoutY="350.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Single Snake Game          Try to get highest score as you can" wrappingWidth="159.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Line endX="252.0" endY="174.0" layoutX="166.0" layoutY="182.0" startX="105.0" startY="174.0" stroke="#ffb549" strokeWidth="2.0" />
-            <Text fill="#ffb549" layoutX="422.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Double snake Battle     with heart and soul       kill your opponent" wrappingWidth="168.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text fill="#00ffa2" layoutX="418.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Input your Game Pin (The defult is JACK)" wrappingWidth="155.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text fill="AQUA" layoutX="422.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="GameGuide                  the Guide book for ANGRY JACK  APP" wrappingWidth="157.0">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Text>
-            <Text fill="AQUA" layoutX="418.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Bakeground music mute (Not effect sound)" wrappingWidth="170.833251953125">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="452.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Not Mute" wrappingWidth="43.9998779296875" />
-            <Text fill="WHITE" layoutX="528.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Mute" wrappingWidth="43.9998779296875" />
-            <Text fill="AQUA" layoutX="420.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Choose your Snake (The defult is Jack)" wrappingWidth="161.15686035156244">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <ImageView fx:id="Sound11" fitHeight="25.0" fitWidth="25.0" layoutX="419.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/sound.png" />
-               </image>
-            </ImageView>
-            <Pane layoutX="335.0" layoutY="241.0" prefHeight="40.0" prefWidth="45.0" style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;" />
-            <Line endX="-167.5" endY="72.0" layoutX="582.0" layoutY="178.0" startX="-202.0" startY="83.0" stroke="#51bebf" strokeWidth="2.0" />
-            <Text fill="AQUA" layoutX="402.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Chose your Theme (Dark or Light)" textAlignment="CENTER" wrappingWidth="161.833251953125">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <ImageView fx:id="Sound1111" fitHeight="25.0" fitWidth="25.0" layoutX="497.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/dark.png" />
-               </image>
-            </ImageView>
-            <Text fill="WHITE" layoutX="450.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Light" wrappingWidth="43.9998779296875" />
-            <Text fill="WHITE" layoutX="528.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Dark" wrappingWidth="43.9998779296875" />
-            <ImageView fx:id="Sound211" fitHeight="25.0" fitWidth="25.0" layoutX="419.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/light.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="HomeLight" layoutX="25.0" layoutY="158.0" prefHeight="481.0" prefWidth="618.0" visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
-         <children>
-            <ImageView id="DarkPane" fx:id="Scene111" fitHeight="429.0" fitWidth="389.0" layoutX="14.0" layoutY="28.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="228.0" AnchorPane.topAnchor="28.0">
-               <image>
-                  <Image url="@../img/LightScene.png" />
-               </image>
-            </ImageView>
-            <Line endX="99.0" endY="10.0" layoutX="280.0" layoutY="169.0" startX="129.8431396484375" startY="-32.5" stroke="#51bebf" strokeWidth="2.0" />
-            <Line endX="173.8431396484375" endY="-43.5" layoutX="238.0" layoutY="107.0" startX="141.0" startY="34.5" stroke="#51bebf" strokeWidth="2.0" />
-            <Line endX="-172.0" endY="70.5" layoutX="585.0" layoutY="130.0" startX="-206.0" startY="93.5" stroke="#51bebf" strokeWidth="2.0" />
-            <Pane layoutX="336.0" layoutY="198.0" prefHeight="40.0" prefWidth="43.0" style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;" />
-            <Pane layoutX="336.0" layoutY="163.0" prefHeight="32.0" prefWidth="43.0" style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;" />
-            <Pane layoutX="336.0" layoutY="122.0" prefHeight="40.0" prefWidth="43.0" style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;" />
-            <Pane layoutX="115.0" layoutY="289.0" prefHeight="34.0" prefWidth="176.0" style="-fx-border-color: #00ffa2#00ffa2; -fx-border-width: 3;" />
-            <Pane layoutX="139.0" layoutY="383.0" prefHeight="34.0" prefWidth="130.0" style="-fx-border-color: #FFB549 #FFB549; -fx-border-width: 3;" />
-            <Pane layoutX="141.0" layoutY="336.0" prefHeight="34.0" prefWidth="130.0" style="-fx-border-color: #FFB549 #FFB549; -fx-border-width: 3;" />
-            <ImageView fx:id="Sound1111" fitHeight="25.0" fitWidth="25.0" layoutX="497.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/no-sound.png" />
-               </image>
-            </ImageView>
-            <Line endX="-74.1568603515625" endY="52.5" layoutX="489.0" layoutY="254.0" startX="-199.0" startY="52.5" stroke="#00ffa2" strokeWidth="2.0" />
-            <Line endX="-211.6568603515625" endY="18.0" layoutX="628.0" layoutY="387.0" startX="-357.0" startY="18.0" stroke="#ffb549" strokeWidth="2.0" />
-            <Text fill="#dd8100" layoutX="425.0" layoutY="350.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Single Snake Game          Try to get highest score as you can" wrappingWidth="159.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Line endX="252.0" endY="174.0" layoutX="166.0" layoutY="182.0" startX="105.0" startY="174.0" stroke="#ffb549" strokeWidth="2.0" />
-            <Text fill="#dd8100" layoutX="422.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Double snake Battle     with heart and soul       kill your opponent" wrappingWidth="168.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text fill="#00e15e" layoutX="418.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Input your Game Pin (The defult is JACK)" wrappingWidth="155.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text fill="#0094a8" layoutX="422.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="GameGuide                  the Guide book for ANGRY JACK  APP" wrappingWidth="157.0">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Text>
-            <Text fill="#0094a8" layoutX="418.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Bakeground music mute (Not effect sound)" wrappingWidth="170.833251953125">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="452.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Not Mute" wrappingWidth="43.9998779296875" />
-            <Text fill="WHITE" layoutX="528.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Mute" wrappingWidth="43.9998779296875" />
-            <Text fill="#0094a8" layoutX="420.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Choose your Snake (The defult is Jack)" wrappingWidth="161.15686035156244">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <ImageView fx:id="Sound111" fitHeight="25.0" fitWidth="25.0" layoutX="419.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/sound.png" />
-               </image>
-            </ImageView>
-            <Pane layoutX="335.0" layoutY="241.0" prefHeight="40.0" prefWidth="45.0" style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;" />
-            <Line endX="-167.5" endY="72.0" layoutX="582.0" layoutY="178.0" startX="-202.0" startY="83.0" stroke="#51bebf" strokeWidth="2.0" />
-            <Text fill="#0094a8" layoutX="402.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Chose your Theme (Dark or Light)" textAlignment="CENTER" wrappingWidth="161.833251953125">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <ImageView fx:id="Sound11111" fitHeight="25.0" fitWidth="25.0" layoutX="497.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/dark.png" />
-               </image>
-            </ImageView>
-            <Text fill="WHITE" layoutX="450.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Light" wrappingWidth="43.9998779296875" />
-            <Text fill="WHITE" layoutX="528.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Dark" wrappingWidth="43.9998779296875" />
-            <ImageView fx:id="Sound2111" fitHeight="25.0" fitWidth="25.0" layoutX="419.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/light.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </children>
+<AnchorPane id="LightPane" fx:id="Jack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="660.0" prefWidth="620.0" stylesheets="@../CSS/style.css"
+            xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="SnakeGame.Controller.GameGuideController">
+    <children>
+        <Text id="LightText" fx:id="Title" fill="#b9e4b5" fontSmoothingType="LCD" layoutX="116.0" layoutY="59.0"
+              stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" text="GAME GUIDE" textAlignment="CENTER"
+              wrappingWidth="420.0" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="84.0">
+            <font>
+                <Font name="JackeyFont" size="70.0"/>
+            </font>
+        </Text>
+        <Label id="LightLabel" fx:id="TitleLabel" alignment="CENTER" contentDisplay="BOTTOM" layoutX="152.0"
+               layoutY="79.0" text="Home Page" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="152.0"
+               AnchorPane.rightAnchor="148.0">
+            <font>
+                <Font size="48.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="34.0" layoutY="19.0" onMouseClicked="#BackToHomePage"
+                   pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/house.png"/>
+            </image>
+        </ImageView>
+        <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="521.0" layoutY="89.0" onMouseClicked="#RightShift"
+                   pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="70.0">
+            <image>
+                <Image url="@../img/right-arrow.png"/>
+            </image>
+        </ImageView>
+        <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="70.0" layoutY="89.0" nodeOrientation="RIGHT_TO_LEFT"
+                   onMouseClicked="#LeftShift" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0">
+            <image>
+                <Image url="@../img/right-arrow.png"/>
+            </image>
+        </ImageView>
+        <AnchorPane fx:id="FoodDark" layoutX="7.0" layoutY="128.0" prefHeight="508.0" prefWidth="609.0" visible="false"
+                    AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <children>
+                <GridPane id="DarkBattle" fx:id="Grid" gridLinesVisible="true" layoutX="-1.0" layoutY="21.0"
+                          prefHeight="422.0" prefWidth="604.0" style="-fx-border-color: WHITE;"
+                          AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                          AnchorPane.topAnchor="31.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="82.0" minWidth="1.0"
+                                           prefWidth="53.5"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0"
+                                           prefWidth="103.5"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0"
+                                           prefWidth="203.66665649414062"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="415.0" minWidth="8.5"
+                                           prefWidth="46.333343505859375"/>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="415.0" minWidth="23.0"
+                                           prefWidth="196.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="7">
+                            <image>
+                                <Image url="@../img/Jack.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="5">
+                            <image>
+                                <Image url="@../img/bananas.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="4">
+                            <image>
+                                <Image url="@../img/fire.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="3">
+                            <image>
+                                <Image url="@../img/ice.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="2">
+                            <image>
+                                <Image url="@../img/bomb.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="1">
+                            <image>
+                                <Image url="@../img/avocado.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="6">
+                            <image>
+                                <Image url="@../img/star.png"/>
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Normal Jack"
+                              textAlignment="CENTER" wrappingWidth="99.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="1">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Bomb JACK"
+                              textAlignment="CENTER" wrappingWidth="115.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="2">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="ICE JACK"
+                              textAlignment="CENTER" wrappingWidth="110.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="3">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Fire JACK"
+                              textAlignment="CENTER" wrappingWidth="114.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="4">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Banana JACK"
+                              textAlignment="CENTER" wrappingWidth="129.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="5">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Super JACK"
+                              textAlignment="CENTER" wrappingWidth="110.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="6">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Angry JACK"
+                              textAlignment="CENTER" wrappingWidth="118.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="7">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Growing up with  new body, speed up" textAlignment="CENTER"
+                              wrappingWidth="188.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Able to plant bomb in fornt of your opponent" textAlignment="CENTER"
+                              wrappingWidth="172.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Freez the opponent snake make them slow down" textAlignment="CENTER"
+                              wrappingWidth="190.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Been able to use fire attack other snake" textAlignment="CENTER"
+                              wrappingWidth="194.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Growing three new body " textAlignment="CENTER" wrappingWidth="200.32843017578125"
+                              GridPane.columnIndex="2" GridPane.rowIndex="5">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text=" Become invincible temporarily invulnerable to all damage" textAlignment="CENTER"
+                              wrappingWidth="186.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Getting angry and speed up twice" textAlignment="CENTER"
+                              wrappingWidth="159.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S"
+                              textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3"
+                              GridPane.rowIndex="2">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="3S"
+                              textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3"
+                              GridPane.rowIndex="3">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S"
+                              textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3"
+                              GridPane.rowIndex="4">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S"
+                              textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3"
+                              GridPane.rowIndex="6">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="3S"
+                              textAlignment="CENTER" wrappingWidth="29.32843017578125" GridPane.columnIndex="3"
+                              GridPane.rowIndex="7">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text id="DarkText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label"
+                              text="ICON" textAlignment="CENTER" wrappingWidth="43.32843017578125">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Text id="DarkText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label"
+                              text="NAME" textAlignment="CENTER" wrappingWidth="49.32843017578125"
+                              GridPane.columnIndex="1">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Text id="DarkText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label"
+                              text="SKILL " textAlignment="CENTER" wrappingWidth="149.82843017578125"
+                              GridPane.columnIndex="2">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Text id="DarkText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label"
+                              text="TIMES" textAlignment="CENTER" wrappingWidth="42.32843017578125"
+                              GridPane.columnIndex="3">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text id="DarkText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label"
+                              text="OTHERS" textAlignment="CENTER" wrappingWidth="186.32843017578125"
+                              GridPane.columnIndex="4">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="None"
+                              textAlignment="CENTER" wrappingWidth="37.32843017578125" GridPane.columnIndex="3"
+                              GridPane.rowIndex="1">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="None"
+                              textAlignment="CENTER" wrappingWidth="37.32843017578125" GridPane.columnIndex="3"
+                              GridPane.rowIndex="5">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.columnIndex="4" GridPane.rowIndex="4">
+                            <image>
+                                <Image url="@../img/FireBullet.png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" top="10.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="2"
+                                   GridPane.valignment="CENTER">
+                            <image>
+                                <Image url="@../img/TNT.png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" top="10.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="you will lose three snake body if bump into It" textAlignment="CENTER"
+                              wrappingWidth="127.32843017578125" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="60.0" right="1.0" top="10.0"/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="you got burn and lose one snake body when hit by fire" textAlignment="CENTER"
+                              wrappingWidth="141.82843017578125" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="55.0" top="10.0"/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text=" I'm vary angry now!" textAlignment="CENTER" wrappingWidth="194.82843017578125"
+                              GridPane.columnIndex="4" GridPane.rowIndex="7">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets right="30.0"/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Damage include fire bomb and your opponent attack" textAlignment="CENTER"
+                              wrappingWidth="194.82843017578125" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="KeyboardDark" layoutX="6.0" layoutY="141.0" prefHeight="499.0" prefWidth="600.0"
+                    visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <children>
+                <Rectangle arcHeight="50.0" arcWidth="5.0" fill="#333f48" height="37.0" layoutX="119.0" layoutY="25.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.0"/>
+                <Text fill="#ffcccc" layoutX="128.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="SPACE" textAlignment="CENTER" wrappingWidth="118.49263763427734">
+                    <font>
+                        <Font size="31.0"/>
+                    </font>
+                </Text>
+                <GridPane layoutX="105.0" layoutY="328.0" prefHeight="105.0" prefWidth="156.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1"/>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-rotate: 90;"
+                              styleClass="Text" text="&gt;" textAlignment="CENTER" wrappingWidth="25.32598876953125"
+                              GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets left="2.0"/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="&gt;"
+                              textAlignment="CENTER" wrappingWidth="47.992645263671875" GridPane.columnIndex="2"
+                              GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="&lt;"
+                              textAlignment="CENTER" wrappingWidth="39.992645263671875" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-rotate: 90;"
+                              styleClass="Text" text="&lt;" textAlignment="CENTER" wrappingWidth="27.992645263671875"
+                              GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+                <GridPane layoutX="104.0" layoutY="193.0" prefHeight="105.0" prefWidth="156.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1"/>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="D"
+                              textAlignment="CENTER" wrappingWidth="29.992645263671875" GridPane.columnIndex="2"
+                              GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="A"
+                              textAlignment="CENTER" wrappingWidth="25.992645263671875" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="S"
+                              textAlignment="CENTER" wrappingWidth="21.32598876953125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="W"
+                              textAlignment="CENTER" wrappingWidth="28.6593017578125" GridPane.columnIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+                <Rectangle arcHeight="50.0" arcWidth="5.0" fill="#333f48" height="37.0" layoutX="119.0" layoutY="113.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.0"/>
+                <Text fill="#ffcccc" layoutX="131.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="ENTER" textAlignment="CENTER" wrappingWidth="108.49263763427734">
+                    <font>
+                        <Font size="31.0"/>
+                    </font>
+                </Text>
+                <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="407.0" layoutY="246.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0"/>
+                <Text fill="#ffcccc" layoutX="419.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Q" textAlignment="CENTER" wrappingWidth="22.659317016601562">
+                    <font>
+                        <Font size="48.0"/>
+                    </font>
+                </Text>
+                <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="409.0" layoutY="383.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0"/>
+                <Text fill="#ffcccc" layoutX="422.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="?" textAlignment="CENTER" wrappingWidth="22.659317016601562">
+                    <font>
+                        <Font size="48.0"/>
+                    </font>
+                </Text>
+                <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="406.0" layoutY="68.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0"/>
+                <Text fill="#ffcccc" layoutX="418.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="H" textAlignment="CENTER" wrappingWidth="22.659317016601562">
+                    <font>
+                        <Font size="48.0"/>
+                    </font>
+                </Text>
+                <Text fill="#ffcccc" layoutX="68.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="1. Pause/Continous the game 2. player1 choose snake"
+                      textAlignment="CENTER" wrappingWidth="232.5">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text fill="#ffcccc" layoutX="69.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="1. Start a new game        2. player2 choose snake" textAlignment="CENTER"
+                      wrappingWidth="195.0">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text fill="#ffcccc" layoutX="323.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Back to Home page" textAlignment="CENTER"
+                      wrappingWidth="212.74264526367188">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text fill="#ffcccc" layoutX="70.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Player1 direction control" textAlignment="CENTER"
+                      wrappingWidth="212.74264526367188">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text fill="#ffcccc" layoutX="72.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Player2 direction control" textAlignment="CENTER"
+                      wrappingWidth="212.74264526367188">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text fill="#ffcccc" layoutX="325.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Player1 Shooting button" textAlignment="CENTER"
+                      wrappingWidth="212.74264526367188">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text fill="#ffcccc" layoutX="332.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Player2 Shooting button" textAlignment="CENTER"
+                      wrappingWidth="212.74264526367188">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="DeveloperDark" disable="true" layoutX="6.0" layoutY="128.0" prefHeight="481.0"
+                    prefWidth="600.0" visible="false">
+            <children>
+                <GridPane layoutX="30.0" layoutY="68.0" prefHeight="281.0" prefWidth="503.0"
+                          AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="68.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0"
+                                           prefWidth="81.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0"
+                                           prefWidth="94.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="368.3333435058594"
+                                           minWidth="10.0" prefWidth="207.66665649414062"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.66668701171875" minWidth="10.0"
+                                           prefWidth="144.33334350585938"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <ImageView fitHeight="66.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Quan.JPG"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="77.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="1">
+                            <image>
+                                <Image url="@../img/Albert.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="72.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="2">
+                            <image>
+                                <Image url="@../img/Jack.png"/>
+                            </image>
+                        </ImageView>
+                        <Text id="DarkText" fx:id="Quan" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0"
+                              styleClass="Text" text="QUAN" textAlignment="CENTER" wrappingWidth="71.99510192871094"
+                              GridPane.columnIndex="1">
+                            <font>
+                                <Font size="24.0"/>
+                            </font>
+                        </Text>
+                        <Text id="DarkText" fx:id="JACK" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0"
+                              styleClass="Text" text="JACK" textAlignment="CENTER" wrappingWidth="71.32843017578125"
+                              GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="24.0"/>
+                            </font>
+                        </Text>
+                        <Text id="DarkText" fx:id="Albert" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0"
+                              styleClass="Text" text="ALBERT" textAlignment="CENTER" wrappingWidth="87.99510192871094"
+                              GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="24.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="GAME UI &amp; UX design and Programmer" textAlignment="CENTER"
+                              wrappingWidth="181.32839965820312" GridPane.columnIndex="2">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="system architect and Programmer" textAlignment="CENTER"
+                              wrappingWidth="187.32846069335938" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Game Idea and  Main Character of the Game" textAlignment="CENTER"
+                              wrappingWidth="209.99502563476562" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanFB" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3">
+                            <image>
+                                <Image url="@../img/facebook%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="20.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanIG" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3">
+                            <image>
+                                <Image url="@../img/instagram%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="55.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanEmail" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3">
+                            <image>
+                                <Image url="@../img/gmail.png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="90.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertFB" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <image>
+                                <Image url="@../img/facebook%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="20.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertIG" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <image>
+                                <Image url="@../img/instagram%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="55.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertEmail" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <image>
+                                <Image url="@../img/gmail.png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="90.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackEmail" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                            <image>
+                                <Image url="@../img/gmail.png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="90.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackIG" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                            <image>
+                                <Image url="@../img/instagram%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="55.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackFB" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                            <image>
+                                <Image url="@../img/facebook%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="20.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                    </children>
+                </GridPane>
+                <ImageView fitHeight="48.0" fitWidth="56.0" layoutX="274.0" layoutY="393.0" onMouseClicked="#GitHubLink"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/github.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="KeyboardLight" layoutX="3.0" layoutY="146.0" prefHeight="499.0" prefWidth="600.0"
+                    visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <children>
+                <Rectangle arcHeight="50.0" arcWidth="5.0" fill="#333f48" height="37.0" layoutX="119.0" layoutY="25.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.0"/>
+                <Text fill="#ffcccc" layoutX="128.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="SPACE" textAlignment="CENTER" wrappingWidth="118.49263763427734">
+                    <font>
+                        <Font size="31.0"/>
+                    </font>
+                </Text>
+                <GridPane layoutX="105.0" layoutY="328.0" prefHeight="105.0" prefWidth="156.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1"/>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-rotate: 90;"
+                              styleClass="Text" text="&gt;" textAlignment="CENTER" wrappingWidth="25.32598876953125"
+                              GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets left="2.0"/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="&gt;"
+                              textAlignment="CENTER" wrappingWidth="47.992645263671875" GridPane.columnIndex="2"
+                              GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="&lt;"
+                              textAlignment="CENTER" wrappingWidth="39.992645263671875" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-rotate: 90;"
+                              styleClass="Text" text="&lt;" textAlignment="CENTER" wrappingWidth="27.992645263671875"
+                              GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+                <GridPane layoutX="104.0" layoutY="193.0" prefHeight="105.0" prefWidth="156.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="2"
+                                   GridPane.rowIndex="1"/>
+                        <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" stroke="BLACK"
+                                   strokeType="INSIDE" strokeWidth="0.0" width="44.0" GridPane.columnIndex="1"/>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="D"
+                              textAlignment="CENTER" wrappingWidth="29.992645263671875" GridPane.columnIndex="2"
+                              GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="A"
+                              textAlignment="CENTER" wrappingWidth="25.992645263671875" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="S"
+                              textAlignment="CENTER" wrappingWidth="21.32598876953125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                        </Text>
+                        <Text fill="#ffcccc" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="W"
+                              textAlignment="CENTER" wrappingWidth="28.6593017578125" GridPane.columnIndex="1">
+                            <font>
+                                <Font size="48.0"/>
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+                <Rectangle arcHeight="50.0" arcWidth="5.0" fill="#333f48" height="37.0" layoutX="119.0" layoutY="113.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="127.0"/>
+                <Text fill="#ffcccc" layoutX="131.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="ENTER" textAlignment="CENTER" wrappingWidth="108.49263763427734">
+                    <font>
+                        <Font size="31.0"/>
+                    </font>
+                </Text>
+                <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="407.0" layoutY="241.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0"/>
+                <Text fill="#ffcccc" layoutX="419.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Q" textAlignment="CENTER" wrappingWidth="22.659317016601562">
+                    <font>
+                        <Font size="48.0"/>
+                    </font>
+                </Text>
+                <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="409.0" layoutY="383.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0"/>
+                <Text fill="#ffcccc" layoutX="422.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="?" textAlignment="CENTER" wrappingWidth="22.659317016601562">
+                    <font>
+                        <Font size="48.0"/>
+                    </font>
+                </Text>
+                <Rectangle arcHeight="20.0" arcWidth="5.0" fill="#333f48" height="47.0" layoutX="407.0" layoutY="69.0"
+                           stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="44.0"/>
+                <Text fill="#ffcccc" layoutX="418.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="H" textAlignment="CENTER" wrappingWidth="22.659317016601562">
+                    <font>
+                        <Font size="48.0"/>
+                    </font>
+                </Text>
+                <Text id="LightText" fill="WHITE" layoutX="68.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="1. Pause/Continous the game 2. player1 choose snake"
+                      textAlignment="CENTER" wrappingWidth="232.5">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text id="LightText" fill="WHITE" layoutX="69.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="1. Start a new game        2. player2 choose snake" textAlignment="CENTER"
+                      wrappingWidth="195.0">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text id="LightText" fill="WHITE" layoutX="323.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Back to Home page" textAlignment="CENTER"
+                      wrappingWidth="212.74264526367188">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text id="LightText" fill="#ffcccc" layoutX="70.0" layoutY="319.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" styleClass="Text" text="Player1 direction control" textAlignment="CENTER"
+                      wrappingWidth="212.74264526367188">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text id="LightText" fill="#ffcccc" layoutX="72.0" layoutY="457.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" styleClass="Text" text="Player2 direction control" textAlignment="CENTER"
+                      wrappingWidth="212.74264526367188">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text id="LightText" fill="#ffcccc" layoutX="328.0" layoutY="316.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" styleClass="Text" text="Player1 Shooting button" textAlignment="CENTER"
+                      wrappingWidth="212.74264526367188">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+                <Text id="LightText" fill="#ffcccc" layoutX="332.0" layoutY="457.0" strokeType="OUTSIDE"
+                      strokeWidth="0.0" styleClass="Text" text="Player2 Shooting button" textAlignment="CENTER"
+                      wrappingWidth="212.74264526367188">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Text>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="DeveloperLight" disable="true" layoutX="16.0" layoutY="138.0" prefHeight="481.0"
+                    prefWidth="600.0" visible="false">
+            <children>
+                <GridPane layoutX="30.0" layoutY="68.0" prefHeight="281.0" prefWidth="503.0"
+                          AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="68.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="139.0" minWidth="10.0"
+                                           prefWidth="81.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0"
+                                           prefWidth="94.0"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="368.3333435058594"
+                                           minWidth="10.0" prefWidth="207.66665649414062"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.66668701171875" minWidth="10.0"
+                                           prefWidth="144.33334350585938"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <ImageView fitHeight="66.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/Quan.JPG"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="77.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="1">
+                            <image>
+                                <Image url="@../img/Albert.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="72.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="2">
+                            <image>
+                                <Image url="@../img/Jack.png"/>
+                            </image>
+                        </ImageView>
+                        <Text id="LightText" fx:id="Quan1" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0"
+                              styleClass="Text" text="QUAN" textAlignment="CENTER" wrappingWidth="71.99510192871094"
+                              GridPane.columnIndex="1">
+                            <font>
+                                <Font size="24.0"/>
+                            </font>
+                        </Text>
+                        <Text id="LightText" fx:id="JACK1" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0"
+                              styleClass="Text" text="JACK" textAlignment="CENTER" wrappingWidth="71.32843017578125"
+                              GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="24.0"/>
+                            </font>
+                        </Text>
+                        <Text id="LightText" fx:id="Albert1" fill="#b9e4b5" strokeType="OUTSIDE" strokeWidth="0.0"
+                              styleClass="Text" text="ALBERT" textAlignment="CENTER" wrappingWidth="87.99510192871094"
+                              GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="24.0"/>
+                            </font>
+                        </Text>
+                        <Text id="Light" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="GAME UI &amp; UX design and Programmer" textAlignment="CENTER"
+                              wrappingWidth="181.32839965820312" GridPane.columnIndex="2">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Text id="Light" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="system architect and Programmer" textAlignment="CENTER"
+                              wrappingWidth="187.32846069335938" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Text id="Light" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Game Idea and  Main Character of the Game" textAlignment="CENTER"
+                              wrappingWidth="209.99502563476562" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanFB" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3">
+                            <image>
+                                <Image url="@../img/facebook%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="20.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanIG" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3">
+                            <image>
+                                <Image url="@../img/instagram%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="55.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#QuanEmail" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3">
+                            <image>
+                                <Image url="@../img/gmail.png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="90.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertFB" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <image>
+                                <Image url="@../img/facebook%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="20.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertIG" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <image>
+                                <Image url="@../img/instagram%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="55.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#AlbertEmail" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <image>
+                                <Image url="@../img/gmail.png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="90.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackEmail" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                            <image>
+                                <Image url="@../img/gmail.png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="90.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackIG" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                            <image>
+                                <Image url="@../img/instagram%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="55.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#JackFB" pickOnBounds="true"
+                                   preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                            <image>
+                                <Image url="@../img/facebook%20(1).png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets left="20.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                    </children>
+                </GridPane>
+                <ImageView fitHeight="48.0" fitWidth="56.0" layoutX="274.0" layoutY="393.0" onMouseClicked="#GitHubLink"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/github.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="FoodLight" layoutX="17.0" layoutY="138.0" prefHeight="508.0" prefWidth="609.0"
+                    visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <children>
+                <GridPane id="LightBattle" fx:id="Grid1" gridLinesVisible="true" layoutX="-20.0" layoutY="26.0"
+                          prefHeight="422.0" prefWidth="604.0" style="-fx-border-color: WHITE;"
+                          AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                          AnchorPane.topAnchor="21.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="82.0" minWidth="1.0"
+                                           prefWidth="53.5"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0"
+                                           prefWidth="103.5"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0"
+                                           prefWidth="203.66665649414062"/>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="415.0" minWidth="8.5"
+                                           prefWidth="46.333343505859375"/>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="415.0" minWidth="23.0"
+                                           prefWidth="196.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="7">
+                            <image>
+                                <Image url="@../img/Jack.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="5">
+                            <image>
+                                <Image url="@../img/bananas.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="4">
+                            <image>
+                                <Image url="@../img/fire.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="3">
+                            <image>
+                                <Image url="@../img/ice.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="2">
+                            <image>
+                                <Image url="@../img/bomb.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="1">
+                            <image>
+                                <Image url="@../img/avocado.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.rowIndex="6">
+                            <image>
+                                <Image url="@../img/star.png"/>
+                            </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Normal Jack"
+                              textAlignment="CENTER" wrappingWidth="99.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="1">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Bomb JACK"
+                              textAlignment="CENTER" wrappingWidth="115.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="2">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="ICE JACK"
+                              textAlignment="CENTER" wrappingWidth="110.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="3">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Fire JACK"
+                              textAlignment="CENTER" wrappingWidth="114.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="4">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Banana JACK"
+                              textAlignment="CENTER" wrappingWidth="129.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="5">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Super JACK"
+                              textAlignment="CENTER" wrappingWidth="110.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="6">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Angry JACK"
+                              textAlignment="CENTER" wrappingWidth="118.32843017578125" GridPane.columnIndex="1"
+                              GridPane.rowIndex="7">
+                            <font>
+                                <Font size="15.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Growing up with  new body, speed up" textAlignment="CENTER"
+                              wrappingWidth="188.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Able to plant bomb in fornt of your opponent" textAlignment="CENTER"
+                              wrappingWidth="172.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Freez the opponent snake make them slow down" textAlignment="CENTER"
+                              wrappingWidth="190.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Been able to use fire attack other snake" textAlignment="CENTER"
+                              wrappingWidth="194.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="Growing three new body "
+                              textAlignment="CENTER" wrappingWidth="200.32843017578125" GridPane.columnIndex="2"
+                              GridPane.rowIndex="5">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text=" Become invincible temporarily invulnerable to all damage" textAlignment="CENTER"
+                              wrappingWidth="186.32843017578125" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Getting angry and speed up twice" textAlignment="CENTER"
+                              wrappingWidth="159.82843017578125" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S" textAlignment="CENTER"
+                              wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="3S" textAlignment="CENTER"
+                              wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S" textAlignment="CENTER"
+                              wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="5S" textAlignment="CENTER"
+                              wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="3S" textAlignment="CENTER"
+                              wrappingWidth="29.32843017578125" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text id="LightText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label"
+                              text="ICON" textAlignment="CENTER" wrappingWidth="43.32843017578125">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Text id="LightText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label"
+                              text="NAME" textAlignment="CENTER" wrappingWidth="49.32843017578125"
+                              GridPane.columnIndex="1">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Text id="LightText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label"
+                              text="SKILL " textAlignment="CENTER" wrappingWidth="149.82843017578125"
+                              GridPane.columnIndex="2">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Text>
+                        <Text id="LightText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label"
+                              text="TIMES" textAlignment="CENTER" wrappingWidth="42.32843017578125"
+                              GridPane.columnIndex="3">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text id="LightText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label"
+                              text="OTHERS" textAlignment="CENTER" wrappingWidth="186.32843017578125"
+                              GridPane.columnIndex="4">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="None"
+                              textAlignment="CENTER" wrappingWidth="37.32843017578125" GridPane.columnIndex="3"
+                              GridPane.rowIndex="1">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text="None"
+                              textAlignment="CENTER" wrappingWidth="37.32843017578125" GridPane.columnIndex="3"
+                              GridPane.rowIndex="5">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.columnIndex="4" GridPane.rowIndex="4">
+                            <image>
+                                <Image url="@../img/FireBullet.png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" top="10.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true"
+                                   GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="2"
+                                   GridPane.valignment="CENTER">
+                            <image>
+                                <Image url="@../img/TNT.png"/>
+                            </image>
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="10.0" top="10.0"/>
+                            </GridPane.margin>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="you will lose three snake body if bump into It" textAlignment="CENTER"
+                              wrappingWidth="127.32843017578125" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="60.0" right="1.0" top="10.0"/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="you got burn and lose one snake body when hit by fire" textAlignment="CENTER"
+                              wrappingWidth="141.82843017578125" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets bottom="10.0" left="55.0" top="10.0"/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text" text=" I'm vary angry now!"
+                              textAlignment="CENTER" wrappingWidth="194.82843017578125" GridPane.columnIndex="4"
+                              GridPane.rowIndex="7">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                            <GridPane.margin>
+                                <Insets right="30.0"/>
+                            </GridPane.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="Text"
+                              text="Damage include fire bomb and your opponent attack" textAlignment="CENTER"
+                              wrappingWidth="194.82843017578125" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                            <font>
+                                <Font size="14.0"/>
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="HomeDark" layoutX="15.0" layoutY="148.0" prefHeight="481.0" prefWidth="618.0" visible="false"
+                    AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+            <children>
+                <ImageView id="DarkPane" fx:id="Scene11" fitHeight="429.0" fitWidth="389.0" layoutX="14.0"
+                           layoutY="28.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="10.0"
+                           AnchorPane.rightAnchor="228.0" AnchorPane.topAnchor="28.0">
+                    <image>
+                        <Image url="@../img/DarkScene.png"/>
+                    </image>
+                </ImageView>
+                <Line endX="99.0" endY="10.0" layoutX="280.0" layoutY="169.0" startX="129.8431396484375" startY="-32.5"
+                      stroke="#51bebf" strokeWidth="2.0"/>
+                <Line endX="173.8431396484375" endY="-43.5" layoutX="238.0" layoutY="107.0" startX="141.0" startY="34.5"
+                      stroke="#51bebf" strokeWidth="2.0"/>
+                <Line endX="-172.0" endY="70.5" layoutX="585.0" layoutY="130.0" startX="-206.0" startY="93.5"
+                      stroke="#51bebf" strokeWidth="2.0"/>
+                <Pane layoutX="336.0" layoutY="198.0" prefHeight="40.0" prefWidth="43.0"
+                      style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;"/>
+                <Pane layoutX="336.0" layoutY="163.0" prefHeight="32.0" prefWidth="43.0"
+                      style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;"/>
+                <Pane layoutX="336.0" layoutY="122.0" prefHeight="40.0" prefWidth="43.0"
+                      style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;"/>
+                <Pane layoutX="115.0" layoutY="289.0" prefHeight="34.0" prefWidth="176.0"
+                      style="-fx-border-color: #00ffa2#00ffa2; -fx-border-width: 3;"/>
+                <Pane layoutX="139.0" layoutY="383.0" prefHeight="34.0" prefWidth="130.0"
+                      style="-fx-border-color: #FFB549 #FFB549; -fx-border-width: 3;"/>
+                <Pane layoutX="141.0" layoutY="336.0" prefHeight="34.0" prefWidth="130.0"
+                      style="-fx-border-color: #FFB549 #FFB549; -fx-border-width: 3;"/>
+                <ImageView fx:id="Sound111" fitHeight="25.0" fitWidth="25.0" layoutX="497.0" layoutY="155.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/no-sound.png"/>
+                    </image>
+                </ImageView>
+                <Line endX="-74.1568603515625" endY="52.5" layoutX="489.0" layoutY="254.0" startX="-199.0" startY="52.5"
+                      stroke="#00ffa2" strokeWidth="2.0"/>
+                <Line endX="-211.6568603515625" endY="18.0" layoutX="628.0" layoutY="387.0" startX="-357.0"
+                      startY="18.0" stroke="#ffb549" strokeWidth="2.0"/>
+                <Text fill="#ffb549" layoutX="425.0" layoutY="350.0" stroke="BLACK" strokeType="OUTSIDE"
+                      strokeWidth="0.0" styleClass="Text"
+                      text="Single Snake Game          Try to get highest score as you can" wrappingWidth="159.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <Line endX="252.0" endY="174.0" layoutX="166.0" layoutY="182.0" startX="105.0" startY="174.0"
+                      stroke="#ffb549" strokeWidth="2.0"/>
+                <Text fill="#ffb549" layoutX="422.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Double snake Battle     with heart and soul       kill your opponent"
+                      wrappingWidth="168.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <Text fill="#00ffa2" layoutX="418.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Input your Game Pin (The defult is JACK)" wrappingWidth="155.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <Text fill="AQUA" layoutX="422.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="GameGuide                  the Guide book for ANGRY JACK  APP"
+                      wrappingWidth="157.0">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </Text>
+                <Text fill="AQUA" layoutX="418.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Bakeground music mute (Not effect sound)"
+                      wrappingWidth="170.833251953125">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="452.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Not Mute" wrappingWidth="43.9998779296875"/>
+                <Text fill="WHITE" layoutX="528.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Mute" wrappingWidth="43.9998779296875"/>
+                <Text fill="AQUA" layoutX="420.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Choose your Snake (The defult is Jack)"
+                      wrappingWidth="161.15686035156244">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <ImageView fx:id="Sound11" fitHeight="25.0" fitWidth="25.0" layoutX="419.0" layoutY="156.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/sound.png"/>
+                    </image>
+                </ImageView>
+                <Pane layoutX="335.0" layoutY="241.0" prefHeight="40.0" prefWidth="45.0"
+                      style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;"/>
+                <Line endX="-167.5" endY="72.0" layoutX="582.0" layoutY="178.0" startX="-202.0" startY="83.0"
+                      stroke="#51bebf" strokeWidth="2.0"/>
+                <Text fill="AQUA" layoutX="402.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Chose your Theme (Dark or Light)" textAlignment="CENTER"
+                      wrappingWidth="161.833251953125">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <ImageView fx:id="Sound1111" fitHeight="25.0" fitWidth="25.0" layoutX="497.0" layoutY="82.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/dark.png"/>
+                    </image>
+                </ImageView>
+                <Text fill="WHITE" layoutX="450.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Light" wrappingWidth="43.9998779296875"/>
+                <Text fill="WHITE" layoutX="528.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Dark" wrappingWidth="43.9998779296875"/>
+                <ImageView fx:id="Sound211" fitHeight="25.0" fitWidth="25.0" layoutX="419.0" layoutY="83.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/light.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="HomeLight" layoutX="25.0" layoutY="158.0" prefHeight="481.0" prefWidth="618.0"
+                    visible="false" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0"
+                    AnchorPane.rightAnchor="10.0">
+            <children>
+                <ImageView id="DarkPane" fx:id="Scene111" fitHeight="429.0" fitWidth="389.0" layoutX="14.0"
+                           layoutY="28.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="10.0"
+                           AnchorPane.rightAnchor="228.0" AnchorPane.topAnchor="28.0">
+                    <image>
+                        <Image url="@../img/LightScene.png"/>
+                    </image>
+                </ImageView>
+                <Line endX="99.0" endY="10.0" layoutX="280.0" layoutY="169.0" startX="129.8431396484375" startY="-32.5"
+                      stroke="#51bebf" strokeWidth="2.0"/>
+                <Line endX="173.8431396484375" endY="-43.5" layoutX="238.0" layoutY="107.0" startX="141.0" startY="34.5"
+                      stroke="#51bebf" strokeWidth="2.0"/>
+                <Line endX="-172.0" endY="70.5" layoutX="585.0" layoutY="130.0" startX="-206.0" startY="93.5"
+                      stroke="#51bebf" strokeWidth="2.0"/>
+                <Pane layoutX="336.0" layoutY="198.0" prefHeight="40.0" prefWidth="43.0"
+                      style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;"/>
+                <Pane layoutX="336.0" layoutY="163.0" prefHeight="32.0" prefWidth="43.0"
+                      style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;"/>
+                <Pane layoutX="336.0" layoutY="122.0" prefHeight="40.0" prefWidth="43.0"
+                      style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;"/>
+                <Pane layoutX="115.0" layoutY="289.0" prefHeight="34.0" prefWidth="176.0"
+                      style="-fx-border-color: #00ffa2#00ffa2; -fx-border-width: 3;"/>
+                <Pane layoutX="139.0" layoutY="383.0" prefHeight="34.0" prefWidth="130.0"
+                      style="-fx-border-color: #FFB549 #FFB549; -fx-border-width: 3;"/>
+                <Pane layoutX="141.0" layoutY="336.0" prefHeight="34.0" prefWidth="130.0"
+                      style="-fx-border-color: #FFB549 #FFB549; -fx-border-width: 3;"/>
+                <ImageView fx:id="Sound1111" fitHeight="25.0" fitWidth="25.0" layoutX="497.0" layoutY="155.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/no-sound.png"/>
+                    </image>
+                </ImageView>
+                <Line endX="-74.1568603515625" endY="52.5" layoutX="489.0" layoutY="254.0" startX="-199.0" startY="52.5"
+                      stroke="#00ffa2" strokeWidth="2.0"/>
+                <Line endX="-211.6568603515625" endY="18.0" layoutX="628.0" layoutY="387.0" startX="-357.0"
+                      startY="18.0" stroke="#ffb549" strokeWidth="2.0"/>
+                <Text fill="#dd8100" layoutX="425.0" layoutY="350.0" stroke="BLACK" strokeType="OUTSIDE"
+                      strokeWidth="0.0" styleClass="Text"
+                      text="Single Snake Game          Try to get highest score as you can" wrappingWidth="159.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <Line endX="252.0" endY="174.0" layoutX="166.0" layoutY="182.0" startX="105.0" startY="174.0"
+                      stroke="#ffb549" strokeWidth="2.0"/>
+                <Text fill="#dd8100" layoutX="422.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Double snake Battle     with heart and soul       kill your opponent"
+                      wrappingWidth="168.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <Text fill="#00e15e" layoutX="418.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Input your Game Pin (The defult is JACK)" wrappingWidth="155.0">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0094a8" layoutX="422.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="GameGuide                  the Guide book for ANGRY JACK  APP"
+                      wrappingWidth="157.0">
+                    <font>
+                        <Font size="15.0"/>
+                    </font>
+                </Text>
+                <Text fill="#0094a8" layoutX="418.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Bakeground music mute (Not effect sound)"
+                      wrappingWidth="170.833251953125">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="452.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Not Mute" wrappingWidth="43.9998779296875"/>
+                <Text fill="WHITE" layoutX="528.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Mute" wrappingWidth="43.9998779296875"/>
+                <Text fill="#0094a8" layoutX="420.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Choose your Snake (The defult is Jack)"
+                      wrappingWidth="161.15686035156244">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <ImageView fx:id="Sound111" fitHeight="25.0" fitWidth="25.0" layoutX="419.0" layoutY="156.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/sound.png"/>
+                    </image>
+                </ImageView>
+                <Pane layoutX="335.0" layoutY="241.0" prefHeight="40.0" prefWidth="45.0"
+                      style="-fx-border-color: #51bebf#51bebf; -fx-border-width: 3;"/>
+                <Line endX="-167.5" endY="72.0" layoutX="582.0" layoutY="178.0" startX="-202.0" startY="83.0"
+                      stroke="#51bebf" strokeWidth="2.0"/>
+                <Text fill="#0094a8" layoutX="402.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Chose your Theme (Dark or Light)" textAlignment="CENTER"
+                      wrappingWidth="161.833251953125">
+                    <font>
+                        <Font size="14.0"/>
+                    </font>
+                </Text>
+                <ImageView fx:id="Sound11111" fitHeight="25.0" fitWidth="25.0" layoutX="497.0" layoutY="82.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/dark.png"/>
+                    </image>
+                </ImageView>
+                <Text fill="WHITE" layoutX="450.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Light" wrappingWidth="43.9998779296875"/>
+                <Text fill="WHITE" layoutX="528.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      styleClass="Text" text="Dark" wrappingWidth="43.9998779296875"/>
+                <ImageView fx:id="Sound2111" fitHeight="25.0" fitWidth="25.0" layoutX="419.0" layoutY="83.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/light.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
