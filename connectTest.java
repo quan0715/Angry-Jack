@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.Objects;
 
 public class connectTest extends Application {
     public static void main(String[] args) throws IOException {
@@ -17,24 +18,11 @@ public class connectTest extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("test.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("test.fxml")))));
         stage.show();
-        Socket connect=new Socket("127.0.0.1",8787);
+        Socket connect = new Socket("127.0.0.1", 8787);
         BufferedReader reader = new BufferedReader(new InputStreamReader(connect.getInputStream()));
-        ObjectOutputStream outputStream=new ObjectOutputStream(connect.getOutputStream());
-        while(true){
-            String tem=reader.readLine();
-            if(tem==null || tem.toCharArray()[0]=='S'){
-                System.out.println(tem);
-                break;
-            }
-        }
-            stage.getScene().setOnKeyPressed(keyEvent -> {
-                try {
-                    outputStream.writeObject(keyEvent.getCode());
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
-            });
+        ObjectOutputStream outputStream = new ObjectOutputStream(connect.getOutputStream());
+        new testThread(reader,outputStream,stage.getScene());
     }
 }
