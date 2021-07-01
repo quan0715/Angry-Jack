@@ -5,7 +5,6 @@ import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.effect.Lighting;
 import javafx.scene.effect.Light.Distant;
 import javafx.scene.image.Image;
@@ -34,30 +33,22 @@ public class TripleFood extends Food {
   }
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
+    s.AddNewBody();
     if (HomeController.ThemeColor) s.SkillText("BIG", "LightNormal");
     else s.SkillText("BIG", "DarkNormal");
     MusicController.GrowingUp();
-    Timeline ef = new Timeline(new KeyFrame(Duration.millis(180), e -> {
+    GameFlow ef = new GameFlow(new KeyFrame(Duration.millis(180), e -> {
       if(Case == 0) s.clearOnScreen();
       else s.showOnScreen();
-        //l.setSpecularExponent((Case == 0 ? 40.0 : 20.0));
         Case = (Case + 1) % 2;
-    }));
-    Timeline add = new Timeline( new KeyFrame(Duration.millis(500) , e -> {
-      s.ScoreUp();
+    }),-1);
+    GameFlow add = new GameFlow( new KeyFrame(Duration.millis(500) , e -> {
       s.AddNewBody();
-    }));
-    Timeline text = new Timeline(new KeyFrame(Duration.millis(1500), e -> {
+    }),2);
+    GameFlow text = new GameFlow(new KeyFrame(Duration.millis(1500), e -> {
       s.SkillText(null, null);
       ef.stop();
-    }));
-    ef.setCycleCount(-1);
-    ef.play();
-    text.setCycleCount(1);
-    text.play();
-    add.setCycleCount(3);
-    add.play();
-    //MusicController.EatFoodPop();
+    }),1);
     FoodGenerator.RefreshFood();
   }
 

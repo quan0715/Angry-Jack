@@ -4,7 +4,6 @@ import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
@@ -23,13 +22,10 @@ public class NormalFood extends Food{
     @Override
     protected void OnSnakeHeadTouch(SnakeBody s) {
       s.AddNewBody();
-      s.ScoreUp();
       s.SkillText("JACK","Normal");
-      Timeline text = new Timeline(new KeyFrame(Duration.millis(2000), e -> {
+      GameFlow text = new GameFlow(new KeyFrame(Duration.millis(2000), e -> {
         s.SkillText(null,null);
-      }));
-      text.setCycleCount(1);
-      text.play();
+      }),1);
       MusicController.EatFoodPop();
       FoodGenerator.RefreshFood();
     }

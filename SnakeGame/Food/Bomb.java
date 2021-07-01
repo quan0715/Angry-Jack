@@ -2,13 +2,8 @@ package SnakeGame.Food;
 
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
-import SnakeGame.SingletonAndTemplate.Food;
-import SnakeGame.SingletonAndTemplate.GameEntityCenter;
-import SnakeGame.SingletonAndTemplate.MusicController;
-import SnakeGame.SingletonAndTemplate.SnakeBody;
-import SnakeGame.SingletonAndTemplate.boomPlayer;
+import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.effect.Lighting;
 import javafx.scene.effect.Light.Distant;
 import javafx.scene.image.Image;
@@ -19,7 +14,7 @@ import javafx.util.Duration;
 public class Bomb extends Food {
   private Distant lightW;
   private Lighting l;
-  private Timeline ef;
+  private GameFlow ef;
   private int count = 0;
   private int speed;
   private boomPlayer m_boomPlayer;
@@ -43,7 +38,7 @@ public class Bomb extends Food {
     l.setDiffuseConstant(2.0);
     body.setEffect(l);
     m_boomPlayer=MusicController.newboom();
-    ef = new Timeline(new KeyFrame(Duration.millis(1),e ->{
+    ef = new GameFlow(new KeyFrame(Duration.millis(1),e ->{
       if(!GameEntityCenter.contain(this)){
         m_boomPlayer.stop();
         ef.stop();
@@ -62,9 +57,7 @@ public class Bomb extends Food {
         ef.stop();
         m_boomPlayer.boom();
       }
-    }));
-    ef.setCycleCount(-1);
-    ef.play();
+    }),-1);
   }
   
   @Override
@@ -79,7 +72,6 @@ public class Bomb extends Food {
    m_boomPlayer.boom();
     for(int i=0;i<3;i++){
       s.RemoveBody();
-      s.ScoreDown();
     }
   }
 }

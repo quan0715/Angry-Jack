@@ -4,7 +4,6 @@ import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.scene.effect.Lighting;
 import javafx.scene.effect.Light.Distant;
 import javafx.scene.image.Image;
@@ -37,12 +36,11 @@ public class StarFood extends Food {
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.AddNewBody();
-    s.ScoreUp();
     s.RateBuff(SpeedUp);
     s.woody++;
     s.SkillText("SUPER", "Star");
     s.SnakeEffect(l);
-    Timeline SparkTimeline = new Timeline( new KeyFrame(Duration.millis(50),e ->{
+    GameFlow SparkTimeline = new GameFlow( new KeyFrame(Duration.millis(50),e ->{
       switch(spark){
         case 0:
           l.setLight(lightY);
@@ -58,18 +56,14 @@ public class StarFood extends Food {
           break;
       }
       spark = (spark+1) % 4;
-    }));
-    Timeline speedup = new Timeline(new KeyFrame(Duration.millis(4000), e -> {
+    }),80);
+    GameFlow speedup = new GameFlow(new KeyFrame(Duration.millis(4000), e -> {
       s.SnakeEffect(null);
       s.RateNuff(SpeedUp);
       MusicController.SuperStarFood(false);
       s.SkillText(null,"");
       s.woody--;
-    }));
-    SparkTimeline.setCycleCount(80);
-    SparkTimeline.play();
-    speedup.setCycleCount(1);
-    speedup.play();
+    }),1);
     MusicController.SuperStarFood(true);
     FoodGenerator.RefreshFood();
   }

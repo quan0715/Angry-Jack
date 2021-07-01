@@ -7,6 +7,8 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
+import java.sql.Time;
+
 public class boomPlayer {
     private MediaPlayer player;
     private Timeline resetTimeLine;
@@ -20,6 +22,7 @@ public class boomPlayer {
             player.seek(Duration.millis(1800));
         }));
         resetTimeLine.setCycleCount(-1);
+        resetTimeLine.play();
     }
     public void preboom(){
         if(!preBoomPlayed){
@@ -37,8 +40,6 @@ public class boomPlayer {
         resetTimeLine=new Timeline(new KeyFrame(Duration.millis(2000),e->{
             player.dispose();
         }));
-        resetTimeLine.setCycleCount(1);
-        resetTimeLine.play();
     }
     public void stop() {
         resetTimeLine.stop();

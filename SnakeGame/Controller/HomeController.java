@@ -109,6 +109,7 @@ public class HomeController implements Initializable{
   }
   @Override
   public void initialize(URL location, ResourceBundle resources) {
+    GameCurrentChildrenArray.Instance.set(null);
     MusicController.PlayBackground2();
     SwitchSoundIcon(SoundOff);
     SwitchThemeIcon(ThemeColor);

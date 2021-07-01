@@ -4,10 +4,7 @@ import java.io.IOException;
 
 import SnakeGame.App;
 import SnakeGame.ResourcesLoader;
-import SnakeGame.SingletonAndTemplate.DirectionController;
-import SnakeGame.SingletonAndTemplate.GameCurrentChildrenArray;
-import SnakeGame.SingletonAndTemplate.MusicController;
-import SnakeGame.SingletonAndTemplate.SnakeBodyPlayer;
+import SnakeGame.SingletonAndTemplate.*;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -56,20 +53,16 @@ public class InputController{
   public boolean GameTwoFlow(KeyEvent event) throws IOException{
     KeyCode key = event.getCode();
     if (key == KeyCode.H) {
-      s1.stop();
-      s2.stop();
       BackToHomePage();
     }
     if (key == KeyCode.SPACE) {
       if(GameContinue()){
-        s1.pause();
-        s2.pause();
+        GameFlowController.GameFlowPause();
         setAlertText("TAP SPACE --> CONTINUE THE GAME\n\nTAP H --> RETURN HOME PAGE", NormalAlert);
         GamePause = true;
       }
       else if(GameIsPause()){
-        s1.play();
-        s2.play();
+        GameFlowController.GameFlowPlay();
         setAlertText("", NormalAlert);
         GamePause = false;
       }
@@ -94,16 +87,15 @@ public class InputController{
   public boolean GameOneFlow(KeyEvent event) throws IOException {
     KeyCode key = event.getCode();
     if (key == KeyCode.H) {
-      s1.stop();
       BackToHomePage();
     }
     if (key == KeyCode.SPACE) {
       if (GameContinue()) {
-        s1.pause();
+        GameFlowController.GameFlowPause();
         setAlertText("TAP SPACE --> CONTINUE THE GAME\n\nTAP H --> RETURN HOME PAGE", NormalAlert);
         GamePause = true;
       } else if (GameIsPause()) {
-        s1.play();
+        GameFlowController.GameFlowPlay();
         setAlertText("", NormalAlert);
         GamePause = false;
       }

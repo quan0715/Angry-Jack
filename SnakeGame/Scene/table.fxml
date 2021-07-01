@@ -36,30 +36,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="DarkPane" fx:id="Jack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="620.0" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SnakeGame.Controller.GameOneController">
-   <children>
-      <Label fx:id="ScoreText" layoutX="317.0" layoutY="13.0" prefHeight="27.0" prefWidth="139.0" text="Score :" textFill="#90716a">
-         <font>
-            <Font name="System Bold Italic" size="20.0" />
-         </font>
-      </Label>
-      <AnchorPane id="DarkBattle" fx:id="GameTable" layoutX="10.0" layoutY="52.0" prefHeight="600.0" prefWidth="600.0">
-         <children>
-            <Label id="Normal" fx:id="AlertText" alignment="CENTER" layoutX="-2.0" layoutY="228.0" prefHeight="124.0" prefWidth="600.0" text="TAP  ENTER  TO START NEW GAME" textAlignment="CENTER" textFill="#fffcfb">
-               <font>
-                  <Font name="System Bold Italic" size="26.0" />
-               </font>
-            </Label>
-         </children></AnchorPane>
-      <Label fx:id="UserName" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="13.0" prefHeight="27.0" prefWidth="175.0" text="HI!! " textAlignment="CENTER" textFill="#90716a">
-         <font>
-            <Font name="System Bold Italic" size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="RecordS" layoutX="447.0" layoutY="13.0" prefHeight="27.0" prefWidth="139.0" text="Record :" textFill="#90716a">
-         <font>
-            <Font name="System Bold Italic" size="20.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane id="DarkPane" fx:id="Jack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="660.0" prefWidth="620.0" stylesheets="@../CSS/style.css"
+            xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="SnakeGame.Controller.GameOneController">
+    <children>
+        <Label fx:id="ScoreText" layoutX="317.0" layoutY="13.0" prefHeight="27.0" prefWidth="139.0" text="Score :"
+               textFill="#90716a">
+            <font>
+                <Font name="System Bold Italic" size="20.0"/>
+            </font>
+        </Label>
+        <AnchorPane id="DarkBattle" fx:id="GameTable" layoutX="10.0" layoutY="52.0" prefHeight="600.0"
+                    prefWidth="600.0">
+            <children>
+                <Label id="Normal" fx:id="AlertText" alignment="CENTER" layoutX="-2.0" layoutY="228.0"
+                       prefHeight="124.0" prefWidth="600.0" text="TAP  ENTER  TO START NEW GAME" textAlignment="CENTER"
+                       textFill="#fffcfb">
+                    <font>
+                        <Font name="System Bold Italic" size="26.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Label fx:id="UserName" alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="13.0"
+               prefHeight="27.0" prefWidth="175.0" text="HI!! " textAlignment="CENTER" textFill="#90716a">
+            <font>
+                <Font name="System Bold Italic" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="RecordS" layoutX="447.0" layoutY="13.0" prefHeight="27.0" prefWidth="139.0" text="Record :"
+               textFill="#90716a">
+            <font>
+                <Font name="System Bold Italic" size="20.0"/>
+            </font>
+        </Label>
+    </children>
 </AnchorPane>
