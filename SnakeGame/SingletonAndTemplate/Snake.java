@@ -8,9 +8,10 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
 import java.io.File;
+import java.io.Serializable;
 import java.net.MalformedURLException;
 
-public abstract class Snake{
+public abstract class Snake implements Serializable {
   public static final int SnakeWidth = Point.GridWidth;
   protected Rectangle body ;
   protected Point position ; 

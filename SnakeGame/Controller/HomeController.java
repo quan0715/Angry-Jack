@@ -8,9 +8,7 @@ import SnakeGame.App;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
 import SnakeGame.Snake.JackSnake;
-import SnakeGame.Snake.PythonSnake;
 import SnakeGame.Snake.SBBSnake;
-import SnakeGame.Snake.VscodeSnake;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +27,7 @@ import javafx.scene.text.Text;
 public class HomeController implements Initializable{
   @FXML private Button ButtonOne;
   @FXML private Button ButtonTwo;
+  @FXML private Button ButtonThree;
   @FXML public TextField GamePin;
   @FXML private ImageView Sound;
   @FXML private ImageView Theme;
@@ -39,7 +38,7 @@ public class HomeController implements Initializable{
   private Image Light = ResourcesLoader.getImage("img/light.png");
   private Image Dark = ResourcesLoader.getImage("img/dark.png");
   private Image sound = ResourcesLoader.getImage("img/sound.png");
-  private Image nosound = ResourcesLoader.getImage("img/no-sound.png");
+  private final Image unsound = ResourcesLoader.getImage("img/no-sound.png");
   public static Snake Player1=new JackSnake();
   public static Snake Player2=new SBBSnake();
   public void SwitchOneManGame() throws IOException{
@@ -95,17 +94,24 @@ public class HomeController implements Initializable{
     GameTwoController controller = loader.getController();
     controller.init();
     controller.GetPinName(PinName);
-    scene.setOnKeyPressed(new javafx.event.EventHandler<KeyEvent>() {
-      @Override
-      public void handle(KeyEvent event) {
-        try {
-          controller.KeyEven(event);
-        } catch (IOException e) {
-          // TODO Auto-generated catch block
-          e.printStackTrace();
-        }
+    scene.setOnKeyPressed(event1 -> {
+      try {
+        controller.KeyEven(event1);
+      } catch (IOException e) {
+        e.printStackTrace();
       }
     });
+  }
+  public void SwitchOnlineBattleGame(ActionEvent event) throws IOException {
+    MusicController.StopBackground2();
+    MusicController.ButtonClickSound();
+    FXMLLoader loader = ResourcesLoader.getFXMLLoader("Scene/table3.fxml");
+    String PinName = GamePin.getText();
+    Parent root = loader.load();
+    Scene scene = new Scene(root);
+    App.stage.setScene(scene);
+    GameThreeController controller = loader.getController();
+    controller.GetPinName(PinName);
   }
   @Override
   public void initialize(URL location, ResourceBundle resources) {
@@ -143,7 +149,7 @@ public class HomeController implements Initializable{
   }
   private void SwitchSoundIcon (boolean SoundOff){
     if(SoundOff){
-      Sound.setImage(nosound);
+      Sound.setImage(unsound);
     }
     else Sound.setImage(sound);
   }
@@ -154,6 +160,7 @@ public class HomeController implements Initializable{
       Title.setId("LightText");
       ButtonOne.setId("LightButton");
       ButtonTwo.setId("LightButton");
+      ButtonThree.setId("LightButton");
       GamePin.setId("LightField");
     }
     else {
@@ -162,6 +169,7 @@ public class HomeController implements Initializable{
       Title.setId("DarkText");
       ButtonOne.setId("DarkButton");
       ButtonTwo.setId("DarkButton");
+      ButtonThree.setId("DarkButton");
       GamePin.setId("DarkField");
     }
   }

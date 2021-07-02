@@ -8,64 +8,56 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="DarkPane" fx:id="Jack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="660.0" prefWidth="620.0" styleClass="Anchor"
-            stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="SnakeGame.Controller.HomeController">
+<AnchorPane id="DarkPane" fx:id="Jack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="620.0" styleClass="Anchor" stylesheets="@../CSS/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SnakeGame.Controller.HomeController">
     <children>
-        <ImageView fitHeight="333.0" fitWidth="393.0" layoutX="142.0" layoutY="89.0" pickOnBounds="true"
-                   preserveRatio="true">
+        <ImageView fitHeight="333.0" fitWidth="393.0" layoutX="142.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/JacKK.png"/>
+                <Image url="@../img/JacKK.png" />
             </image>
         </ImageView>
-        <Text id="DarkText" fx:id="Title" fill="#bae3b6" fontSmoothingType="LCD" layoutX="21.0" layoutY="91.0"
-              stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="label" text="ANGRY JACK"
-              textAlignment="CENTER" wrappingWidth="584.0">
+        <Text id="DarkText" fx:id="Title" fill="#bae3b6" fontSmoothingType="LCD" layoutX="21.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="label" text="ANGRY JACK" textAlignment="CENTER" wrappingWidth="584.0">
             <font>
-                <Font name="JackeyFont" size="81.0"/>
+                <Font name="JackeyFont" size="81.0" />
             </font>
         </Text>
-        <Button id="DarkButton" fx:id="ButtonOne" defaultButton="true" layoutX="219.0" layoutY="480.0"
-                mnemonicParsing="false" onAction="#SwitchOneManGame" prefHeight="37.0" prefWidth="186.0" text="SINGLE">
+        <Button id="DarkButton" fx:id="ButtonOne" defaultButton="true" layoutX="219.0" layoutY="480.0" mnemonicParsing="false" onAction="#SwitchOneManGame" prefHeight="37.0" prefWidth="186.0" text="SINGLE">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
             </font>
         </Button>
-        <Button id="DarkButton" fx:id="ButtonTwo" defaultButton="true" layoutX="219.0" layoutY="553.0"
-                mnemonicParsing="false" onAction="#SwitchTwoManGame" prefHeight="37.0" prefWidth="186.0" text="DOUBLE">
+        <Button id="DarkButton" fx:id="ButtonTwo" defaultButton="true" layoutX="219.0" layoutY="553.0" mnemonicParsing="false" onAction="#SwitchTwoManGame" prefHeight="37.0" prefWidth="186.0" text="DOUBLE">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
             </font>
         </Button>
-        <TextField fx:id="GamePin" alignment="CENTER" layoutX="181.0" layoutY="411.0" prefHeight="37.0"
-                   prefWidth="258.0" promptText="GAME PIN ">
+      <Button id="DarkButton" fx:id="ButtonThree" defaultButton="true" layoutX="217.0" layoutY="609.0" mnemonicParsing="false" onAction="#SwitchOnlineBattleGame" prefHeight="37.0" prefWidth="186.0" text="Online">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+        <TextField fx:id="GamePin" alignment="CENTER" layoutX="181.0" layoutY="411.0" prefHeight="37.0" prefWidth="258.0" promptText="GAME PIN ">
             <font>
-                <Font name="JackeyFont" size="13.0"/>
+                <Font name="JackeyFont" size="13.0" />
             </font>
         </TextField>
-        <ImageView fx:id="Sound" fitHeight="45.0" fitWidth="45.0" layoutX="531.0" layoutY="209.0"
-                   onMouseClicked="#SetMute" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Sound" fitHeight="45.0" fitWidth="45.0" layoutX="531.0" layoutY="209.0" onMouseClicked="#SetMute" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/sound.png"/>
+                <Image url="@../img/sound.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="531.0" layoutY="267.0" onMouseClicked="#SwitchChoseSnake"
-                   pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="531.0" layoutY="267.0" onMouseClicked="#SwitchChoseSnake" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/snake3.png"/>
+                <Image url="@../img/snake3.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="532.0" layoutY="332.0" onMouseClicked="#SwitchToGameGuide"
-                   pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="532.0" layoutY="332.0" onMouseClicked="#SwitchToGameGuide" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/books.png"/>
+                <Image url="@../img/books.png" />
             </image>
         </ImageView>
-        <ImageView fx:id="Theme" fitHeight="45.0" fitWidth="45.0" layoutX="532.0" layoutY="153.0"
-                   onMouseClicked="#SetTheme" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="Theme" fitHeight="45.0" fitWidth="45.0" layoutX="532.0" layoutY="153.0" onMouseClicked="#SetTheme" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../img/dark.png"/>
+                <Image url="@../img/dark.png" />
             </image>
         </ImageView>
     </children>
