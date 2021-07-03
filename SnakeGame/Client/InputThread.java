@@ -15,12 +15,14 @@ public class InputThread extends Thread {
     private GameThreeController controller;
     private InputStream rawInputStream;
     private OutputStream rawOutputStream;
+    private boolean waiting;
 
     public InputThread(InputStream inputStream, OutputStream outputStream, Scene scene, GameThreeController controller) {
         this.scene = scene;
         this.controller = controller;
         this.rawInputStream = inputStream;
         this.rawOutputStream = outputStream;
+        this.waiting=true;
         start();
     }
 
@@ -71,6 +73,8 @@ public class InputThread extends Thread {
         while (true) {
             try {
                 System.out.println(inputStream.readObject());
+                if(waiting)controller.startGame();
+                waiting=false;
             } catch (IOException | ClassNotFoundException ioException) {
                 ioException.printStackTrace();
                 break;

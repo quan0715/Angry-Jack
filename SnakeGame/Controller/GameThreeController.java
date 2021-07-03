@@ -22,11 +22,17 @@ public class GameThreeController implements Initializable {
         try {
             connect = new Socket("127.0.0.1", 8787);
             new InputThread(connect.getInputStream(), connect.getOutputStream(), App.stage.getScene(), this);
+            //wait scene
         } catch (IOException ioException) {
             ioException.printStackTrace();
+            //Connect Fail handling
         }
     }
 
     public void GetPinName(String pinName) {
+    }
+
+    public void startGame() {
+        //stop wait scene(Input thread will call this when game start)
     }
 }
