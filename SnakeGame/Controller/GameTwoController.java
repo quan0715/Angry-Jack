@@ -35,36 +35,21 @@ public class GameTwoController {
     DirectionController directionController2;
     public InputController input;
     private String NormalAlert = "DarkNormal";
-    @FXML
-    private AnchorPane GameTable;
-    @FXML
-    private AnchorPane Jack;
-    @FXML
-    private Label VS;
-    @FXML
-    private Label ScoreText;
-    @FXML
-    private Label AlertText;
-    @FXML
-    private Label UserName1;
-    @FXML
-    private Label Score1;
-    @FXML
-    private Label UserName2;
-    @FXML
-    private Label Score2;
-    @FXML
-    private Label GamePoint1;
-    @FXML
-    private Label GamePoint2;
-    @FXML
-    private Label SnakeName1;
-    @FXML
-    private Label SnakeName2;
-    @FXML
-    private Label Skill1;
-    @FXML
-    private Label Skill2;
+    @FXML private AnchorPane GameTable;
+    @FXML private AnchorPane Jack;
+    @FXML private Label VS;
+    @FXML private Label ScoreText;
+    @FXML private Label AlertText;
+    @FXML private Label UserName1;
+    @FXML private Label Score1;
+    @FXML private Label UserName2;
+    @FXML private Label Score2;
+    @FXML private Label GamePoint1;
+    @FXML private Label GamePoint2;
+    @FXML private Label SnakeName1;
+    @FXML private Label SnakeName2;
+    @FXML private Label Skill1;
+    @FXML private Label Skill2;
     private GameFlow checkScoreTimeline;
     private GameFlow SkillTextRefresh;
 
