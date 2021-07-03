@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 
 import java.io.*;
 
-public class InputThread extends Thread {
+public class ioThread extends Thread {
     private Scene scene;
     private ObjectInputStream inputStream;
     private ObjectOutputStream outputStream;
@@ -16,7 +16,7 @@ public class InputThread extends Thread {
     private InputStream rawInputStream;
     private OutputStream rawOutputStream;
 
-    public InputThread(InputStream inputStream, OutputStream outputStream, Scene scene, GameThreeController controller) {
+    public ioThread(InputStream inputStream, OutputStream outputStream, GameThreeController controller) {
         this.scene = scene;
         this.controller = controller;
         this.rawInputStream = inputStream;
@@ -28,6 +28,7 @@ public class InputThread extends Thread {
         try {
             //io
             outputStream = new ObjectOutputStream(rawOutputStream);
+            inputStream = new ObjectInputStream(rawInputStream);
             App.stage.setOnCloseRequest(windowEvent -> {
                 try {
                     outputStream.writeObject("disconnect");
@@ -37,11 +38,11 @@ public class InputThread extends Thread {
                     ioException.printStackTrace();
                 }
             });
-            inputStream = new ObjectInputStream(rawInputStream);
             //sendSnake
             String str = inputStream.readObject().toString();
-            outputStream.writeObject(HomeController.Player1);
             if (str.equals("StartGameAsPlayer1")) {
+                outputStream.writeObject("StartGame");
+                outputStream.writeObject(HomeController.Player1);
                 controller.snake1Instance = HomeController.Player1;
                 str = inputStream.readObject().toString();
                 if (str.equals("sameSnake")) {
@@ -50,6 +51,8 @@ public class InputThread extends Thread {
                     controller.snake2Instance = (Snake) inputStream.readObject();
                 }
             } else {
+                outputStream.writeObject("StartGame");
+                outputStream.writeObject(HomeController.Player1);
                 controller.snake2Instance = HomeController.Player1;
                 str = inputStream.readObject().toString();
                 if (str.equals("sameSnake")) {
@@ -58,10 +61,11 @@ public class InputThread extends Thread {
                     controller.snake1Instance = (Snake) inputStream.readObject();
                 }
             }
+            controller.startGame();
         } catch (IOException | ClassNotFoundException ioException) {
             ioException.printStackTrace();
         }
-        scene.setOnKeyPressed(keyEvent -> {
+        App.stage.getScene().setOnKeyPressed(keyEvent -> {
             try {
                 outputStream.writeObject(keyEvent.getCode());
             } catch (IOException ioException) {

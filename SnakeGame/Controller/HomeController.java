@@ -112,6 +112,7 @@ public class HomeController implements Initializable{
     App.stage.setScene(scene);
     GameThreeController controller = loader.getController();
     controller.GetPinName(PinName);
+    controller.init();
   }
   @Override
   public void initialize(URL location, ResourceBundle resources) {
@@ -126,7 +127,6 @@ public class HomeController implements Initializable{
         try {
           SwitchOneManGame();
         } catch (IOException e1) {
-          // TODO Auto-generated catch block
           e1.printStackTrace();
         }
       }

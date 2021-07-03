@@ -1,32 +1,33 @@
 package SnakeGame.Controller;
 
 import SnakeGame.App;
-import SnakeGame.Client.InputThread;
+import SnakeGame.Client.ioThread;
 import SnakeGame.SingletonAndTemplate.Snake;
-import javafx.fxml.Initializable;
 
-import java.io.BufferedReader;
+
+
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class GameThreeController implements Initializable {
+public class GameThreeController{
     public Socket connect;
     public Snake snake1Instance;
     public Snake snake2Instance;
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void init() {
         try {
             connect = new Socket("127.0.0.1", 8787);
-            new InputThread(connect.getInputStream(), connect.getOutputStream(), App.stage.getScene(), this);
+            new ioThread(connect.getInputStream(), connect.getOutputStream(), this);
+            //wait scene
         } catch (IOException ioException) {
             ioException.printStackTrace();
+            //Connect Fail handling
         }
     }
 
     public void GetPinName(String pinName) {
+    }
+
+    public void startGame() {
+        //stop wait scene(Input thread will call this when game start)
     }
 }
