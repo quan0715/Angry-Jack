@@ -1,5 +1,6 @@
 package SnakeGame.SingletonAndTemplate;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -181,6 +182,40 @@ public class SnakeBody {
       TextCount++;
       this.Skill = text;
       this.Id = Id;
+    }
+  }
+  public void OnlineBodyChang(ArrayList<Point> NewBodyPosition){
+    if (NewBodyPosition.length() == Body.length()){
+      for(int i=0;i<Body.length();i++){
+        Body.get(i).ChangPosition(NewBodyPosition.get(i));
+      }
+    }
+    else if  (NewBodyPosition.length() > Body.length()){
+      for(int i=0;i<Body.length();i++){
+
+        Body.get(i).ChangPosition(NewBodyPosition.get(i));
+      }
+      for (int i=Body.length();i<NewBodyPosition.length();i++){
+        Snake bod= null;
+        try {
+          bod = snakeInstance.getClass().getDeclaredConstructor().newInstance();
+          bod.InitialSnakeBody(NewBodyPosition.get(i));
+          Body.add(bod);
+        } catch (InstantiationException e) {
+          e.printStackTrace();
+        } catch (IllegalAccessException e) {
+          e.printStackTrace();
+        } catch (InvocationTargetException e) {
+          e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+          e.printStackTrace();
+        }
+      }
+    }
+    else{
+      for(int i = NewBodyPosition.length();i<Body.length();i++){
+        this.RemoveBody();
+      }
     }
   }
   public String getSkillText(){
