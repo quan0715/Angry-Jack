@@ -10,4 +10,9 @@ public class renderPackage implements Serializable {
     public ArrayList<Food> foodList;
     public ArrayList<Point> SnakeOneList;
     public ArrayList<Point> SnakeTwoList;
+    public renderPackage(ArrayList<Food> foodList, ArrayList<Point> SnakeOneList, ArrayList<Point> SnakeTwoList){
+        this.foodList=foodList;
+        this.SnakeOneList=SnakeOneList;
+        this.SnakeTwoList=SnakeTwoList;
+    }
 }

@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.util.Duration;
 
 
@@ -17,6 +19,8 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class GameThreeController{
+    private int windowWidth = 600;
+    private int GridWidth = 20;
     public Socket connect;
     public Snake snake1Instance;
     public Snake snake2Instance;
@@ -29,6 +33,7 @@ public class GameThreeController{
     private boolean reverse = true;
     public void init() {
         try{
+            DrawLine();
             connect = new Socket("127.0.0.1", 8787);
             new ioThread(connect.getInputStream(), connect.getOutputStream(), this);
             //wait scene
@@ -68,7 +73,7 @@ public class GameThreeController{
         GameCurrentChildrenArray.Instance.set(GameTable.getChildren());
         //initialize snakeBody
         player1=new SnakeBody(snake1Instance,10000,200,200);
-        player2=new SnakeBody(snake2Instance,10000,200,200);
+        player2=new SnakeBody(snake2Instance,10000,400,400);
     }
     public void UpdateGame(renderPackage updatePackage){
         player1.OnlineBodyChang(updatePackage.SnakeOneList);
@@ -81,6 +86,23 @@ public class GameThreeController{
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+    public void DrawLine() {
+        for (int i = 0; i <= windowWidth; i += GridWidth) {
+            Line rows = new Line(0, i, windowWidth, i);
+            Line cols = new Line(i, 0, i, windowWidth);
+            if (HomeController.ThemeColor) {
+                rows.setStroke(Color.web("#353535"));
+                cols.setStroke(Color.web("#353535"));
+            } else {
+                rows.setStroke(Color.web("#D6D6AD"));
+                cols.setStroke(Color.web("#D6D6AD"));
+            }
+            rows.setStrokeWidth(0.3);
+            cols.setStrokeWidth(0.3);
+            GameTable.getChildren().add(rows);
+            GameTable.getChildren().add(cols);
         }
     }
 }

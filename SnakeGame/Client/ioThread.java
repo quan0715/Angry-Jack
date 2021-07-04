@@ -4,6 +4,7 @@ import SnakeGame.App;
 import SnakeGame.Controller.GameThreeController;
 import SnakeGame.Controller.HomeController;
 import SnakeGame.SingletonAndTemplate.Snake;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 
 import java.io.*;
@@ -11,7 +12,7 @@ import java.io.*;
 public class ioThread extends Thread {
     private ObjectInputStream inputStream;
     private ObjectOutputStream outputStream;
-    private GameThreeController controller;
+    private final GameThreeController controller;
     private InputStream rawInputStream;
     private OutputStream rawOutputStream;
 
@@ -59,7 +60,7 @@ public class ioThread extends Thread {
                     controller.snake1Instance = (Snake) inputStream.readObject();
                 }
             }
-            controller.startGame();
+            Platform.runLater(controller::startGame);
         } catch (IOException | ClassNotFoundException ioException) {
             ioException.printStackTrace();
         }
@@ -73,7 +74,7 @@ public class ioThread extends Thread {
         while (true) {
             try {
                 renderPackage updatePackage= (renderPackage) inputStream.readObject();
-                controller.UpdateGame(updatePackage);
+                Platform.runLater(()->{controller.UpdateGame(updatePackage);});
             } catch (IOException | ClassNotFoundException ioException) {
                 ioException.printStackTrace();
                 break;
