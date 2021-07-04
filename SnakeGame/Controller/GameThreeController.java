@@ -2,8 +2,8 @@ package SnakeGame.Controller;
 
 import SnakeGame.App;
 import SnakeGame.Client.ioThread;
-import SnakeGame.SingletonAndTemplate.GameFlow;
-import SnakeGame.SingletonAndTemplate.Snake;
+import SnakeGame.Client.renderPackage;
+import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -20,8 +20,11 @@ public class GameThreeController{
     public Socket connect;
     public Snake snake1Instance;
     public Snake snake2Instance;
+    private SnakeBody player1;
+    private SnakeBody player2;
     @FXML private Label WaitText;
     @FXML private AnchorPane Wait;
+    @FXML private AnchorPane GameTable;
     private double opacity = 0;
     private boolean reverse = true;
     public void init() {
@@ -62,6 +65,22 @@ public class GameThreeController{
     public void startGame() {
         //stop wait scene(Input thread will call this when game start)
         Wait.setVisible(false);
-
+        GameCurrentChildrenArray.Instance.set(GameTable.getChildren());
+        //initialize snakeBody
+        player1=new SnakeBody(snake1Instance,10000,200,200);
+        player2=new SnakeBody(snake2Instance,10000,200,200);
+    }
+    public void UpdateGame(renderPackage updatePackage){
+        player1.OnlineBodyChang(updatePackage.SnakeOneList);
+        player2.OnlineBodyChang(updatePackage.SnakeTwoList);
+        GameEntityCenter.clearFood();
+        for(Food food:updatePackage.foodList){
+            try {
+                Food tem=food.getClass().getDeclaredConstructor().newInstance();
+                tem.ChangeFoodPosition(food.GetFoodPosition());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

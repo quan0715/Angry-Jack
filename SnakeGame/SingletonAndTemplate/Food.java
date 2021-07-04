@@ -1,13 +1,15 @@
 package SnakeGame.SingletonAndTemplate;
 
+import java.io.Serializable;
 import java.util.List;
 
+import SnakeGame.Controller.HomeController;
 import SnakeGame.Enum.Point;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.shape.Rectangle;
 
-public abstract class Food{
+public abstract class Food implements Serializable {
   protected Image image;
   protected Point FoodPosition;
   protected Rectangle body;
@@ -16,18 +18,23 @@ public abstract class Food{
   protected abstract void OnSnakeHeadTouch(SnakeBody b);
   protected abstract void OnSnakeBodyTouch(SnakeBody s);
   protected abstract void Cast(SnakeBody s);
+  protected Food(){
+    GameEntityCenter.addFood(this);
+    FoodInit();
+  }
   protected Food(Point p){
     FoodPosition = p;
     body = new Rectangle(FoodPosition.getX(), FoodPosition.getY(), Point.GridWidth, Point.GridWidth);
     GameEntityCenter.addFood(this);
     FoodInit();
+    if(HomeController.isOnlineGame)return;
     m_event=new FoodEvent(
       this,
       (b)->{OnSnakeHeadTouch(b);},
       (b)->{OnSnakeBodyTouch(b);},
       (b)->{Cast(b);});
   }
-  protected void ChangeFoodPosition(Point point){
+  public void ChangeFoodPosition(Point point){
     FoodPosition = point;
     body.setX(point.getX());
     body.setY(point.getY());

@@ -57,13 +57,15 @@ public class GameEntityCenter {
         catch(Exception e){e.printStackTrace();return false;}
     }
     static void clearAll(){
-        List<SnakeBody> RemoveListSnake = new ArrayList<>();
-        List<Food> RemoveListFood = new ArrayList<>();
-        for(SnakeBody b:instance.snakes)RemoveListSnake.add(b);
-        for(Food f:instance.foods) RemoveListFood.add(f);
-        for (SnakeBody b : RemoveListSnake) instance.snakes.remove(b);
-        for (Food f : RemoveListFood)  instance.foods.remove(f);
+        List<SnakeBody> RemoveListSnake = new ArrayList<>(instance.snakes);
+        List<Food> RemoveListFood = new ArrayList<>(instance.foods);
+        for (SnakeBody b : RemoveListSnake) removeSnakeBody(b);
+        for (Food f : RemoveListFood)  removeFood(f);
         FoodEventCenter.clear();
         GameFlowController.Clear();
+    }
+    public static void clearFood(){
+        List<Food> RemoveListFood = new ArrayList<>(instance.foods);
+        for (Food f : RemoveListFood)  removeFood(f);
     }
 }

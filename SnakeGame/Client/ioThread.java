@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import java.io.*;
 
 public class ioThread extends Thread {
-    private Scene scene;
     private ObjectInputStream inputStream;
     private ObjectOutputStream outputStream;
     private GameThreeController controller;
@@ -17,7 +16,6 @@ public class ioThread extends Thread {
     private OutputStream rawOutputStream;
 
     public ioThread(InputStream inputStream, OutputStream outputStream, GameThreeController controller) {
-        this.scene = scene;
         this.controller = controller;
         this.rawInputStream = inputStream;
         this.rawOutputStream = outputStream;
@@ -74,7 +72,8 @@ public class ioThread extends Thread {
         });
         while (true) {
             try {
-                System.out.println(inputStream.readObject());
+                renderPackage updatePackage= (renderPackage) inputStream.readObject();
+                controller.UpdateGame(updatePackage);
             } catch (IOException | ClassNotFoundException ioException) {
                 ioException.printStackTrace();
                 break;

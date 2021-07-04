@@ -1,8 +1,9 @@
 package SnakeGame.Enum;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Point {
+public class Point implements Serializable {
   private int x;
   private int y;
   private static int windowWidth = 600;

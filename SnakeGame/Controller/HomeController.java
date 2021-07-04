@@ -35,6 +35,7 @@ public class HomeController implements Initializable{
   @FXML private Text Title;
   private static boolean SoundOff = false;
   public  static boolean ThemeColor = false;
+  public static boolean isOnlineGame = false;
   private Image Light = ResourcesLoader.getImage("img/light.png");
   private Image Dark = ResourcesLoader.getImage("img/dark.png");
   private Image sound = ResourcesLoader.getImage("img/sound.png");
@@ -42,6 +43,7 @@ public class HomeController implements Initializable{
   public static Snake Player1=new JackSnake();
   public static Snake Player2=new SBBSnake();
   public void SwitchOneManGame() throws IOException{
+    isOnlineGame=false;
     MusicController.StopBackground2();
     MusicController.ButtonClickSound();
     FXMLLoader loader = ResourcesLoader.getFXMLLoader("Scene/table.fxml");
@@ -84,6 +86,7 @@ public class HomeController implements Initializable{
     }
   }
   public void SwitchTwoManGame(ActionEvent event) throws IOException {
+    isOnlineGame=false;
     MusicController.StopBackground2();
     MusicController.ButtonClickSound();
     FXMLLoader loader = ResourcesLoader.getFXMLLoader("Scene/table2.fxml");
@@ -103,6 +106,7 @@ public class HomeController implements Initializable{
     });
   }
   public void SwitchOnlineBattleGame(ActionEvent event) throws IOException {
+    isOnlineGame=true;
     MusicController.StopBackground2();
     MusicController.ButtonClickSound();
     FXMLLoader loader = ResourcesLoader.getFXMLLoader("Scene/table3.fxml");
