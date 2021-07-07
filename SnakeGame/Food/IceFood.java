@@ -2,6 +2,7 @@ package SnakeGame.Food;
 
 
 import SnakeGame.Controller.HomeController;
+import SnakeGame.Effect.IceEffect;
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
@@ -20,21 +21,14 @@ public class IceFood extends Food {
   private double SlowDown = 0.5;
   private Distant light ;
   private Lighting l;
+  private IceEffect Effect;
   @Override
   protected void FoodInit() {
-    light = new Distant(45, 45, Color.web("#009aff"));
-    l = new Lighting();
-    l.setLight(light);
-    l.setSurfaceScale(0.0);
-    l.setSpecularExponent(0.0);
-    l.setSpecularConstant(2.0);
-    l.setDiffuseConstant(2.0);
+    Effect= new IceEffect();
     image = ResourcesLoader.getImage("img/ice.png");
-
     body.setFill(new ImagePattern(image));
-    if(HomeController.ThemeColor)body.setEffect(l);
+    Effect.ThemeEffect(body);
   }
-
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.AddNewBody();
@@ -43,17 +37,9 @@ public class IceFood extends Food {
   }
   @Override
   protected void Cast(SnakeBody s) {
-    s.RateBuff(SlowDown);
-    s.SnakeEffect(l);
     s.SkillText("Frozen", "Ice");
-    GameFlow slowdown = new GameFlow(new KeyFrame(Duration.millis(3000), e -> {
-      s.RateNuff(SlowDown);
-      s.SnakeEffect(null);
-      s.SkillText(null, "");
-
-    }),1);
+    Effect.trigger(s);
   }
-
   @Override
   protected void OnSnakeBodyTouch(SnakeBody s) {
     FoodGenerator.RefreshFood();

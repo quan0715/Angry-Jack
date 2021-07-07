@@ -2,6 +2,8 @@ package SnakeGame.Food;
 
 import java.util.concurrent.Callable;
 
+import SnakeGame.Effect.CancelEffect;
+import SnakeGame.Effect.FireEffect;
 import SnakeGame.Enum.Direction;
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
@@ -15,21 +17,16 @@ import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
 public class FireFood extends Food {
-  private Distant lightO;
-  private Lighting l;
-  private double spark = 0;
+  private FireEffect Effect;
+  private CancelEffect Cancel;
   public FireFood(Point p) {
     super(p);
   }
 
   @Override
   protected void FoodInit() {
-    lightO = new Distant(45, 25, Color.web("#ff9700"));
-    l = new Lighting();
-    l.setSurfaceScale(0.0);
-    l.setSpecularExponent(0.0);
-    l.setSpecularConstant(2.0);
-    l.setDiffuseConstant(2.0);
+    Effect = new FireEffect();
+    Cancel = new CancelEffect(5000,1);
     image = ResourcesLoader.getImage("img/fire.png");
     body.setFill(new ImagePattern(image));
   }
@@ -50,18 +47,8 @@ public class FireFood extends Food {
         return null;
       }
     });
-    GameFlow cancelFlow=new GameFlow(new KeyFrame(Duration.millis(5000), e->{
-      s.SnakeEffect(null);
-      s.setSkill(0, null);
-      s.SkillText(null, "");
-    }),1);
-    spark = 25;
-    s.SnakeEffect(l);
-    GameFlow SparkFlow = new GameFlow(new KeyFrame(Duration.millis(1), e -> {
-      lightO = new Distant(45, spark, Color.web("#ff9700"));
-      l.setLight(lightO);
-      spark = (spark - 25 + 0.075) % 100 + 25;
-    }),5000);
+    Effect.trigger(s);
+    Cancel.trigger(s);
   }
   @Override
   protected void Cast(SnakeBody s) {  

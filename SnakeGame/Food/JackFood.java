@@ -2,6 +2,7 @@ package SnakeGame.Food;
 
 
 import SnakeGame.Controller.HomeController;
+import SnakeGame.Effect.JackEffect;
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
@@ -17,31 +18,18 @@ public class JackFood extends Food {
   public JackFood(Point p) {
     super(p);
   }
-  private double SpeedUp = 2; 
-  private Distant light;
-  private Lighting l;
+  private JackEffect Jack;
   @Override
   protected void FoodInit() {
-    light = new Distant(45, 45, Color.web("#575757"));
-    l = new Lighting();
-    l.setLight(light);
-    l.setSpecularConstant(0.0);
-    l.setSurfaceScale(0.0);
-    l.setDiffuseConstant(0.4);
+    Jack = new JackEffect();
     image = ResourcesLoader.getImage("img/Jack.png");
     body.setFill(new ImagePattern(image));
   }
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
-    s.RateBuff(SpeedUp);
-    s.SnakeEffect(l);
     if (HomeController.ThemeColor) s.SkillText("Angry!", "LightNormal");
     else s.SkillText("Angry!", "DarkNormal");
-    GameFlow speedup = new GameFlow(new KeyFrame(Duration.millis(3000), e -> {
-      s.SnakeEffect(null);
-      s.RateNuff(SpeedUp);
-      s.SkillText(null, "");
-    }),1);
+    Jack.trigger(s);
     MusicController.EatFoodPop();
     FoodGenerator.RefreshFood();
   }

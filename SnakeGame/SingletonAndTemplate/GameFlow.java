@@ -1,5 +1,6 @@
 package SnakeGame.SingletonAndTemplate;
 
+import SnakeGame.Controller.HomeController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 
@@ -8,9 +9,11 @@ public class GameFlow {
     public GameFlow(KeyFrame keyFrame, int cycleCount){
         flow=new Timeline(keyFrame);
         flow.setCycleCount(cycleCount);
-        GameFlowController.add(this);
+        if (!HomeController.isOnlineGame)
+            GameFlowController.add(this);
         flow.play();
-        flow.setOnFinished((e)->GameFlowController.remove(this));
+        if (!HomeController.isOnlineGame)
+            flow.setOnFinished((e)->GameFlowController.remove(this));
     }
     void pause() {
         flow.pause();
