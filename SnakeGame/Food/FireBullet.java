@@ -11,6 +11,7 @@ public class FireBullet extends Food {
   public FireBullet(Point p) {
     super(p);
   }
+  public FireBullet(){}
   @Override
   protected void FoodInit() {
     image = ResourcesLoader.getImage("img/FireBullet.png");

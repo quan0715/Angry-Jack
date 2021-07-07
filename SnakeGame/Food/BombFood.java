@@ -14,6 +14,7 @@ public class BombFood extends Food {
     public BombFood(Point p) {
       super(p);
     }
+    public BombFood(){}
     @Override
     protected void FoodInit() {
         image = ResourcesLoader.getImage("img/bomb.png");

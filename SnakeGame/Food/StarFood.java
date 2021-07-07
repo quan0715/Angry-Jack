@@ -21,6 +21,7 @@ public class StarFood extends Food {
   public StarFood(Point p) {
     super(p);
   }
+  public StarFood(){}
   @Override
   protected void FoodInit() {
     lightY = new Distant(45, 45, Color.web("#ffee00"));

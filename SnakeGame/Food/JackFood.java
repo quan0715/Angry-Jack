@@ -18,6 +18,7 @@ public class JackFood extends Food {
   public JackFood(Point p) {
     super(p);
   }
+  public JackFood(){}
   private JackEffect Jack;
   @Override
   protected void FoodInit() {

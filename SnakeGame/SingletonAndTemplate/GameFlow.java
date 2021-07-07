@@ -23,6 +23,7 @@ public class GameFlow {
     }
     public void stop() {
         flow.stop();
-        if(GameFlowController.contain(this))GameFlowController.remove(this);
+        if(GameFlowController.contain(this))
+            GameFlowController.remove(this);
     }
 }

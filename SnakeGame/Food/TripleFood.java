@@ -19,6 +19,7 @@ public class TripleFood extends Food {
   public TripleFood(Point p) {
     super(p);
   }
+  public TripleFood(){}
   @Override
   protected void FoodInit() {
     image = ResourcesLoader.getImage("img/bananas.png");

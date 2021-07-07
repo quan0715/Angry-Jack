@@ -18,6 +18,7 @@ public class IceFood extends Food {
   public IceFood(Point p) {
     super(p);
   }
+  public IceFood(){}
   private double SlowDown = 0.5;
   private Distant light ;
   private Lighting l;

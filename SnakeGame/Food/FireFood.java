@@ -22,7 +22,7 @@ public class FireFood extends Food {
   public FireFood(Point p) {
     super(p);
   }
-
+  public FireFood(){}
   @Override
   protected void FoodInit() {
     Effect = new FireEffect();

@@ -12,6 +12,7 @@ public class NormalFood extends Food{
     public NormalFood(Point p) {
       super(p);
     }
+    public NormalFood(){}
 
     @Override
     protected void FoodInit() {

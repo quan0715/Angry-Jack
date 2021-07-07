@@ -25,6 +25,7 @@ public class Bomb extends Food {
     this.duration=duration;
     speed=(int)(50*(540+duration)/540);
   }
+  public Bomb(){}
   @Override
   protected void FoodInit() {
     lightW = new Distant(45,45,Color.WHITE);
