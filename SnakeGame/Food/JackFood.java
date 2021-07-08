@@ -2,6 +2,7 @@ package SnakeGame.Food;
 
 
 import SnakeGame.Controller.HomeController;
+import SnakeGame.Effect.CancelEffect;
 import SnakeGame.Effect.JackEffect;
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
@@ -33,6 +34,7 @@ public class JackFood extends Food {
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.RateBuff(2);
     Jack.trigger(s);
+    new CancelEffect(5000,1).trigger(s);
     GameFlow Ef = new GameFlow(new KeyFrame(Duration.millis(3000), e -> {
       s.RateNuff(2);
     }),1);
