@@ -14,9 +14,9 @@ public class SnakeBody {
   private ArrayList<Snake> Body;
   private Snake snakeInstance;
   private int HeadX;
-  private int HeadY; 
+  private int HeadY;
   private Lighting l;
-  private int EffectCount = 0;
+  private SnakeEffect currentEffect;
   private final int HeightLimit = 600;
   private final int WidthLimit = 600;
   private Direction currentDirection;
@@ -33,13 +33,13 @@ public class SnakeBody {
     HeadY = y;
     woody=0;
     rate = 1;
-    EffectCount = 0;
     TextCount = 0;
     FoodBuff = 1 ;
     this.startSpeed=startSpeed;
     currentDirection=Direction.RIGHT;
     Body = new ArrayList<Snake>();
     snakeInstance=instance;
+    currentEffect=null;
     for(int i=0;i<3;i++)AddNewBody();
     GameEntityCenter.addSnakeBody(this);
   }
@@ -128,25 +128,6 @@ public class SnakeBody {
     if(p.getX()==HeadX&&p.getY()==HeadY)returnedList.add(SnakePart.HEAD);
     return returnedList;
   }
-  public void SnakeEffect(Lighting l){
-    if(l == null ){
-      EffectCount--;
-      if(EffectCount<=0){
-        this.l = null;
-        EffectCount = 0;
-        for (Snake s : Body) {
-          s.SnakeEffect(this.l);
-        }
-      }
-    }
-    else{
-      EffectCount++;
-      this.l = l;
-      for (Snake s : Body) {
-        s.SnakeEffect(l);
-      }
-    }
-  }
   public void RateBuff(double buff){
     FoodBuff *= buff;
   }
@@ -216,5 +197,20 @@ public class SnakeBody {
   }
   public String getSkillTextId() {
     return Id;
+  }
+  public void SnakeEffect(Lighting l){
+    this.l=l;
+    for (Snake s : Body) {
+      s.SnakeEffect(this.l);
+    }
+  }
+  public void setEffect(SnakeEffect effect){
+    if(effect==null){
+      currentEffect=null;
+      return;
+    }
+    if(currentEffect!=null)currentEffect.Terminate(this);
+    currentEffect=effect;
+    currentEffect.trigger(this);
   }
 }

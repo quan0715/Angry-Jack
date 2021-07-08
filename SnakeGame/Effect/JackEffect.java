@@ -36,6 +36,14 @@ public class JackEffect extends SnakeEffect {
         else s.SkillText("Angry!", "DarkNormal");
         EffectControl = new GameFlow(new KeyFrame(Duration.millis(this.Times), e -> {
             s.SkillText(null, "");
+            s.SnakeEffect(null);
         }),this.Cycle);
+    }
+
+    @Override
+    public void Terminate(SnakeBody s) {
+        EffectControl.stop();
+        s.SkillText(null, "");
+        s.SnakeEffect(null);
     }
 }

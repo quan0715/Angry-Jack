@@ -17,4 +17,5 @@ public abstract class SnakeEffect {
     protected int Cycle;
     protected abstract void init();
     protected abstract void trigger(SnakeBody s);
+    public abstract void Terminate(SnakeBody s);
 }
