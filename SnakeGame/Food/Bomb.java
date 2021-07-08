@@ -21,9 +21,9 @@ public class Bomb extends Food {
   protected void FoodInit() {
     image = ResourcesLoader.getImage("img/TNT.png");
     body.setFill(new ImagePattern(image));
-    Effect = new BombEffect(this,body);
+    Effect = new BombEffect(this);
+    Effect.ThemeEffect(body);
   }
-  
   @Override
   protected void Cast(SnakeBody s) {
   }
@@ -38,7 +38,7 @@ public class Bomb extends Food {
       s.RemoveBody();
     }
   }
-  public void setDistant(Effect effect){
+  public void setEffect(Effect effect){
     this.body.setEffect(effect);
   }
 }
