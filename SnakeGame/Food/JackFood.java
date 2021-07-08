@@ -23,17 +23,17 @@ public class JackFood extends Food {
   public JackFood(){
     super();
   }
-  private JackEffect Jack;
   @Override
   protected void FoodInit() {
-    Jack = new JackEffect();
     image = ResourcesLoader.getImage("img/Jack.png");
     body.setFill(new ImagePattern(image));
   }
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.RateBuff(2);
-    Jack.trigger(s);
+
+    //Use sample
+    s.setEffect(new JackEffect());
     GameFlow Ef = new GameFlow(new KeyFrame(Duration.millis(3000), e -> {
       s.RateNuff(2);
     }),1);
