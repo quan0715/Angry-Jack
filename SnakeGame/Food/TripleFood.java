@@ -31,9 +31,10 @@ public class TripleFood extends Food {
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.AddNewBody();
-    if (HomeController.ThemeColor) s.SkillText("BIG", "LightNormal");
-    else s.SkillText("BIG", "DarkNormal");
-    MusicController.GrowingUp();
+
+    GameFlow Add = new GameFlow( new KeyFrame(Duration.millis(500) , e -> {
+      s.AddNewBody();
+    }),2);
     Effect.trigger(s);
     FoodGenerator.RefreshFood();
   }
@@ -44,4 +45,5 @@ public class TripleFood extends Food {
   protected void OnSnakeBodyTouch(SnakeBody s) {
     FoodGenerator.RefreshFood();
   }
+
 }

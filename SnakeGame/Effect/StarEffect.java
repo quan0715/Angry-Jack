@@ -32,6 +32,8 @@ public class StarEffect extends SnakeEffect {
     public void trigger(SnakeBody s) {
         s.RateBuff(Buff);
         s.SnakeEffect(MainLight);
+        s.SkillText("SUPER", "Star");
+        MusicController.SuperStarFood(true);
         EffectControl = new GameFlow( new KeyFrame(Duration.millis(Times),e ->{
             switch(spark){
                 case 0:
@@ -54,7 +56,6 @@ public class StarEffect extends SnakeEffect {
             s.RateNuff(Buff);
             MusicController.SuperStarFood(false);
             s.SkillText(null,"");
-            s.woody--;
         }),1);
     }
 }

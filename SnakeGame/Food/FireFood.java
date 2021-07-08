@@ -37,9 +37,8 @@ public class FireFood extends Food {
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.AddNewBody();
-    s.SkillText("On Fire!", "Fire");
     FoodGenerator.RefreshFood();
-    MusicController.EatFoodPop();
+
     s.setSkill(-1, new Callable<Void>(){
       @Override
       public Void call() throws Exception {

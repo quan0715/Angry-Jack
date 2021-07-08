@@ -30,10 +30,11 @@ public class StarFood extends Food {
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.AddNewBody();
-    Effect.trigger(s);
     s.woody++;
-    s.SkillText("SUPER", "Star");
-    MusicController.SuperStarFood(true);
+    Effect.trigger(s);
+    GameFlow WoodyTime = new GameFlow(new KeyFrame(Duration.millis(4000), e -> {
+      s.woody--;
+    }),1);
     FoodGenerator.RefreshFood();
   }
   @Override

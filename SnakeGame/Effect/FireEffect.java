@@ -1,5 +1,6 @@
 package SnakeGame.Effect;
 import SnakeGame.SingletonAndTemplate.GameFlow;
+import SnakeGame.SingletonAndTemplate.MusicController;
 import SnakeGame.SingletonAndTemplate.SnakeBody;
 import SnakeGame.SingletonAndTemplate.SnakeEffect;
 import javafx.animation.KeyFrame;
@@ -30,6 +31,8 @@ public class FireEffect extends SnakeEffect {
     @Override
     public void trigger(SnakeBody s) {
         s.SnakeEffect(MainLight);
+        s.SkillText("On Fire!", "Fire");
+        MusicController.EatFoodPop();
         EffectControl = new GameFlow(new KeyFrame(Duration.millis(this.Times), e -> {
             distant = new Light.Distant(45, spark, Color.web("#ff9700"));
             MainLight.setLight(distant);

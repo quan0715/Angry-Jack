@@ -1,5 +1,6 @@
 package SnakeGame.Food;
 
+import SnakeGame.Effect.NormalEffect;
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
@@ -10,6 +11,7 @@ import javafx.util.Duration;
 
 public class NormalFood extends Food{
     private static final long serialVersionUID = 7L;
+    private NormalEffect Effect ;
     public NormalFood(Point p) {
       super(p);
     }
@@ -19,6 +21,7 @@ public class NormalFood extends Food{
 
     @Override
     protected void FoodInit() {
+        Effect = new NormalEffect();
         image = ResourcesLoader.getImage("img/avocado.png");
         body.setFill(new ImagePattern(image));
     }
@@ -26,11 +29,7 @@ public class NormalFood extends Food{
     @Override
     protected void OnSnakeHeadTouch(SnakeBody s) {
       s.AddNewBody();
-      s.SkillText("JACK","Normal");
-      GameFlow text = new GameFlow(new KeyFrame(Duration.millis(2000), e -> {
-        s.SkillText(null,null);
-      }),1);
-      MusicController.EatFoodPop();
+      Effect.trigger(s);
       FoodGenerator.RefreshFood();
     }
     @Override
