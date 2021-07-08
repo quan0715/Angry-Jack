@@ -35,8 +35,6 @@ public class JackEffect extends SnakeEffect {
         if (HomeController.ThemeColor) s.SkillText("Angry!", "LightNormal");
         else s.SkillText("Angry!", "DarkNormal");
         EffectControl = new GameFlow(new KeyFrame(Duration.millis(this.Times), e -> {
-            s.RateNuff(this.Buff);
-            s.SnakeEffect(null);
             s.SkillText(null, "");
         }),this.Cycle);
     }

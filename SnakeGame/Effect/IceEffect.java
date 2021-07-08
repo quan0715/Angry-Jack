@@ -30,10 +30,8 @@ public class IceEffect extends SnakeEffect {
     }
     @Override
     public void trigger(SnakeBody s) {
-        s.RateBuff(this.Buff);
         s.SnakeEffect(this.MainLight);
         EffectControl = new GameFlow(new KeyFrame(Duration.millis(this.Times), e -> {
-            s.RateNuff(this.Buff);
             s.SnakeEffect(null);
             s.SkillText(null, "");
         }),this.Cycle);

@@ -22,7 +22,6 @@ public class Bomb extends Food {
     image = ResourcesLoader.getImage("img/TNT.png");
     body.setFill(new ImagePattern(image));
     Effect = new BombEffect(this,body);
-    Effect.ThemeEffect(body);
   }
   
   @Override
