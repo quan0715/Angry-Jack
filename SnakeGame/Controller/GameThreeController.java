@@ -3,6 +3,7 @@ package SnakeGame.Controller;
 import SnakeGame.App;
 import SnakeGame.Client.ioThread;
 import SnakeGame.Client.renderPackage;
+import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -11,7 +12,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 

@@ -15,10 +15,13 @@ import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
 public class JackFood extends Food {
+  private static final long serialVersionUID = 6L;
   public JackFood(Point p) {
     super(p);
   }
-  public JackFood(){}
+  public JackFood(){
+    super();
+  }
   private JackEffect Jack;
   @Override
   protected void FoodInit() {

@@ -6,12 +6,12 @@ import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
 import javafx.scene.effect.Lighting;
 import javafx.scene.effect.Light.Distant;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
 public class Bomb extends Food {
+  private static final long serialVersionUID = 1L;
   private Distant lightW;
   private Lighting l;
   private GameFlow ef;
@@ -25,7 +25,9 @@ public class Bomb extends Food {
     this.duration=duration;
     speed=(int)(50*(540+duration)/540);
   }
-  public Bomb(){}
+  public Bomb(){
+    super();
+  }
   @Override
   protected void FoodInit() {
     lightW = new Distant(45,45,Color.WHITE);

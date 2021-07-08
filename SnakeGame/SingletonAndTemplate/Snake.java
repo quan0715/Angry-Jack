@@ -1,21 +1,17 @@
 package SnakeGame.SingletonAndTemplate;
 import SnakeGame.Enum.Point;
-import SnakeGame.ResourcesLoader;
 import javafx.scene.effect.Lighting;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
-import java.io.File;
 import java.io.Serializable;
-import java.net.MalformedURLException;
 
 public abstract class Snake implements Serializable {
   public static final int SnakeWidth = Point.GridWidth;
-  protected Rectangle body ;
+  protected transient Rectangle body ;
   protected Point position ; 
-  protected Image image ;
+  protected transient Image image ;
   public abstract void InitialSnakeBody(Point position);
   public void ChangPosition(Point newPosition){
     this.position.setX(newPosition.getX());

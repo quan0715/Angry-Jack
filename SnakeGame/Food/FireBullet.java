@@ -8,10 +8,13 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
 
 public class FireBullet extends Food {
+  private static final long serialVersionUID = 3L;
   public FireBullet(Point p) {
     super(p);
   }
-  public FireBullet(){}
+  public FireBullet(){
+    super();
+  }
   @Override
   protected void FoodInit() {
     image = ResourcesLoader.getImage("img/FireBullet.png");

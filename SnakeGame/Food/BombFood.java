@@ -11,10 +11,13 @@ import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
 public class BombFood extends Food {
+    private static final long serialVersionUID = 2L;
     public BombFood(Point p) {
       super(p);
     }
-    public BombFood(){}
+    public BombFood(){
+        super();
+    }
     @Override
     protected void FoodInit() {
         image = ResourcesLoader.getImage("img/bomb.png");

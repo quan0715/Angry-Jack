@@ -9,10 +9,13 @@ import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
 public class NormalFood extends Food{
+    private static final long serialVersionUID = 7L;
     public NormalFood(Point p) {
       super(p);
     }
-    public NormalFood(){}
+    public NormalFood(){
+        super();
+    }
 
     @Override
     protected void FoodInit() {

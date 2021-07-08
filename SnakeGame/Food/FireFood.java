@@ -17,12 +17,15 @@ import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
 public class FireFood extends Food {
+  private static final long serialVersionUID = 4L;
   private FireEffect Effect;
   private CancelEffect Cancel;
   public FireFood(Point p) {
     super(p);
   }
-  public FireFood(){}
+  public FireFood(){
+    super();
+  }
   @Override
   protected void FoodInit() {
     Effect = new FireEffect();

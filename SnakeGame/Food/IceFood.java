@@ -15,10 +15,13 @@ import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
 public class IceFood extends Food {
+  private static final long serialVersionUID = 5L;
   public IceFood(Point p) {
     super(p);
   }
-  public IceFood(){}
+  public IceFood(){
+    super();
+  }
   private double SlowDown = 0.5;
   private Distant light ;
   private Lighting l;

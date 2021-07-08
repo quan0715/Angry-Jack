@@ -12,6 +12,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
 public class StarFood extends Food {
+  private static final long serialVersionUID = 8L;
   private Distant lightY;
   private Distant lightG;
   private Distant lightB;
@@ -21,7 +22,9 @@ public class StarFood extends Food {
   public StarFood(Point p) {
     super(p);
   }
-  public StarFood(){}
+  public StarFood(){
+    super();
+  }
   @Override
   protected void FoodInit() {
     lightY = new Distant(45, 45, Color.web("#ffee00"));

@@ -13,13 +13,16 @@ import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
 public class TripleFood extends Food {
+  private static final long serialVersionUID = 9L;
   private int Case = 0;
   private Distant lightW;
   private Lighting l;
   public TripleFood(Point p) {
     super(p);
   }
-  public TripleFood(){}
+  public TripleFood(){
+    super();
+  }
   @Override
   protected void FoodInit() {
     image = ResourcesLoader.getImage("img/bananas.png");
