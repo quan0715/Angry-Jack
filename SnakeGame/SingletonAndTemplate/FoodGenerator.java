@@ -23,6 +23,7 @@ public class FoodGenerator{
   private List<Food> foods;
   private List<Integer> FoodRate;
   private Random random = new Random();
+  public static final int BombDuration = 5000;
   private FoodGenerator(){
     foods=new ArrayList<>();
     FoodRate = new ArrayList<>();
@@ -115,7 +116,6 @@ public class FoodGenerator{
     }),30);
   }
   public static void NewBomb(SnakeBody snake) {
-    double duration=5000;
     for(SnakeBody s:GameEntityCenter.GetOtherSnakes(snake)){
       Direction d = s.GetDirection();
       Point p=new Point(s.GetHead().getX(),s.GetHead().getY());
@@ -135,10 +135,10 @@ public class FoodGenerator{
       }
       p.setX((600+p.getX()+x)%600);
       p.setY((600+p.getY()+y)%600);
-      Bomb m_bomb=new Bomb(p,duration);
+      Bomb m_bomb=new Bomb(p);
       instance.foods.add(m_bomb);
       
-      GameFlow cancelTimeline=new GameFlow(new KeyFrame(Duration.millis(duration),ev -> {
+      new GameFlow(new KeyFrame(Duration.millis(BombDuration),ev -> {
         if(instance.foods.contains(m_bomb))instance.foods.remove(m_bomb);
         GameEntityCenter.removeFood(m_bomb);
       }),1);

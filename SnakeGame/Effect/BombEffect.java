@@ -18,7 +18,7 @@ public class BombEffect extends SnakeEffect {
     private Bomb bomb;
     public BombEffect(Bomb bomb){
         this.bomb = bomb;
-        speed=(int)(50*(540+bomb.duration)/540);
+        speed=(int)(50*(540+FoodGenerator.BombDuration)/540);
         init();
     }
     @Override
@@ -26,6 +26,7 @@ public class BombEffect extends SnakeEffect {
         distant = new Light.Distant(45,45, Color.WHITE);
         spark = 0;
         MainLight = new Lighting(distant);
+        bomb.setDistant(MainLight);
         MainLight.setSurfaceScale(0.0);
         MainLight.setSpecularExponent(0.0);
         MainLight.setSpecularConstant(2.0);
@@ -42,15 +43,15 @@ public class BombEffect extends SnakeEffect {
             }
             spark++;
             lifeCounter++;
-            if(lifeCounter>=bomb.duration-4000)m_boomPlayer.preboom();
+            if(lifeCounter>=FoodGenerator.BombDuration-4000)m_boomPlayer.preboom();
             if(spark>=speed*0.4||spark>=200)MainLight.setSpecularExponent(40);
-            if(spark >= speed && lifeCounter <= bomb.duration){
+            if(spark >= speed && lifeCounter <= FoodGenerator.BombDuration){
                 MainLight.setSpecularExponent(0);
                 speed*=0.9;
                 if(speed<=60) speed = 60;
                 spark = 0;
             }
-            if(lifeCounter>=bomb.duration){
+            if(lifeCounter>=FoodGenerator.BombDuration){
                 EffectControl.stop();
                 m_boomPlayer.boom();
             }
