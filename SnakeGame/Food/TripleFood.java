@@ -1,6 +1,7 @@
 package SnakeGame.Food;
 
 import SnakeGame.Controller.HomeController;
+import SnakeGame.Effect.TripleEffect;
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
@@ -14,9 +15,7 @@ import javafx.util.Duration;
 
 public class TripleFood extends Food {
   private static final long serialVersionUID = 9L;
-  private int Case = 0;
-  private Distant lightW;
-  private Lighting l;
+  private TripleEffect Effect ;
   public TripleFood(Point p) {
     super(p);
   }
@@ -25,15 +24,9 @@ public class TripleFood extends Food {
   }
   @Override
   protected void FoodInit() {
+    Effect= new TripleEffect();
     image = ResourcesLoader.getImage("img/bananas.png");
     body.setFill(new ImagePattern(image));
-    lightW = new Distant(45, 45, Color.WHITE);
-    l = new Lighting(lightW);
-    l.setSurfaceScale(0.0);
-    l.setSpecularExponent(40.0);
-    l.setSpecularConstant(2.0);
-    l.setDiffuseConstant(2.0);
-    Case = 0;
   }
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
@@ -41,21 +34,9 @@ public class TripleFood extends Food {
     if (HomeController.ThemeColor) s.SkillText("BIG", "LightNormal");
     else s.SkillText("BIG", "DarkNormal");
     MusicController.GrowingUp();
-    GameFlow ef = new GameFlow(new KeyFrame(Duration.millis(180), e -> {
-      if(Case == 0) s.clearOnScreen();
-      else s.showOnScreen();
-        Case = (Case + 1) % 2;
-    }),-1);
-    GameFlow add = new GameFlow( new KeyFrame(Duration.millis(500) , e -> {
-      s.AddNewBody();
-    }),2);
-    GameFlow text = new GameFlow(new KeyFrame(Duration.millis(1500), e -> {
-      s.SkillText(null, null);
-      ef.stop();
-    }),1);
+    Effect.trigger(s);
     FoodGenerator.RefreshFood();
   }
-
   @Override
   protected void Cast(SnakeBody s) {  
   }
