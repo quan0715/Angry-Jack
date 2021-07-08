@@ -4,16 +4,15 @@ import SnakeGame.Effect.BombEffect;
 import SnakeGame.Enum.Point;
 import SnakeGame.ResourcesLoader;
 import SnakeGame.SingletonAndTemplate.*;
+import javafx.scene.effect.Effect;
+import javafx.scene.effect.Light;
 import javafx.scene.paint.ImagePattern;
 
 public class Bomb extends Food {
   private static final long serialVersionUID = 1L;
-  public double duration;
-
   private BombEffect Effect;
-  public Bomb(Point p,double duration) {
+  public Bomb(Point p) {
     super(p);
-    this.duration=duration;
   }
   public Bomb(){
     super();
@@ -39,5 +38,8 @@ public class Bomb extends Food {
     for(int i=0;i<3;i++){
       s.RemoveBody();
     }
+  }
+  public void setDistant(Effect effect){
+    this.body.setEffect(effect);
   }
 }
