@@ -15,10 +15,12 @@ public class BombEffect extends SnakeEffect {
     private boomPlayer m_boomPlayer;
     private int lifeCounter;
     private int speed;
+    private double duration;
+    private Rectangle body;
     private Bomb bomb;
-    public BombEffect(Bomb bomb){
+    public BombEffect(Bomb bomb,Rectangle body){
         this.bomb = bomb;
-        speed=(int)(50*(540+bomb.duration)/540);
+        this.body = body;
         init();
     }
     @Override
@@ -35,6 +37,9 @@ public class BombEffect extends SnakeEffect {
         Cycle = -1;
         spark = 0;
         lifeCounter = 0;
+        duration = bomb.duration;
+        speed=(int)(50*(540+duration)/540);
+        body.setEffect(MainLight);
         EffectControl = new GameFlow(new KeyFrame(Duration.millis(Times), e ->{
             if(!GameEntityCenter.contain(bomb)){
                 m_boomPlayer.stop();
@@ -42,15 +47,15 @@ public class BombEffect extends SnakeEffect {
             }
             spark++;
             lifeCounter++;
-            if(lifeCounter>=bomb.duration-4000)m_boomPlayer.preboom();
+            if(lifeCounter>=duration-4000)m_boomPlayer.preboom();
             if(spark>=speed*0.4||spark>=200)MainLight.setSpecularExponent(40);
-            if(spark >= speed && lifeCounter <= bomb.duration){
+            if(spark >= speed && lifeCounter <= duration){
                 MainLight.setSpecularExponent(0);
                 speed*=0.9;
                 if(speed<=60) speed = 60;
                 spark = 0;
             }
-            if(lifeCounter>=bomb.duration){
+            if(lifeCounter>=duration){
                 EffectControl.stop();
                 m_boomPlayer.boom();
             }

@@ -41,8 +41,11 @@ public class IceFood extends Food {
   }
   @Override
   protected void Cast(SnakeBody s) {
-    s.SkillText("Frozen", "Ice");
+    s.RateBuff(SlowDown);
     Effect.trigger(s);
+    GameFlow Ef = new GameFlow(new KeyFrame(Duration.millis(3000), e -> {
+      s.RateNuff(SlowDown);
+    }),1);
   }
   @Override
   protected void OnSnakeBodyTouch(SnakeBody s) {

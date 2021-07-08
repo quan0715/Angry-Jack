@@ -31,9 +31,11 @@ public class StarFood extends Food {
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.AddNewBody();
     s.woody++;
+    s.RateBuff(1.5);
     Effect.trigger(s);
     GameFlow WoodyTime = new GameFlow(new KeyFrame(Duration.millis(4000), e -> {
       s.woody--;
+      s.RateNuff(1.5);
     }),1);
     FoodGenerator.RefreshFood();
   }

@@ -22,7 +22,7 @@ public class Bomb extends Food {
   protected void FoodInit() {
     image = ResourcesLoader.getImage("img/TNT.png");
     body.setFill(new ImagePattern(image));
-    Effect = new BombEffect(this);
+    Effect = new BombEffect(this,body);
     Effect.ThemeEffect(body);
   }
   

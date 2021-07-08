@@ -1,6 +1,8 @@
 package SnakeGame.Effect;
 
+import SnakeGame.Controller.HomeController;
 import SnakeGame.SingletonAndTemplate.GameFlow;
+import SnakeGame.SingletonAndTemplate.MusicController;
 import SnakeGame.SingletonAndTemplate.SnakeBody;
 import SnakeGame.SingletonAndTemplate.SnakeEffect;
 import javafx.animation.KeyFrame;
@@ -27,8 +29,11 @@ public class JackEffect extends SnakeEffect {
     }
     @Override
     public void trigger(SnakeBody s) {
-        s.RateBuff(this.Buff);
+        MusicController.EatFoodPop();
+        s.SkillText("Frozen", "Ice");
         s.SnakeEffect(this.MainLight);
+        if (HomeController.ThemeColor) s.SkillText("Angry!", "LightNormal");
+        else s.SkillText("Angry!", "DarkNormal");
         EffectControl = new GameFlow(new KeyFrame(Duration.millis(this.Times), e -> {
             s.RateNuff(this.Buff);
             s.SnakeEffect(null);

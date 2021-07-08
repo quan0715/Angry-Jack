@@ -31,10 +31,11 @@ public class JackFood extends Food {
   }
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
-    if (HomeController.ThemeColor) s.SkillText("Angry!", "LightNormal");
-    else s.SkillText("Angry!", "DarkNormal");
+    s.RateBuff(2);
     Jack.trigger(s);
-    MusicController.EatFoodPop();
+    GameFlow Ef = new GameFlow(new KeyFrame(Duration.millis(3000), e -> {
+      s.RateNuff(2);
+    }),1);
     FoodGenerator.RefreshFood();
   }
   @Override
