@@ -31,7 +31,6 @@ public class JackFood extends Food {
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.RateBuff(2);
-
     //Use sample
     s.setEffect(new JackEffect());
     GameFlow Ef = new GameFlow(new KeyFrame(Duration.millis(3000), e -> {

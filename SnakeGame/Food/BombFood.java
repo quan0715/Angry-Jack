@@ -2,6 +2,7 @@ package SnakeGame.Food;
 
 import java.util.concurrent.Callable;
 
+import SnakeGame.Effect.BombEffect;
 import SnakeGame.Effect.BombFoodEffect;
 import SnakeGame.Effect.CancelEffect;
 import SnakeGame.Enum.Point;
@@ -14,8 +15,6 @@ import javafx.util.Duration;
 
 public class BombFood extends Food {
     private static final long serialVersionUID = 2L;
-    private BombFoodEffect Effect;
-    private CancelEffect Cancel;
     public BombFood(Point p) {
       super(p);
     }
@@ -24,8 +23,6 @@ public class BombFood extends Food {
     }
     @Override
     protected void FoodInit() {
-        Effect = new BombFoodEffect();
-        Cancel = new CancelEffect(5000,1);
         image = ResourcesLoader.getImage("img/bomb.png");
         body.setFill(new ImagePattern(image));
     }
@@ -35,6 +32,7 @@ public class BombFood extends Food {
     @Override
     protected void OnSnakeHeadTouch(SnakeBody s) {
         s.AddNewBody();
+        s.setEffect(new BombFoodEffect());
         s.setSkill(3, new Callable<Void>(){
             @Override
             public Void call() throws Exception {
@@ -42,8 +40,6 @@ public class BombFood extends Food {
                 return null;
             }
         });
-        Effect.trigger(s);
-        Cancel.trigger(s);
     }
     @Override
     protected void OnSnakeBodyTouch(SnakeBody s) {

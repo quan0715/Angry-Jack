@@ -38,5 +38,17 @@ public class FireEffect extends SnakeEffect {
             MainLight.setLight(distant);
             spark = (spark - 25 + 0.075) % 100 + 25;
         }),this.Cycle);
+        EffectControl2 = new GameFlow(new KeyFrame(Duration.millis(Times*Cycle), e -> {
+            s.SnakeEffect(null);
+            s.SkillText(null, "");
+        }),1);
+    }
+
+    @Override
+    public void Terminate(SnakeBody s) {
+        EffectControl.stop();
+        EffectControl2.stop();
+        s.SnakeEffect(null);
+        s.SkillText(null, "");
     }
 }

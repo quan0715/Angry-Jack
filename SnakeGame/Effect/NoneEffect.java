@@ -14,4 +14,9 @@ public class NoneEffect extends SnakeEffect {
     public void trigger(SnakeBody s) {
 
     }
+
+    @Override
+    public void Terminate(SnakeBody s) {
+
+    }
 }

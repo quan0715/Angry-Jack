@@ -10,7 +10,7 @@ import javafx.scene.paint.ImagePattern;
 
 public class Bomb extends Food {
   private static final long serialVersionUID = 1L;
-  private BombEffect Effect;
+  private BombEffect effect;
   public Bomb(Point p) {
     super(p);
   }
@@ -21,8 +21,7 @@ public class Bomb extends Food {
   protected void FoodInit() {
     image = ResourcesLoader.getImage("img/TNT.png");
     body.setFill(new ImagePattern(image));
-    Effect = new BombEffect(this);
-    Effect.ThemeEffect(body);
+    effect = new BombEffect(this);
   }
   @Override
   protected void Cast(SnakeBody s) {
@@ -33,7 +32,7 @@ public class Bomb extends Food {
   }
   @Override
   protected void OnSnakeBodyTouch(SnakeBody s) {
-    Effect.trigger(s);
+    effect.trigger(s);
     for(int i=0;i<3;i++){
       s.RemoveBody();
     }

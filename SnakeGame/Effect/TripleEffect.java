@@ -9,7 +9,6 @@ import javafx.animation.KeyFrame;
 import javafx.scene.effect.Light.Distant;
 import javafx.scene.effect.Lighting;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 public class TripleEffect extends SnakeEffect {
@@ -43,5 +42,11 @@ public class TripleEffect extends SnakeEffect {
             s.SkillText(null, null);
             EffectControl.stop();
         }),1);
+    }
+    @Override
+    public void Terminate(SnakeBody s) {
+        EffectControl.stop();
+        EffectControl2.stop();
+        s.SkillText(null, null);
     }
 }

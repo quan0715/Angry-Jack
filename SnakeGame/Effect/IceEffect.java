@@ -31,12 +31,16 @@ public class IceEffect extends SnakeEffect {
     @Override
     public void trigger(SnakeBody s) {
         s.SnakeEffect(this.MainLight);
+        s.SkillText("Freeze","Ice");
         EffectControl = new GameFlow(new KeyFrame(Duration.millis(this.Times), e -> {
             s.SnakeEffect(null);
             s.SkillText(null, "");
         }),this.Cycle);
     }
-    public void ThemeEffect(Rectangle body){
-        if(HomeController.ThemeColor) body.setEffect(this.MainLight);
+    @Override
+    public void Terminate(SnakeBody s) {
+        EffectControl.stop();
+        s.SkillText(null, "");
+        s.SnakeEffect(null);
     }
 }

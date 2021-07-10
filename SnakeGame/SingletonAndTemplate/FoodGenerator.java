@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import SnakeGame.Effect.BombEffect;
 import SnakeGame.Enum.Direction;
 import SnakeGame.Enum.Point;
 import SnakeGame.Food.Bomb;
@@ -137,7 +138,6 @@ public class FoodGenerator{
       p.setY((600+p.getY()+y)%600);
       Bomb m_bomb=new Bomb(p);
       instance.foods.add(m_bomb);
-      
       new GameFlow(new KeyFrame(Duration.millis(BombDuration),ev -> {
         if(instance.foods.contains(m_bomb))instance.foods.remove(m_bomb);
         GameEntityCenter.removeFood(m_bomb);

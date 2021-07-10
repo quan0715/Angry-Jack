@@ -18,8 +18,6 @@ import javafx.util.Duration;
 
 public class FireFood extends Food {
   private static final long serialVersionUID = 4L;
-  private FireEffect Effect;
-  private CancelEffect Cancel;
   public FireFood(Point p) {
     super(p);
   }
@@ -28,8 +26,6 @@ public class FireFood extends Food {
   }
   @Override
   protected void FoodInit() {
-    Effect = new FireEffect();
-    Cancel = new CancelEffect(5000,1);
     image = ResourcesLoader.getImage("img/fire.png");
     body.setFill(new ImagePattern(image));
   }
@@ -38,7 +34,7 @@ public class FireFood extends Food {
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.AddNewBody();
     FoodGenerator.RefreshFood();
-
+    s.setEffect(new FireEffect());
     s.setSkill(-1, new Callable<Void>(){
       @Override
       public Void call() throws Exception {
@@ -49,8 +45,6 @@ public class FireFood extends Food {
         return null;
       }
     });
-    Effect.trigger(s);
-    Cancel.trigger(s);
   }
   @Override
   protected void Cast(SnakeBody s) {  

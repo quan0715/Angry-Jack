@@ -1,5 +1,6 @@
 package SnakeGame.Effect;
 
+import SnakeGame.Controller.HomeController;
 import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
 import javafx.util.Duration;
@@ -15,10 +16,17 @@ public class NormalEffect extends SnakeEffect {
     }
     @Override
     public void trigger(SnakeBody s) {
-        s.SkillText("JACK","Normal");
+        if (HomeController.ThemeColor) s.SkillText("Angry!", "LightNormal");
+        else s.SkillText("Angry!", "DarkNormal");
         EffectControl = new GameFlow(new KeyFrame(Duration.millis(Times), e -> {
             s.SkillText(null,null);
         }),Cycle);
         MusicController.EatFoodPop();
+    }
+
+    @Override
+    public void Terminate(SnakeBody s) {
+        EffectControl.stop();
+        s.SkillText(null,null);
     }
 }

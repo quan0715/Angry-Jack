@@ -17,13 +17,11 @@ public class StarFood extends Food {
   public StarFood(Point p) {
     super(p);
   }
-  private StarEffect Effect;
   public StarFood(){
     super();
   }
   @Override
   protected void FoodInit() {
-    Effect = new StarEffect();
     image = ResourcesLoader.getImage("img/star.png");
     body.setFill(new ImagePattern(image));
   }
@@ -32,7 +30,7 @@ public class StarFood extends Food {
     s.AddNewBody();
     s.woody++;
     s.RateBuff(1.5);
-    Effect.trigger(s);
+    s.setEffect(new StarEffect());
     GameFlow WoodyTime = new GameFlow(new KeyFrame(Duration.millis(4000), e -> {
       s.woody--;
       s.RateNuff(1.5);

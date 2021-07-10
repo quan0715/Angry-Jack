@@ -59,8 +59,11 @@ public class BombEffect extends SnakeEffect {
     @Override
     public void trigger(SnakeBody s) {
         m_boomPlayer.boom();
+        EffectControl.stop();
     }
-    public void ThemeEffect(Rectangle body){
-        if(HomeController.ThemeColor) body.setEffect(this.MainLight);
+    @Override
+    public void Terminate(SnakeBody s) {
+        EffectControl.stop();
+        m_boomPlayer.stop();
     }
 }

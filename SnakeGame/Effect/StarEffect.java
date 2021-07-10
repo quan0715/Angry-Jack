@@ -30,7 +30,6 @@ public class StarEffect extends SnakeEffect {
     }
     @Override
     public void trigger(SnakeBody s) {
-
         s.SnakeEffect(MainLight);
         s.SkillText("SUPER", "Star");
         MusicController.SuperStarFood(true);
@@ -56,5 +55,13 @@ public class StarEffect extends SnakeEffect {
             MusicController.SuperStarFood(false);
             s.SkillText(null,"");
         }),1);
+    }
+    @Override
+    public void Terminate(SnakeBody s) {
+        EffectControl.stop();
+        EffectControl2.stop();
+        s.SnakeEffect(null);
+        MusicController.SuperStarFood(false);
+        s.SkillText(null,"");
     }
 }

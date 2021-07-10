@@ -24,4 +24,12 @@ public class CancelEffect extends SnakeEffect {
             s.SkillText(null, "");
         }),this.Cycle);
     }
+
+    @Override
+    public void Terminate(SnakeBody s) {
+        EffectControl.stop();
+        s.SnakeEffect(null);
+        s.setSkill(0, null);
+        s.SkillText(null, "");
+    }
 }

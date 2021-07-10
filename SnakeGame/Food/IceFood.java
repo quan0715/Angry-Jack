@@ -9,8 +9,6 @@ import SnakeGame.SingletonAndTemplate.*;
 import javafx.animation.KeyFrame;
 import javafx.scene.effect.Lighting;
 import javafx.scene.effect.Light.Distant;
-import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.util.Duration;
 
@@ -23,15 +21,10 @@ public class IceFood extends Food {
     super();
   }
   private double SlowDown = 0.5;
-  private Distant light ;
-  private Lighting l;
-  private IceEffect Effect;
   @Override
   protected void FoodInit() {
-    Effect= new IceEffect();
     image = ResourcesLoader.getImage("img/ice.png");
     body.setFill(new ImagePattern(image));
-    Effect.ThemeEffect(body);
   }
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
@@ -42,7 +35,7 @@ public class IceFood extends Food {
   @Override
   protected void Cast(SnakeBody s) {
     s.RateBuff(SlowDown);
-    Effect.trigger(s);
+    s.setEffect(new IceEffect());
     GameFlow Ef = new GameFlow(new KeyFrame(Duration.millis(3000), e -> {
       s.RateNuff(SlowDown);
     }),1);

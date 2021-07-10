@@ -15,7 +15,6 @@ import javafx.util.Duration;
 
 public class TripleFood extends Food {
   private static final long serialVersionUID = 9L;
-  private TripleEffect Effect ;
   public TripleFood(Point p) {
     super(p);
   }
@@ -24,18 +23,16 @@ public class TripleFood extends Food {
   }
   @Override
   protected void FoodInit() {
-    Effect= new TripleEffect();
     image = ResourcesLoader.getImage("img/bananas.png");
     body.setFill(new ImagePattern(image));
   }
   @Override
   protected void OnSnakeHeadTouch(SnakeBody s) {
     s.AddNewBody();
-
+    s.setEffect(new TripleEffect());
     GameFlow Add = new GameFlow( new KeyFrame(Duration.millis(500) , e -> {
       s.AddNewBody();
     }),2);
-    Effect.trigger(s);
     FoodGenerator.RefreshFood();
   }
   @Override
