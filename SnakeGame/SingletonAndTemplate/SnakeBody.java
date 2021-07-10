@@ -165,6 +165,7 @@ public class SnakeBody {
     }
   }
   public void OnlineBodyChang(ArrayList<Point> NewBodyPosition){
+    clearOnScreen();
     if (NewBodyPosition.size() == Body.size()){
       for(int i=0;i<Body.size();i++){
         Body.get(i).ChangPosition(NewBodyPosition.get(i));
@@ -191,6 +192,7 @@ public class SnakeBody {
         this.RemoveBody();
       }
     }
+    showOnScreen();
   }
   public String getSkillText(){
     return Skill;
