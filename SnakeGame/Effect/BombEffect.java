@@ -35,6 +35,7 @@ public class BombEffect extends SnakeEffect {
         Cycle = -1;
         spark = 0;
         lifeCounter = 0;
+        speed=(int) (50 * (540 + FoodGenerator.BombDuration) / 540);
         EffectControl = new GameFlow(new KeyFrame(Duration.millis(Times), e ->{
             if(!GameEntityCenter.contain(bomb)){
                 m_boomPlayer.stop();
