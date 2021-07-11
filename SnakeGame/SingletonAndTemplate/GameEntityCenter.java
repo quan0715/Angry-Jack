@@ -64,8 +64,7 @@ public class GameEntityCenter {
         FoodEventCenter.clear();
         GameFlowController.Clear();
     }
-    public static void clearFood(){
-        List<Food> RemoveListFood = new ArrayList<>(instance.foods);
-        for (Food f : RemoveListFood)  removeFood(f);
+    public static void clearFood(List<Integer> RemovedList){
+        for (Integer i : RemovedList)  removeFood(instance.foods.get(i));
     }
 }

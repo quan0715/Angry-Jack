@@ -20,7 +20,8 @@ public class GameFlowController {
         }
     }
     static void Clear(){
-        for(GameFlow flow: instance.GameFlows){
+        ArrayList<GameFlow> stopList=new ArrayList<>(instance.GameFlows);
+        for(GameFlow flow: stopList){
             flow.stop();
         }
         instance.GameFlows.clear();

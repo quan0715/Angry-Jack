@@ -81,8 +81,8 @@ public class GameThreeController{
     public void UpdateGame(renderPackage updatePackage){
         player1.OnlineBodyChang(updatePackage.SnakeOneList);
         player2.OnlineBodyChang(updatePackage.SnakeTwoList);
-        GameEntityCenter.clearFood();
-        for(Food food:updatePackage.foodList){
+        GameEntityCenter.clearFood(updatePackage.removedFoodIndexList);
+        for(Food food:updatePackage.addedFoodList){
             try {
                 Food tem=food.getClass().getDeclaredConstructor().newInstance();
                 tem.ChangeFoodPosition(food.GetFoodPosition());
