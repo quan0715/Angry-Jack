@@ -21,7 +21,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.Socket;
 
-public class GameThreeController{
+public class GameThreeController {
     private int windowWidth = 600;
     private int GridWidth = 20;
     public Socket connect;
@@ -29,33 +29,36 @@ public class GameThreeController{
     public Snake snake2Instance;
     private SnakeBody player1;
     private SnakeBody player2;
-    @FXML private Label WaitText;
-    @FXML private AnchorPane Wait;
-    @FXML private AnchorPane GameTable;
+    @FXML
+    private Label WaitText;
+    @FXML
+    private AnchorPane Wait;
+    @FXML
+    private AnchorPane GameTable;
     private double opacity = 0;
     private boolean reverse = true;
+
     public void init() {
-        try{
+        try {
             DrawLine();
             connect = new Socket("127.0.0.1", 8787);
             new ioThread(connect.getInputStream(), connect.getOutputStream(), this);
             //wait scene
             Wait.setVisible(true);
             WaitText.setOpacity(0.5);
-            Timeline label = new Timeline(new KeyFrame(Duration.millis(80),e ->{
-                if (reverse){
+            Timeline label = new Timeline(new KeyFrame(Duration.millis(80), e -> {
+                if (reverse) {
                     opacity += 0.05;
-                }
-                else{
+                } else {
                     opacity -= 0.05;
                 }
-                if (opacity > 1){
+                if (opacity > 1) {
                     opacity = 1;
                     reverse = !reverse;
                 }
-                if (opacity < 0.1){
+                if (opacity < 0.1) {
                     opacity = 0.1;
-                    reverse =!reverse;
+                    reverse = !reverse;
                 }
                 WaitText.setOpacity(opacity);
             }));
@@ -75,22 +78,24 @@ public class GameThreeController{
         Wait.setVisible(false);
         GameCurrentChildrenArray.Instance.set(GameTable.getChildren());
         //initialize snakeBody
-        player1=new SnakeBody(snake1Instance,10000,200,200);
-        player2=new SnakeBody(snake2Instance,10000,400,400);
+        player1 = new SnakeBody(snake1Instance, 10000, 200, 200);
+        player2 = new SnakeBody(snake2Instance, 10000, 400, 400);
     }
-    public void UpdateGame(renderPackage updatePackage){
+
+    public void UpdateGame(renderPackage updatePackage) {
         player1.OnlineBodyChang(updatePackage.SnakeOneList);
         player2.OnlineBodyChang(updatePackage.SnakeTwoList);
-        GameEntityCenter.clearFood(updatePackage.removedFoodIndexList);
-        for(Food food:updatePackage.addedFoodList){
+        GameEntityCenter.clearFood(updatePackage.removedFoodIdList);
+        if (updatePackage.addedFoodList != null) for (Food food : updatePackage.addedFoodList) {
             try {
-                Food tem=food.getClass().getDeclaredConstructor().newInstance();
-                tem.ChangeFoodPosition(food.GetFoodPosition());
+                Food tem = food.getClass().getDeclaredConstructor().newInstance();
+                tem.ChangeFoodPosition(food.GetFoodPosition(), tem.id);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
+
     public void DrawLine() {
         for (int i = 0; i <= windowWidth; i += GridWidth) {
             Line rows = new Line(0, i, windowWidth, i);

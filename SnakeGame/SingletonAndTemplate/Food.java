@@ -12,6 +12,7 @@ import javafx.scene.shape.Rectangle;
 
 public abstract class Food implements Serializable {
   private static final long serialVersionUID = 123456789L;
+  public int id;
   transient GameCenter m_gameCenter;
   protected transient Image image;
   protected Point FoodPosition;
@@ -43,6 +44,10 @@ public abstract class Food implements Serializable {
     FoodPosition = point;
     body.setX(point.getX());
     body.setY(point.getY());
+  }
+  public void ChangeFoodPosition(Point point,int id){
+    this.id=id;
+    ChangeFoodPosition(point);
   }
   public Point GetFoodPosition(){
     return FoodPosition;
